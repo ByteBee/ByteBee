@@ -1,0 +1,26 @@
+﻿using System;
+using System.Runtime.Serialization;
+
+namespace ByteBee.Framework.Configuring.Contract.Exceptions
+{
+    [Serializable]
+    public sealed class SectionOrKeyNotFoundException : ConfiguringException
+    {
+        public SectionOrKeyNotFoundException(string section, string key)
+            : this($"configuration section '{section}' or key '{key}' not found.")
+        {
+        }
+
+        public SectionOrKeyNotFoundException(string message) : base(message)
+        {
+        }
+
+        public SectionOrKeyNotFoundException(string message, Exception inner) : base(message, inner)
+        {
+        }
+
+        private SectionOrKeyNotFoundException(SerializationInfo info, StreamingContext context) : base(info, context)
+        {
+        }
+    }
+}
