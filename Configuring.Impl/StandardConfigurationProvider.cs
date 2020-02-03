@@ -1,7 +1,7 @@
 ﻿using System;
 using ByteBee.Framework.Configuring.Contract;
 
-namespace ByteBee.Framework.Configuring.Implementation
+namespace ByteBee.Framework.Configuring
 {
     public class StandardConfigurationProvider : IConfigurationProvider
     {

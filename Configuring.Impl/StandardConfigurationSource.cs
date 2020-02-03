@@ -4,8 +4,9 @@ using System.Linq;
 using ByteBee.Framework.Configuring.Contract;
 using ByteBee.Framework.Configuring.Contract.DataClasses;
 using ByteBee.Framework.Configuring.Contract.Exceptions;
+using ByteBee.Framework.Converting;
 
-namespace ByteBee.Framework.Configuring.Implementation
+namespace ByteBee.Framework.Configuring
 {
     public sealed class StandardConfigurationSource : IConfigurationSource
     {
@@ -34,7 +35,10 @@ namespace ByteBee.Framework.Configuring.Implementation
             if (isEntryDefined)
             {
                 ConfigEntry entry = _store.Single(e => FindEntry(e, section, key));
-                value = (TResult)entry.Value;
+
+                ITypeConverter<TResult> converter = ConverterFactory.Create<TResult>();
+
+                value = converter.ConvertFrom(entry.Value.ToString());
             }
             else
             {

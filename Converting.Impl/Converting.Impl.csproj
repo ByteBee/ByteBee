@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>ByteBee.Configuring</AssemblyName>
-    <RootNamespace>ByteBee.Framework.Configuring</RootNamespace>
+    <AssemblyName>ByteBee.Converting</AssemblyName>
+    <RootNamespace>ByteBee.Framework.Converting</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>ByteBee</Company>
     <Product>ByteBee Framework</Product>
@@ -12,10 +12,5 @@
     <FileVersion>2.0.0.0</FileVersion>
     <Version>2.0.0</Version>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Configuring.Contract\Configuring.Contract.csproj" />
-    <ProjectReference Include="..\Converting.Impl\Converting.Impl.csproj" />
-  </ItemGroup>
 
 </Project>

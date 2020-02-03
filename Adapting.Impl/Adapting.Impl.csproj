@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>ByteBee.Configuring</AssemblyName>
-    <RootNamespace>ByteBee.Framework.Configuring</RootNamespace>
+    <AssemblyName>ByteBee.Adapting</AssemblyName>
+    <RootNamespace>ByteBee.Framework.Adapting</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>ByteBee</Company>
     <Product>ByteBee Framework</Product>
@@ -14,8 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Configuring.Contract\Configuring.Contract.csproj" />
-    <ProjectReference Include="..\Converting.Impl\Converting.Impl.csproj" />
+    <ProjectReference Include="..\Adapting.Contract\Adapting.Contract.csproj" />
   </ItemGroup>
 
 </Project>

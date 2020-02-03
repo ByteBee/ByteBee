@@ -18,7 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Adapting.Contract\Adapting.Contract.csproj" />
     <ProjectReference Include="..\Configuring.Contract\Configuring.Contract.csproj" />
+    <ProjectReference Include="..\Configuring.Impl\Configuring.Impl.csproj" />
   </ItemGroup>
 
 </Project>

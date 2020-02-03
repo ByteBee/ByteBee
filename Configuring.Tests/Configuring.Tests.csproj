@@ -8,7 +8,7 @@
     <ProjectGuid>{24963604-B969-46ED-A07D-9D024D8E6E18}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ByteBee.Configurating.Tests</RootNamespace>
+    <RootNamespace>ByteBee.Framework.Configurating.Tests</RootNamespace>
     <AssemblyName>ByteBee.Configurating.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -43,6 +43,9 @@
     <Reference Include="Moq, Version=4.13.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.13.1\lib\net45\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
@@ -70,6 +73,9 @@
     <Compile Include="Default\ConfigurationSourceTests\GetSections.cs" />
     <Compile Include="Default\ConfigurationSourceTests\Set.cs" />
     <Compile Include="Default\ConfigurationSourceTests\TryGet.cs" />
+    <Compile Include="JsonNet\ConfigurationStoreTests\ConfigurationStoreTest.cs" />
+    <Compile Include="JsonNet\ConfigurationStoreTests\Load.cs" />
+    <Compile Include="JsonNet\ConfigurationStoreTests\Save.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stub\TestConfig.cs" />
   </ItemGroup>
@@ -79,9 +85,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Default\ConfigurationProviderTests\" />
-    <Folder Include="JsonNet\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Adapting.Contract\Adapting.Contract.csproj">
+      <Project>{DEB43642-73C3-4871-97DA-C9C0B9623EC3}</Project>
+      <Name>Adapting.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Adapting.Impl\Adapting.Impl.csproj">
+      <Project>{C973A281-F6D7-4087-A15E-878B82BF08AE}</Project>
+      <Name>Adapting.Impl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Configuring.Contract\Configuring.Contract.csproj">
       <Project>{B8AB3861-376D-4EC3-BF91-33FB66FC5F36}</Project>
       <Name>Configuring.Contract</Name>
@@ -89,6 +102,10 @@
     <ProjectReference Include="..\Configuring.Impl\Configuring.Impl.csproj">
       <Project>{078E18FE-47F6-40D6-B5EF-B9069485E53C}</Project>
       <Name>Configuring.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Configuring.JsonNet\Configurating.JsonNet.csproj">
+      <Project>{074DBB18-16C1-4013-A418-6AAC739A00FB}</Project>
+      <Name>Configurating.JsonNet</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,4 @@
-﻿using ByteBee.Framework.Configuring.Implementation;
+﻿using ByteBee.Framework.Configuring;
 using NUnit.Framework;
 
 namespace ByteBee.Configurating.Tests.Default.ConfigurationSourceTests
