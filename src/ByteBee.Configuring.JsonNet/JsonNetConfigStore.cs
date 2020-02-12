@@ -11,12 +11,12 @@ using Newtonsoft.Json.Linq;
 
 namespace ByteBee.Framework.Configuring.Impl.JsonNet
 {
-    public sealed class JsonNetConfigurationStore : IConfigurationStore
+    public sealed class JsonNetConfigStore : IConfigStore
     {
         private readonly string _pathToConfigFile;
         private ISystemFile _file;
 
-        public JsonNetConfigurationStore(string pathToConfigFile)
+        public JsonNetConfigStore(string pathToConfigFile)
         {
             _pathToConfigFile = pathToConfigFile;
             _file = new SystemFileAdapter();
@@ -27,7 +27,7 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
             _file = fileAdapter;
         }
 
-        public void Save(IConfigurationSource source)
+        public void Save(IConfigSource source)
         {
             if (source == null)
             {
@@ -62,7 +62,7 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
             _file.WriteAllText(_pathToConfigFile, content);
         }
 
-        public IConfigurationSource Load()
+        public IConfigSource Load()
         {
             if (_file.Exists(_pathToConfigFile) == false)
             {
@@ -76,7 +76,7 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
                 throw new ConfiguringException("The configuration file was entirely empty");
             }
 
-            IConfigurationSource source = new StandardConfigurationSource();
+            IConfigSource source = new StandardConfigSource();
 
             JObject json = JObject.Parse(fileContent);
 

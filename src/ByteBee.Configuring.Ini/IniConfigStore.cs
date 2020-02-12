@@ -5,12 +5,12 @@ using ByteBee.Framework.Configuring.Contract;
 
 namespace ByteBee.Framework.Configuring.Impl.Ini
 {
-    public class IniConfigurationStore : IConfigurationStore
+    public class IniConfigStore : IConfigStore
     {
         private readonly string _pathToConfigFile;
         private ISystemFile _file;
 
-        public IniConfigurationStore(string pathToConfigFile)
+        public IniConfigStore(string pathToConfigFile)
         {
             _pathToConfigFile = pathToConfigFile;
             _file = new SystemFileAdapter();
@@ -21,12 +21,12 @@ namespace ByteBee.Framework.Configuring.Impl.Ini
             _file = fileAdapter;
         }
 
-        public void Save(IConfigurationSource source)
+        public void Save(IConfigSource source)
         {
             throw new NotImplementedException();
         }
 
-        public IConfigurationSource Load()
+        public IConfigSource Load()
         {
             throw new NotImplementedException();
         }

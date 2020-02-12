@@ -7,9 +7,9 @@ using FluentAssertions.Execution;
 using Moq;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
+namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigStoreTests
 {
-    public sealed partial class ConfigurationStoreTest
+    public sealed partial class ConfigStoreTest
     {
         [Test]
         public void Load_NoFile_FileNotFoundException()
@@ -40,7 +40,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
         {
             ReadAllTextMock("{}");
 
-            IConfigurationSource source = _store.Load();
+            IConfigSource source = _store.Load();
 
             source.GetSections().Should()
                 .BeEmpty("the config was empty");
@@ -52,7 +52,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
         {
             ReadAllTextMock("{\"foobar\":{\"foo\":\"bar\"}}");
 
-            IConfigurationSource source = _store.Load();
+            IConfigSource source = _store.Load();
 
             using (new AssertionScope())
             {
@@ -69,7 +69,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
         {
             ReadAllTextMock("{\"foobar\":{\"foo\":42}}");
 
-            IConfigurationSource source = _store.Load();
+            IConfigSource source = _store.Load();
 
             using (new AssertionScope())
             {

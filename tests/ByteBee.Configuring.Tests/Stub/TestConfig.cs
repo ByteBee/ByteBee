@@ -4,9 +4,9 @@ using ByteBee.Framework.Configuring.Contract.DataClasses;
 namespace ByteBee.Framework.Configuring.Tests.Stub
 {
     [ConfigSection("test")]
-    public class TestConfig
+    public sealed class TestConfig
     {
-        [ConfigKey("sting", IgnoreNull = true)]
+        [ConfigKey("string", IgnoreNull = true)]
         public string StringValue { get; set; }
         
         [ConfigKey("int")]

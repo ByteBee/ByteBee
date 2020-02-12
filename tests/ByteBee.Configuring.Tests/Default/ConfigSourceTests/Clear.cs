@@ -1,9 +1,9 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Configuring.Tests.Default.ConfigurationSourceTests
+namespace ByteBee.Framework.Configuring.Tests.Default.ConfigSourceTests
 {
-    public sealed partial class ConfigurationSourceTest
+    public sealed partial class ConfigSourceTest
     {
         [Test]
         public void Clear_NoEntries_NoEntries()

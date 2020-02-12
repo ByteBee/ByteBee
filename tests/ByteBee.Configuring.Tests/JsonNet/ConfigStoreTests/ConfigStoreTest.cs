@@ -4,12 +4,12 @@ using ByteBee.Framework.Configuring.Impl.JsonNet;
 using Moq;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
+namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigStoreTests
 {
     [TestFixture]
-    public sealed partial class ConfigurationStoreTest
+    public sealed partial class ConfigStoreTest
     {
-        private JsonNetConfigurationStore _store;
+        private JsonNetConfigStore _store;
         private Mock<ISystemFile> _fileMoq;
 
         [SetUp]
@@ -17,7 +17,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
         {
             _fileMoq = new Mock<ISystemFile>();
             
-            _store = new JsonNetConfigurationStore("test.cfg");
+            _store = new JsonNetConfigStore("test.cfg");
             _store.SetFileAdapter(_fileMoq.Object);
         }
 

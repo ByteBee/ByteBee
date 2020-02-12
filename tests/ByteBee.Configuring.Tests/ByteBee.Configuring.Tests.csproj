@@ -66,16 +66,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default\ConfigurationSourceTests\Clear.cs" />
-    <Compile Include="Default\ConfigurationSourceTests\ConfigurationSourceTest.cs" />
-    <Compile Include="Default\ConfigurationSourceTests\Get.cs" />
-    <Compile Include="Default\ConfigurationSourceTests\GetKeys.cs" />
-    <Compile Include="Default\ConfigurationSourceTests\GetSections.cs" />
-    <Compile Include="Default\ConfigurationSourceTests\Set.cs" />
-    <Compile Include="Default\ConfigurationSourceTests\TryGet.cs" />
-    <Compile Include="JsonNet\ConfigurationStoreTests\ConfigurationStoreTest.cs" />
-    <Compile Include="JsonNet\ConfigurationStoreTests\Load.cs" />
-    <Compile Include="JsonNet\ConfigurationStoreTests\Save.cs" />
+    <Compile Include="Default\ConfigFactoryTests\ConfigurationProviderTest.cs" />
+    <Compile Include="Default\ConfigFactoryTests\Get.cs" />
+    <Compile Include="Default\ConfigSourceTests\Clear.cs" />
+    <Compile Include="Default\ConfigSourceTests\ConfigSourceTest.cs" />
+    <Compile Include="Default\ConfigSourceTests\Get.cs" />
+    <Compile Include="Default\ConfigSourceTests\GetKeys.cs" />
+    <Compile Include="Default\ConfigSourceTests\GetSections.cs" />
+    <Compile Include="Default\ConfigSourceTests\Set.cs" />
+    <Compile Include="Default\ConfigSourceTests\TryGet.cs" />
+    <Compile Include="JsonNet\ConfigStoreTests\ConfigStoreTest.cs" />
+    <Compile Include="JsonNet\ConfigStoreTests\Load.cs" />
+    <Compile Include="JsonNet\ConfigStoreTests\Save.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stub\TestConfig.cs" />
   </ItemGroup>
@@ -83,9 +85,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Default\ConfigurationProviderTests\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\src\ByteBee.Adapting\ByteBee.Adapting.csproj">
       <Project>{C08EBC4A-79EB-4A25-BDA0-749AC6D1F72F}</Project>

@@ -4,14 +4,14 @@ using FluentAssertions;
 using Moq;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
+namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigStoreTests
 {
-    public sealed partial class ConfigurationStoreTest
+    public sealed partial class ConfigStoreTest
     {
         [Test]
         public void Save_SourceIsNull_ArgumentNullException()
         {
-            IConfigurationSource source = null;
+            IConfigSource source = null;
 
             Action act = () => _store.Save(source);
 
@@ -26,7 +26,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
             string fileContent = "";
             WriteAllTextMock(c => fileContent = c);
 
-            var source = new Mock<IConfigurationSource>();
+            var source = new Mock<IConfigSource>();
             source.Setup(s => s.GetSections())
                 .Returns(() => new string[0]);
 
@@ -41,7 +41,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
             string fileContent = "";
             WriteAllTextMock(c => fileContent = c);
 
-            var source = new Mock<IConfigurationSource>();
+            var source = new Mock<IConfigSource>();
             source.Setup(s => s.GetSections())
                 .Returns(() => new[] {"foo"});
             
@@ -59,7 +59,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
             string fileContent = "";
             WriteAllTextMock(c => fileContent = c);
 
-            var source = new Mock<IConfigurationSource>();
+            var source = new Mock<IConfigSource>();
             source.Setup(s => s.GetSections())
                 .Returns(() => new[] {"foo", "bar"});
             
@@ -75,7 +75,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
             string fileContent = "";
             WriteAllTextMock(c => fileContent = c);
 
-            var source = new Mock<IConfigurationSource>();
+            var source = new Mock<IConfigSource>();
             source.Setup(s => s.GetSections())
                 .Returns(() => new[] {"foo"});
             source.Setup(s => s.GetKeys("foo"))
@@ -93,7 +93,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
             string fileContent = "";
             WriteAllTextMock(c => fileContent = c);
 
-            var source = new Mock<IConfigurationSource>();
+            var source = new Mock<IConfigSource>();
             source.Setup(s => s.GetSections())
                 .Returns(() => new[] {"foo"});
             source.Setup(s => s.GetKeys("foo"))
@@ -113,7 +113,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
             string fileContent = "";
             WriteAllTextMock(c => fileContent = c);
 
-            var source = new Mock<IConfigurationSource>();
+            var source = new Mock<IConfigSource>();
             source.Setup(s => s.GetSections())
                 .Returns(() => new[] {"foo"});
             source.Setup(s => s.GetKeys("foo"))
@@ -133,7 +133,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
             string fileContent = "";
             WriteAllTextMock(c => fileContent = c);
 
-            var source = new Mock<IConfigurationSource>();
+            var source = new Mock<IConfigSource>();
             source.Setup(s => s.GetSections())
                 .Returns(() => new[] {"foo"});
             source.Setup(s => s.GetKeys("foo"))
@@ -153,7 +153,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigurationStoreTests
             string fileContent = "";
             WriteAllTextMock(c => fileContent = c);
 
-            var source = new Mock<IConfigurationSource>();
+            var source = new Mock<IConfigSource>();
             source.Setup(s => s.GetSections())
                 .Returns(() => new[] {"foo"});
             source.Setup(s => s.GetKeys("foo"))
