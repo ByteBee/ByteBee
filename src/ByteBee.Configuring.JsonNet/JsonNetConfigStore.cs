@@ -73,7 +73,7 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
 
             if (string.IsNullOrWhiteSpace(fileContent))
             {
-                throw new ConfiguringException("The configuration file was entirely empty");
+                throw new ConfigurationException("The configuration file was entirely empty");
             }
 
             IConfigSource source = new StandardConfigSource();

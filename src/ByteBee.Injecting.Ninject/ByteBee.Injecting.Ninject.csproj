@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>ByteBee.Adapting</AssemblyName>
-    <RootNamespace>ByteBee.Framework.Adapting</RootNamespace>
+    <AssemblyName>ByteBee.Injecting.Ninject</AssemblyName>
+    <RootNamespace>ByteBee.Framework.Injecting.Impl.Ninject</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>ByteBee</Company>
     <Product>ByteBee Framework</Product>
@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contract\DataClasses\" />
+    <PackageReference Include="Ninject" Version="3.3.4" />
   </ItemGroup>
 
 </Project>

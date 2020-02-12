@@ -32,7 +32,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigStoreTests
             Action act = () => _store.Load();
 
             act.Should()
-                .ThrowExactly<ConfiguringException>("empty jsons are not allowed");
+                .ThrowExactly<ConfigurationException>("empty jsons are not allowed");
         }
 
         [Test]

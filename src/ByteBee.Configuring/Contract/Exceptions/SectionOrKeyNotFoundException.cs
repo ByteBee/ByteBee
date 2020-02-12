@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace ByteBee.Framework.Configuring.Contract.Exceptions
 {
     [Serializable]
-    public sealed class SectionOrKeyNotFoundException : ConfiguringException
+    public sealed class SectionOrKeyNotFoundException : ConfigurationException
     {
         public SectionOrKeyNotFoundException(string section, string key)
             : this($"configuration section '{section}' or key '{key}' not found.")
