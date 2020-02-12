@@ -1,7 +1,7 @@
 ﻿using System;
-using ByteBee.Converting.Contract;
+using ByteBee.Framework.Converting.Contract;
 
-namespace ByteBee.Converting.Impl.Converters
+namespace ByteBee.Framework.Converting.Impl.Converters
 {
     internal sealed class StandardGuidConverter : ITypeConverter<Guid>
     {
@@ -12,12 +12,23 @@ namespace ByteBee.Converting.Impl.Converters
 
         public Guid Convert(object value)
         {
-            throw new NotImplementedException();
+            if (value is Guid output)
+            {
+                return output;
+            }
+
+            return Guid.Parse(value.ToString());
         }
 
         public bool TryConvert(object value, out Guid result)
         {
-            throw new NotImplementedException();
+            if (value is Guid output)
+            {
+                result = output;
+                return true;
+            }
+
+            return Guid.TryParse(value.ToString(), out result);
         }
     }
 }

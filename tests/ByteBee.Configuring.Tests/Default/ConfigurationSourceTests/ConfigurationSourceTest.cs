@@ -1,6 +1,6 @@
-﻿using ByteBee.Converting.Contract;
-using ByteBee.Converting.Impl;
-using ByteBee.Framework.Configuring.Impl;
+﻿using ByteBee.Framework.Configuring.Impl;
+using ByteBee.Framework.Converting.Contract;
+using ByteBee.Framework.Converting.Impl;
 using NUnit.Framework;
 
 namespace ByteBee.Framework.Configuring.Tests.Default.ConfigurationSourceTests

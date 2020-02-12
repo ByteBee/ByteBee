@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using ByteBee.Converting.Contract;
-using ByteBee.Converting.Impl.Converters;
+using ByteBee.Framework.Converting.Contract;
+using ByteBee.Framework.Converting.Impl.Converters;
 
-namespace ByteBee.Converting.Impl
+namespace ByteBee.Framework.Converting.Impl
 {
     public sealed class StandardConverterFactory : IConverterFactory
     {

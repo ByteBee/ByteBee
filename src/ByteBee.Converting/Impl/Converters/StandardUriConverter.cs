@@ -1,7 +1,7 @@
 ﻿using System;
-using ByteBee.Converting.Contract;
+using ByteBee.Framework.Converting.Contract;
 
-namespace ByteBee.Converting.Impl.Converters
+namespace ByteBee.Framework.Converting.Impl.Converters
 {
     internal sealed class StandardUriConverter : ITypeConverter<Uri>
     {

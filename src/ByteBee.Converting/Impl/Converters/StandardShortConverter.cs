@@ -1,6 +1,7 @@
-﻿using ByteBee.Converting.Contract;
+﻿using System.Globalization;
+using ByteBee.Framework.Converting.Contract;
 
-namespace ByteBee.Converting.Impl.Converters
+namespace ByteBee.Framework.Converting.Impl.Converters
 {
     internal sealed class StandardShortConverter : ITypeConverter<short>
     {
@@ -11,12 +12,23 @@ namespace ByteBee.Converting.Impl.Converters
 
         public short Convert(object value)
         {
-            throw new System.NotImplementedException();
+            if (value is short output)
+            {
+                return output;
+            }
+
+            return short.Parse(value.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture);
         }
 
         public bool TryConvert(object value, out short result)
         {
-            throw new System.NotImplementedException();
+            if (value is short output)
+            {
+                result = output;
+                return true;
+            }
+
+            return short.TryParse(value.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture, out result);
         }
     }
 }

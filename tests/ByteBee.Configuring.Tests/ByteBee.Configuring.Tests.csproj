@@ -91,9 +91,9 @@
       <Project>{C08EBC4A-79EB-4A25-BDA0-749AC6D1F72F}</Project>
       <Name>ByteBee.Adapting</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\ByteBee.Configuring.JsonNet\ByteBee.Configurating.JsonNet.csproj">
+    <ProjectReference Include="..\..\src\ByteBee.Configuring.JsonNet\ByteBee.Configuring.JsonNet.csproj">
       <Project>{074DBB18-16C1-4013-A418-6AAC739A00FB}</Project>
-      <Name>ByteBee.Configurating.JsonNet</Name>
+      <Name>ByteBee.Configuring.JsonNet</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\ByteBee.Configuring\ByteBee.Configuring.csproj">
       <Project>{6227DB74-E3FE-4037-9F5A-B14E0BF100E8}</Project>

@@ -1,6 +1,6 @@
-﻿using ByteBee.Converting.Contract;
+﻿using ByteBee.Framework.Converting.Contract;
 
-namespace ByteBee.Converting.Impl.Converters
+namespace ByteBee.Framework.Converting.Impl.Converters
 {
     public class FallbackCasting : ITypeConverter<string>
     {

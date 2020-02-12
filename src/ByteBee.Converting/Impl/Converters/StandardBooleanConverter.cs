@@ -1,7 +1,7 @@
 ﻿using System;
-using ByteBee.Converting.Contract;
+using ByteBee.Framework.Converting.Contract;
 
-namespace ByteBee.Converting.Impl.Converters
+namespace ByteBee.Framework.Converting.Impl.Converters
 {
     internal sealed class StandardBooleanConverter : ITypeConverter<bool>
     {
@@ -17,26 +17,53 @@ namespace ByteBee.Converting.Impl.Converters
                 throw new ArgumentNullException();
             }
 
-            switch (value)
+            if (TryConvert(value, out bool output))
             {
-                case "true":
-                    return true;
-                case "false":
-                    return false;
-                default:
-                    if (bool.TryParse(value.ToString(), out bool output))
-                    {
-                        return output;
-                    }
-
-                    throw new InvalidCastException();
-                    //return (bool)_booleanConverter.ConvertFrom(value);
+                return output;
             }
+
+            throw new InvalidCastException();
         }
 
         public bool TryConvert(object value, out bool result)
         {
-            throw new System.NotImplementedException();
+            if (value == null)
+            {
+                result = false;
+                return false;
+            }
+
+            if (value is bool output)
+            {
+                result = output;
+                return true;
+            }
+
+            if (value is string)
+            {
+                value = value.ToString().ToLowerInvariant();
+            }
+
+            switch (value)
+            {
+                case 1:
+                case "true":
+                case "yes":
+                case "yep":
+                case "ja":
+                    result = true;
+                    return true;
+
+                case 0:
+                case "false":
+                case "no":
+                case "nope":
+                case "nein":
+                    result = false;
+                    return true;
+            }
+
+            return bool.TryParse(value.ToString(), out result);
         }
     }
 }

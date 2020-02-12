@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configurating.JsonNet", "src\ByteBee.Configuring.JsonNet\ByteBee.Configurating.JsonNet.csproj", "{074DBB18-16C1-4013-A418-6AAC739A00FB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9A47D7E4-8998-479C-9685-6AD09D9D12E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DA01E337-D63F-410B-8178-D5C1BBC4B823}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring", "src\ByteBee.Configuring\ByteBee.Configuring.csproj", "{6227DB74-E3FE-4037-9F5A-B14E0BF100E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring.JsonNet", "src\ByteBee.Configuring.JsonNet\ByteBee.Configuring.JsonNet.csproj", "{074DBB18-16C1-4013-A418-6AAC739A00FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBee.Configuring.Tests", "tests\ByteBee.Configuring.Tests\ByteBee.Configuring.Tests.csproj", "{24963604-B969-46ED-A07D-9D024D8E6E18}"
 EndProject
@@ -13,11 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Adapting", "src\Byt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Converting", "src\ByteBee.Converting\ByteBee.Converting.csproj", "{5F5F6FE7-4A91-485F-8FE6-4AE9542C6400}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9A47D7E4-8998-479C-9685-6AD09D9D12E3}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DA01E337-D63F-410B-8178-D5C1BBC4B823}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBee.Configuring", "src\ByteBee.Configuring\ByteBee.Configuring.csproj", "{6227DB74-E3FE-4037-9F5A-B14E0BF100E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring.Ini", "src\ByteBee.Configuring.Ini\ByteBee.Configuring.Ini.csproj", "{779D063E-E490-404E-B96D-FEBB2D7AD728}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{6227DB74-E3FE-4037-9F5A-B14E0BF100E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6227DB74-E3FE-4037-9F5A-B14E0BF100E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6227DB74-E3FE-4037-9F5A-B14E0BF100E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{779D063E-E490-404E-B96D-FEBB2D7AD728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{779D063E-E490-404E-B96D-FEBB2D7AD728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{779D063E-E490-404E-B96D-FEBB2D7AD728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{779D063E-E490-404E-B96D-FEBB2D7AD728}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{C08EBC4A-79EB-4A25-BDA0-749AC6D1F72F} = {9A47D7E4-8998-479C-9685-6AD09D9D12E3}
 		{5F5F6FE7-4A91-485F-8FE6-4AE9542C6400} = {9A47D7E4-8998-479C-9685-6AD09D9D12E3}
 		{6227DB74-E3FE-4037-9F5A-B14E0BF100E8} = {9A47D7E4-8998-479C-9685-6AD09D9D12E3}
+		{779D063E-E490-404E-B96D-FEBB2D7AD728} = {9A47D7E4-8998-479C-9685-6AD09D9D12E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D37575EA-F989-458B-AD7F-F683AABAD4C3}

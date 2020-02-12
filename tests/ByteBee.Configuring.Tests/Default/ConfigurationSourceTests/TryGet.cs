@@ -1,5 +1,5 @@
 ﻿using System;
-using ByteBee.Converting.Contract;
+using ByteBee.Framework.Converting.Contract;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using Moq;

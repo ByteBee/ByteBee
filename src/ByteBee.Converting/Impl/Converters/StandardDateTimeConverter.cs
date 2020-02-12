@@ -1,7 +1,7 @@
 ﻿using System;
-using ByteBee.Converting.Contract;
+using ByteBee.Framework.Converting.Contract;
 
-namespace ByteBee.Converting.Impl.Converters
+namespace ByteBee.Framework.Converting.Impl.Converters
 {
     internal sealed class StandardDateTimeConverter : ITypeConverter<DateTime>
     {
@@ -12,12 +12,23 @@ namespace ByteBee.Converting.Impl.Converters
 
         public DateTime Convert(object value)
         {
-            throw new NotImplementedException();
+            if (value is DateTime output)
+            {
+                return output;
+            }
+
+            return DateTime.Parse(value.ToString());
         }
 
         public bool TryConvert(object value, out DateTime result)
         {
-            throw new NotImplementedException();
+            if (value is DateTime output)
+            {
+                result = output;
+                return true;
+            }
+
+            return DateTime.TryParse(value.ToString(), out result);
         }
     }
 }

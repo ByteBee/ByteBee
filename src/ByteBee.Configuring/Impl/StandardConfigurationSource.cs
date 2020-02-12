@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ByteBee.Converting.Contract;
-using ByteBee.Converting.Impl;
 using ByteBee.Framework.Configuring.Contract;
 using ByteBee.Framework.Configuring.Contract.DataClasses;
 using ByteBee.Framework.Configuring.Contract.Exceptions;
+using ByteBee.Framework.Converting.Contract;
+using ByteBee.Framework.Converting.Impl;
 
 namespace ByteBee.Framework.Configuring.Impl
 {

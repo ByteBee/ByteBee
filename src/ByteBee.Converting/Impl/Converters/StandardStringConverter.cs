@@ -1,6 +1,6 @@
-﻿using ByteBee.Converting.Contract;
+﻿using ByteBee.Framework.Converting.Contract;
 
-namespace ByteBee.Converting.Impl.Converters
+namespace ByteBee.Framework.Converting.Impl.Converters
 {
     internal sealed class StandardStringConverter : ITypeConverter<string>
     {
@@ -16,7 +16,8 @@ namespace ByteBee.Converting.Impl.Converters
 
         public bool TryConvert(object value, out string result)
         {
-            throw new System.NotImplementedException();
+            result = value.ToString();
+            return true;
         }
     }
 }

@@ -1,6 +1,7 @@
-﻿using ByteBee.Converting.Contract;
+﻿using System.Globalization;
+using ByteBee.Framework.Converting.Contract;
 
-namespace ByteBee.Converting.Impl.Converters
+namespace ByteBee.Framework.Converting.Impl.Converters
 {
     internal sealed class StandardDoubleConverter : ITypeConverter<double>
     {
@@ -11,12 +12,23 @@ namespace ByteBee.Converting.Impl.Converters
 
         public double Convert(object value)
         {
-            throw new System.NotImplementedException();
+            if (value is double output)
+            {
+                return output;
+            }
+
+            return double.Parse(value.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture);
         }
 
         public bool TryConvert(object value, out double result)
         {
-            throw new System.NotImplementedException();
+            if (value is double output)
+            {
+                result = output;
+                return true;
+            }
+
+            return double.TryParse(value.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture, out result);
         }
     }
 }

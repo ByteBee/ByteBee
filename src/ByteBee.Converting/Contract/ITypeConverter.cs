@@ -1,4 +1,4 @@
-﻿namespace ByteBee.Converting.Contract
+﻿namespace ByteBee.Framework.Converting.Contract
 {
     public interface ITypeConverter<TResult>
     {

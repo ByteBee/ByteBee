@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
-using ByteBee.Converting.Contract;
+using ByteBee.Framework.Converting.Contract;
 
-namespace ByteBee.Converting.Impl.Converters
+namespace ByteBee.Framework.Converting.Impl.Converters
 {
     internal sealed class StandardIntegerConverter : ITypeConverter<int>
     {
@@ -17,12 +17,7 @@ namespace ByteBee.Converting.Impl.Converters
                 return output;
             }
 
-            return Convert(value.ToString());
-        }
-
-        public int Convert(string value)
-        {
-            return int.Parse(value, NumberStyles.Any, CultureInfo.InvariantCulture);
+            return int.Parse(value.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture);
         }
 
         public bool TryConvert(object value, out int result)
@@ -33,12 +28,7 @@ namespace ByteBee.Converting.Impl.Converters
                 return true;
             }
 
-            return TryConvert(value.ToString(), out result);
-        }
-
-        public bool TryConvert(string value, out int result)
-        {
-            return int.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out result);
+            return int.TryParse(value.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture, out result);
         }
     }
 }
