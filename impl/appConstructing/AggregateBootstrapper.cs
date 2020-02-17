@@ -9,10 +9,10 @@ namespace ByteBee.Framework.AppConstructing.Impl
     {
         private IBootstrapper _bootstrapper;
 
-        public IConfigConstructor SkipBootstrapper()
-        {
-            return this;
-        }
+        //public IConfigConstructor SkipBootstrapper()
+        //{
+        //    return this;
+        //}
 
         public IConfigConstructor AggregateBootstrapper()
         {

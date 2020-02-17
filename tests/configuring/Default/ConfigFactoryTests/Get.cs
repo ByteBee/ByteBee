@@ -25,7 +25,7 @@ namespace ByteBee.Framework.Configuring.Tests.Default.ConfigFactoryTests
         [Test]
         public void Get_StringWasSet_NoErrors()
         {
-            _sourceMock.Setup(s => s.Get<string>("test", "string"))
+            _sourceMock.Setup(s => s.GetOrDefault<string>("test", "string"))
                 .Returns(() => "hello world");
 
             var cfg = _provider.Get<TestConfig>();
@@ -36,7 +36,7 @@ namespace ByteBee.Framework.Configuring.Tests.Default.ConfigFactoryTests
         [Test]
         public void Get_IntWasSet_NoErrors()
         {
-            _sourceMock.Setup(s => s.Get<int>("test", "int"))
+            _sourceMock.Setup(s => s.GetOrDefault<int>("test", "int"))
                 .Returns(() => 42);
 
             var cfg = _provider.Get<TestConfig>();
@@ -47,7 +47,7 @@ namespace ByteBee.Framework.Configuring.Tests.Default.ConfigFactoryTests
         [Test]
         public void Get_DoubleWasSet_NoErrors()
         {
-            _sourceMock.Setup(s => s.Get<double>("test", "double"))
+            _sourceMock.Setup(s => s.GetOrDefault<double>("test", "double"))
                 .Returns(() => 3.1415);
 
             var cfg = _provider.Get<TestConfig>();
@@ -58,7 +58,7 @@ namespace ByteBee.Framework.Configuring.Tests.Default.ConfigFactoryTests
         [Test]
         public void Get_BoolWasSet_NoErrors()
         {
-            _sourceMock.Setup(s => s.Get<bool>("test", "bool"))
+            _sourceMock.Setup(s => s.GetOrDefault<bool>("test", "bool"))
                 .Returns(() => true);
 
             var cfg = _provider.Get<TestConfig>();
