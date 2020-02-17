@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DL\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\contract\bootstrapping\ByteBee.Bootstrapping.Contract.csproj" />
+    <ProjectReference Include="..\..\contract\injecting\ByteBee.Injecting.Contract.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>ByteBee.AppConstructing.Contract</AssemblyName>
+    <RootNamespace>ByteBee.Framework.AppConstructing.Contract</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>ByteBee</Company>
+    <Product>ByteBee Framework</Product>
+    <Authors>Sergej Kukshaus</Authors>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <Version>2.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\bootstrapping\ByteBee.Bootstrapping.Contract.csproj" />
+    <ProjectReference Include="..\configuring\ByteBee.Configuring.Contract.csproj" />
+    <ProjectReference Include="..\injecting\ByteBee.Injecting.Contract.csproj" />
+  </ItemGroup>
+
+</Project>
