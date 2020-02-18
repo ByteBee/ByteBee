@@ -7,6 +7,7 @@ namespace ByteBee.Framework.AppConstructing.Impl
 {
     public sealed partial class ConstructApp : IConfigConstructor
     {
+        private IConfiguration _source;
         public IMessageBusConstructor SkipConfiguration()
         {
             return this;
@@ -17,18 +18,16 @@ namespace ByteBee.Framework.AppConstructing.Impl
             return AggregateConfiguration(null);
         }
 
-        public IMessageBusConstructor AggregateConfiguration(Action<IConfigFactory, IConfigSource> configCallback)
+        public IMessageBusConstructor AggregateConfiguration(Action<IConfiguration> configCallback)
         {
-            _kernel.Register<IConfigSource, StandardConfigSource>();
-            _kernel.Register<IConfigFactory, StandardConfigFactory>();
+            _kernel.Register<IConfiguration, StandardConfiguration>();
+            _kernel.Register<IConfigObjectProvider, StandardConfigObjectProvider>();
 
-            if (configCallback != null)
-            {
-                var factory = _kernel.Resolve<IConfigFactory>();
-                var source = _kernel.Resolve<IConfigSource>();
+            _source = _kernel.Resolve<IConfiguration>();
 
-                configCallback(factory, source);
-            }
+            _bootstrapper.ConfigureAll(_source);
+
+            configCallback?.Invoke(_source);
 
             return this;
         }

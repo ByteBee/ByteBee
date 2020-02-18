@@ -2,7 +2,7 @@
 {
     public interface IConfigStore
     {
-        void Save(IConfigSource source);
-        IConfigSource Load();
+        void Save(IConfiguration source);
+        IConfiguration Load();
     }
 }

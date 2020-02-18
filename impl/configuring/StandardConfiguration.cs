@@ -9,14 +9,14 @@ using ByteBee.Framework.Converting.Impl;
 
 namespace ByteBee.Framework.Configuring.Impl
 {
-    public sealed class StandardConfigSource : IConfigSource
+    public sealed class StandardConfiguration : IConfiguration
     {
         public int NumberOfEntries => _store.Count;
 
         private readonly IList<ConfigEntry> _store = new List<ConfigEntry>();
         private IConverterFactory _converterFactory;
 
-        public StandardConfigSource()
+        public StandardConfiguration()
         {
             _converterFactory = new StandardConverterFactory();
         }

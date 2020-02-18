@@ -2,5 +2,6 @@
 {
     public class TodoManagerConfig
     {
+        public int MinTimeThreshold { get; set; }
     }
 }

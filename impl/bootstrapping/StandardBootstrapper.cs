@@ -32,7 +32,7 @@ namespace ByteBee.Framework.Bootstrapping.Impl
             Each(b => b.Register(kernel));
         }
 
-        public void ConfigureAll(IConfigFactory config)
+        public void ConfigureAll(IConfiguration config)
         {
             Each(b => b.Configure(config));
         }

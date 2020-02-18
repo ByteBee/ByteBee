@@ -66,15 +66,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default\ConfigFactoryTests\ConfigurationProviderTest.cs" />
-    <Compile Include="Default\ConfigFactoryTests\Get.cs" />
-    <Compile Include="Default\ConfigSourceTests\Clear.cs" />
-    <Compile Include="Default\ConfigSourceTests\ConfigSourceTest.cs" />
-    <Compile Include="Default\ConfigSourceTests\Get.cs" />
-    <Compile Include="Default\ConfigSourceTests\GetKeys.cs" />
-    <Compile Include="Default\ConfigSourceTests\GetSections.cs" />
-    <Compile Include="Default\ConfigSourceTests\Set.cs" />
-    <Compile Include="Default\ConfigSourceTests\TryGet.cs" />
+    <Compile Include="Default\ConfigObjectProviderTests\ConfigurationProviderTest.cs" />
+    <Compile Include="Default\ConfigObjectProviderTests\Get.cs" />
+    <Compile Include="Default\ConfigurationTests\Clear.cs" />
+    <Compile Include="Default\ConfigurationTests\ConfigurationTest.cs" />
+    <Compile Include="Default\ConfigurationTests\Get.cs" />
+    <Compile Include="Default\ConfigurationTests\GetKeys.cs" />
+    <Compile Include="Default\ConfigurationTests\GetSections.cs" />
+    <Compile Include="Default\ConfigurationTests\Set.cs" />
+    <Compile Include="Default\ConfigurationTests\TryGet.cs" />
     <Compile Include="JsonNet\ConfigStoreTests\ConfigStoreTest.cs" />
     <Compile Include="JsonNet\ConfigStoreTests\Load.cs" />
     <Compile Include="JsonNet\ConfigStoreTests\Save.cs" />

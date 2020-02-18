@@ -7,6 +7,6 @@ namespace ByteBee.Framework.AppConstructing.Contract
     {
         IMessageBusConstructor SkipConfiguration();
         IMessageBusConstructor AggregateConfiguration();
-        IMessageBusConstructor AggregateConfiguration(Action<IConfigFactory, IConfigSource> configCallback);
+        IMessageBusConstructor AggregateConfiguration(Action<IConfiguration> configCallback);
     }
 }

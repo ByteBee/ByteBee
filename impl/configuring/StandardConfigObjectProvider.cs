@@ -7,11 +7,11 @@ using ByteBee.Framework.Configuring.Contract.DataClasses;
 
 namespace ByteBee.Framework.Configuring.Impl
 {
-    public sealed class StandardConfigFactory : IConfigFactory
+    public sealed class StandardConfigObjectProvider : IConfigObjectProvider
     {
-        private readonly IConfigSource _source;
+        private readonly IConfiguration _source;
 
-        public StandardConfigFactory(IConfigSource source)
+        public StandardConfigObjectProvider(IConfiguration source)
         {
             _source = source;
         }
@@ -19,7 +19,7 @@ namespace ByteBee.Framework.Configuring.Impl
         public TConfig Get<TConfig>()
         {
             Type typeObject = typeof(TConfig);
-            Type sourceType = typeof(IConfigSource);
+            Type sourceType = typeof(IConfiguration);
 
             var config = Activator.CreateInstance<TConfig>();
 
@@ -28,14 +28,11 @@ namespace ByteBee.Framework.Configuring.Impl
                 .OfType<ConfigSectionAttribute>()
                 .FirstOrDefault();
 
-            //IEnumerable<PropertyInfo> properties = typeObject.GetProperties()
-            //    .Where(p => p.GetCustomAttributes(true).Any(a => a is ConfigKeyAttribute));
-
             MethodInfo getMethod = sourceType.GetMethod("GetOrDefault");
 
             if (getMethod == null)
             {
-                throw new MissingMethodException("IConfigSource", "GetOrDefault");
+                throw new MissingMethodException("IConfiguration", "GetOrDefault");
             }
 
             IEnumerable<PropertyInfo> properties = typeObject.GetProperties();

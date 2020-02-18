@@ -40,7 +40,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigStoreTests
         {
             ReadAllTextMock("{}");
 
-            IConfigSource source = _store.Load();
+            IConfiguration source = _store.Load();
 
             source.GetSections().Should()
                 .BeEmpty("the config was empty");
@@ -52,7 +52,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigStoreTests
         {
             ReadAllTextMock("{\"foobar\":{\"foo\":\"bar\"}}");
 
-            IConfigSource source = _store.Load();
+            IConfiguration source = _store.Load();
 
             using (new AssertionScope())
             {
@@ -69,7 +69,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigStoreTests
         {
             ReadAllTextMock("{\"foobar\":{\"foo\":42}}");
 
-            IConfigSource source = _store.Load();
+            IConfiguration source = _store.Load();
 
             using (new AssertionScope())
             {

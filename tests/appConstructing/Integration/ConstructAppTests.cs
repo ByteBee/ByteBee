@@ -8,6 +8,7 @@ using ByteBee.Framework.Injecting.Contract;
 using ByteBee.Framework.Injecting.Impl.Ninject;
 using ByteBee.Framework.Messaging.Contract;
 using FluentAssertions;
+using FluentAssertions.Execution;
 using NUnit.Framework;
 
 namespace ByteBee.Framework.AppConstructing.Tests.Integration
@@ -42,17 +43,22 @@ namespace ByteBee.Framework.AppConstructing.Tests.Integration
         [Test]
         public void ConfigInstantiated()
         {
-            TodoManagerConfig config = null;
+            int minTimeThreshold = 0;
 
             ConstructApp.Default
-                .AggregateKernel<NinjectKernel>()
+                .AggregateKernel<NinjectKernel>(new LogicModule())
                 .AggregateBootstrapper()
-                .AggregateConfiguration((cf, cs) =>
+                .AggregateConfiguration(cs =>
                 {
-                    config = cf.Get<TodoManagerConfig>();
+                    minTimeThreshold = cs.Get<int>(
+                        nameof(TodoManagerConfig),
+                        nameof(TodoManagerConfig.MinTimeThreshold));
                 });
 
-            config.Should().NotBeNull();
+            using (new AssertionScope())
+            {
+                minTimeThreshold.Should().Be(15);
+            }
         }
 
         [Test]

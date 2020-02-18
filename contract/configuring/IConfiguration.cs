@@ -2,7 +2,7 @@
 
 namespace ByteBee.Framework.Configuring.Contract
 {
-    public interface IConfigSource
+    public interface IConfiguration
     {
         IEnumerable<string> GetSections();
         IEnumerable<string> GetKeys(string section);

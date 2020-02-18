@@ -3,12 +3,12 @@ using ByteBee.Framework.Converting.Contract;
 using ByteBee.Framework.Converting.Impl;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Configuring.Tests.Default.ConfigSourceTests
+namespace ByteBee.Framework.Configuring.Tests.Default.ConfigurationTests
 {
     [TestFixture]
-    public sealed partial class ConfigSourceTest
+    public sealed partial class ConfigurationTest
     {
-        private StandardConfigSource _source;
+        private StandardConfiguration _source;
         private IConverterFactory _converter;
 
         [SetUp]
@@ -16,7 +16,7 @@ namespace ByteBee.Framework.Configuring.Tests.Default.ConfigSourceTests
         {
             _converter = new StandardConverterFactory();
 
-            _source = new StandardConfigSource();
+            _source = new StandardConfiguration();
             _source.SetConverterFactory(_converter);
         }
 

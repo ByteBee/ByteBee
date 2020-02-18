@@ -21,12 +21,12 @@ namespace ByteBee.Framework.Configuring.Impl.Ini
             _file = fileAdapter;
         }
 
-        public void Save(IConfigSource source)
+        public void Save(IConfiguration source)
         {
             throw new NotImplementedException();
         }
 
-        public IConfigSource Load()
+        public IConfiguration Load()
         {
             throw new NotImplementedException();
         }

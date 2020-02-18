@@ -1,6 +1,6 @@
 ﻿namespace ByteBee.Framework.Configuring.Contract
 {
-    public interface IConfigFactory
+    public interface IConfigObjectProvider
     {
         TConfig Get<TConfig>();
     }

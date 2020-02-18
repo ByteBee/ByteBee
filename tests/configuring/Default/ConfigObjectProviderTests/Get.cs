@@ -3,9 +3,9 @@ using FluentAssertions;
 using FluentAssertions.Execution;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Configuring.Tests.Default.ConfigFactoryTests
+namespace ByteBee.Framework.Configuring.Tests.Default.ConfigObjectProviderTests
 {
-    public sealed partial class ConfigFactoryTest
+    public sealed partial class ConfigObjectProviderTest
     {
         [Test]
         public void Get_NoEntries_EmptyObject()

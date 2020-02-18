@@ -10,7 +10,7 @@ namespace ByteBee.Framework.Bootstrapping.Contract
         void ActivateAll();
         void DeactivateAll();
         void RegisterAll(IBeeKernel kernel);
-        void ConfigureAll(IConfigFactory config);
+        void ConfigureAll(IConfiguration config);
         void SubscribeAll(IMessageBus messageBus);
         void Each(Action<ILifecycle> callback);
     }

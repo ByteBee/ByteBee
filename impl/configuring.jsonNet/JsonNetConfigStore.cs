@@ -27,7 +27,7 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
             _file = fileAdapter;
         }
 
-        public void Save(IConfigSource source)
+        public void Save(IConfiguration source)
         {
             if (source == null)
             {
@@ -62,7 +62,7 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
             _file.WriteAllText(_pathToConfigFile, content);
         }
 
-        public IConfigSource Load()
+        public IConfiguration Load()
         {
             if (_file.Exists(_pathToConfigFile) == false)
             {
@@ -76,7 +76,7 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
                 throw new ConfigurationException("The configuration file was entirely empty");
             }
 
-            IConfigSource source = new StandardConfigSource();
+            IConfiguration source = new StandardConfiguration();
 
             JObject json = JObject.Parse(fileContent);
 

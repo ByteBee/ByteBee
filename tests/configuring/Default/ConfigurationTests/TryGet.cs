@@ -5,9 +5,9 @@ using FluentAssertions.Execution;
 using Moq;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Configuring.Tests.Default.ConfigSourceTests
+namespace ByteBee.Framework.Configuring.Tests.Default.ConfigurationTests
 {
-    public sealed partial class ConfigSourceTest
+    public sealed partial class ConfigurationTest
     {
         [Test]
         public void TryGet_SectionIsNull_ArgumentNullException()
