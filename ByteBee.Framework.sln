@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBee.AppConstructing.Tes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "contract", "contract", "{AB050C6A-4148-4DA1-81E2-C8BA7DF6D34F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBee.Messaging.Tests", "tests\messaging\ByteBee.Messaging.Tests.csproj", "{4393B3F6-0213-4DDB-9583-6A5BE80C2A06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{FA859AEF-BC64-4874-8ED0-E412C170DF7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA859AEF-BC64-4874-8ED0-E412C170DF7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA859AEF-BC64-4874-8ED0-E412C170DF7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4393B3F6-0213-4DDB-9583-6A5BE80C2A06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4393B3F6-0213-4DDB-9583-6A5BE80C2A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4393B3F6-0213-4DDB-9583-6A5BE80C2A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4393B3F6-0213-4DDB-9583-6A5BE80C2A06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -167,6 +173,7 @@ Global
 		{24963604-B969-46ED-A07D-9D024D8E6E18} = {DA01E337-D63F-410B-8178-D5C1BBC4B823}
 		{CA311473-168C-478F-AF23-CBDB734B8615} = {DA01E337-D63F-410B-8178-D5C1BBC4B823}
 		{FA859AEF-BC64-4874-8ED0-E412C170DF7C} = {DA01E337-D63F-410B-8178-D5C1BBC4B823}
+		{4393B3F6-0213-4DDB-9583-6A5BE80C2A06} = {DA01E337-D63F-410B-8178-D5C1BBC4B823}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D37575EA-F989-458B-AD7F-F683AABAD4C3}
