@@ -1,4 +1,7 @@
-﻿using ByteBee.Framework.Bootstrapping.Contract;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using ByteBee.Framework.Bootstrapping.Contract;
 using ByteBee.Framework.Configuring.Contract;
 using ByteBee.Framework.Injecting.Contract;
 using Ninject;
@@ -6,7 +9,6 @@ using Ninject.Modules;
 
 namespace ByteBee.Framework.Injecting.Impl.Ninject
 {
-    // ReSharper disable once ClassNeverInstantiated.Global
     public sealed class NinjectKernel : IBeeKernel
     {
         private readonly IKernel _kernel;
@@ -31,6 +33,11 @@ namespace ByteBee.Framework.Injecting.Impl.Ninject
             _kernel.Bind<TImpl>().ToSelf().InSingletonScope();
         }
 
+        public void RegisterToObject<TObject>(TObject service)
+        {
+            _kernel.Bind<TObject>().ToConstant(service);
+        }
+
         public void RegisterLifecycle<TLifecycle>() where TLifecycle : class
         {
             _kernel.Bind<ILifecycle>().To(typeof(TLifecycle)).InSingletonScope();
@@ -43,9 +50,29 @@ namespace ByteBee.Framework.Injecting.Impl.Ninject
                 .InSingletonScope();
         }
 
+        public void RegisterObject(object service)
+        {
+            _kernel.Inject(service);
+        }
+
         public TContract Resolve<TContract>()
         {
             return _kernel.Get<TContract>();
+        }
+
+        public object Resolve(Type service)
+        {
+            return _kernel.Get(service);
+        }
+
+        public IEnumerable<TContract> ResolveAll<TContract>()
+        {
+            return _kernel.GetAll<TContract>();
+        }
+
+        public IEnumerable<object> ResolveAll(Type services)
+        {
+            return _kernel.GetAll(services);
         }
     }
 }
