@@ -54,7 +54,7 @@ namespace ByteBee.Framework.Configuring.Impl
             }
             else
             {
-                value = default;
+                value = default(TResult);
             }
 
             return isEntryDefined;
@@ -78,7 +78,7 @@ namespace ByteBee.Framework.Configuring.Impl
 
             if (isEntryDefined == false)
             {
-                return default;
+                return default(TResult);
             }
 
             return obj;

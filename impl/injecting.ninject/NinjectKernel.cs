@@ -2,6 +2,7 @@
 using ByteBee.Framework.Configuring.Contract;
 using ByteBee.Framework.Injecting.Contract;
 using Ninject;
+using Ninject.Modules;
 
 namespace ByteBee.Framework.Injecting.Impl.Ninject
 {
@@ -13,6 +14,11 @@ namespace ByteBee.Framework.Injecting.Impl.Ninject
         public NinjectKernel()
         {
             _kernel = new StandardKernel();
+        }
+
+        public NinjectKernel(params INinjectModule[] modules)
+        {
+            _kernel = new StandardKernel(modules);
         }
 
         public void Register<TContract, TImpl>() where TImpl : TContract

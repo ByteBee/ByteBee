@@ -5,6 +5,7 @@ namespace ByteBee.Framework.AppConstructing.Contract
 {
     public interface IKernelConstructor
     {
+        IBootstrapperConstructor AggregateKernel(IBeeKernel kernel, params IBeeKernelModule[] modules);
         IBootstrapperConstructor AggregateKernel<TKernel>(params IBeeKernelModule[] modules) where TKernel : IBeeKernel;
         IBootstrapperConstructor AggregateKernel<TKernel>(Action<IBeeKernel> kernelCallback, params IBeeKernelModule[] modules) where TKernel : IBeeKernel;
     }

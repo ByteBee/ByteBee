@@ -29,6 +29,18 @@ namespace ByteBee.Framework.AppConstructing.Tests.Integration
         }
 
         [Test]
+        public void KernelUsing()
+        {
+            IBeeKernel kernel = new NinjectKernel();
+
+            ConstructApp.Default
+                .AggregateKernel(kernel);
+
+            kernel.Should().NotBeNull()
+                .And.BeOfType<NinjectKernel>();
+        }
+
+        [Test]
         public void BootstrapperInstantiated()
         {
             IList<ILifecycle> components = new List<ILifecycle>();

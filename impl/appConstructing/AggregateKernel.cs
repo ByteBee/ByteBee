@@ -8,6 +8,18 @@ namespace ByteBee.Framework.AppConstructing.Impl
     {
         private IBeeKernel _kernel;
 
+        public IBootstrapperConstructor AggregateKernel(IBeeKernel kernel, params IBeeKernelModule[] modules)
+        {
+            _kernel = kernel ?? throw new ArgumentNullException(nameof(kernel));
+
+            foreach (IBeeKernelModule module in modules)
+            {
+                module.Load(_kernel);
+            }
+
+            return this;
+        }
+
         public IBootstrapperConstructor AggregateKernel<TKernel>(params IBeeKernelModule[] modules) where TKernel : IBeeKernel
         {
             return AggregateKernel<TKernel>(null, modules);
