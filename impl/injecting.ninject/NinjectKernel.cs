@@ -25,7 +25,7 @@ namespace ByteBee.Framework.Injecting.Impl.Ninject
 
         public void Register<TContract, TImpl>() where TImpl : TContract
         {
-            _kernel.Bind<TContract>().To<TImpl>();
+            _kernel.Bind<TContract>().To<TImpl>().InSingletonScope();
         }
 
         public void RegisterToSelf<TImpl>()
@@ -35,7 +35,7 @@ namespace ByteBee.Framework.Injecting.Impl.Ninject
 
         public void RegisterToObject<TObject>(TObject service)
         {
-            _kernel.Bind<TObject>().ToConstant(service);
+            _kernel.Bind<TObject>().ToConstant(service).InSingletonScope();
         }
 
         public void RegisterLifecycle<TLifecycle>() where TLifecycle : class
