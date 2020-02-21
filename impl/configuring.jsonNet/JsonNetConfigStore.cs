@@ -27,14 +27,14 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
             _file = fileAdapter;
         }
 
-        public void Save(IConfiguration source)
+        public void Save(IConfiguration configuration)
         {
-            if (source == null)
+            if (configuration == null)
             {
-                throw new ArgumentNullException(nameof(source));
+                throw new ArgumentNullException(nameof(configuration));
             }
 
-            string[] sections = source.GetSections().ToArray();
+            string[] sections = configuration.GetSections().ToArray();
 
             var body = new JObject();
 
@@ -44,12 +44,12 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
                 var jsection = new JObject();
                 body.Add(section, jsection);
 
-                string[] keys = source.GetKeys(section).ToArray();
+                string[] keys = configuration.GetKeys(section).ToArray();
 
                 for (int j = 0; j < keys.Length; j++)
                 {
                     string key = keys[j];
-                    var value = source.Get<object>(section, key);
+                    var value = configuration.Get<object>(section, key);
 
                     JToken jkey = value == null ? new JRaw("null") : JToken.FromObject(value);
 
@@ -62,11 +62,16 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
             _file.WriteAllText(_pathToConfigFile, content);
         }
 
-        public IConfiguration Load()
+        public void Load(IConfiguration configuration)
         {
             if (_file.Exists(_pathToConfigFile) == false)
             {
                 throw new FileNotFoundException($"Configuration file '{_pathToConfigFile}' does not exists.");
+            }
+
+            if (!_file.Exists(_pathToConfigFile))
+            {
+                return;
             }
 
             string fileContent = _file.ReadAllText(_pathToConfigFile);
@@ -76,7 +81,7 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
                 throw new ConfigurationException("The configuration file was entirely empty");
             }
 
-            IConfiguration source = new StandardConfiguration();
+            configuration.Clear();
 
             JObject json = JObject.Parse(fileContent);
 
@@ -90,12 +95,10 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
                     {
                         string key = prop.Name;
                         string value = prop.Value.ToString();
-                        source.Set(section, key, value);
+                        configuration.Set(section, key, value);
                     }
                 }
             }
-
-            return source;
         }
     }
 }

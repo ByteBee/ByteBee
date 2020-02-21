@@ -11,13 +11,15 @@ namespace ByteBee.Framework.Configuring.Impl
 {
     public sealed class StandardConfiguration : IConfiguration
     {
+        private readonly IConfigStore _configStore;
         public int NumberOfEntries => _store.Count;
 
         private readonly IList<ConfigEntry> _store = new List<ConfigEntry>();
         private IConverterFactory _converterFactory;
 
-        public StandardConfiguration()
+        public StandardConfiguration(IConfigStore configStore)
         {
+            _configStore = configStore;
             _converterFactory = new StandardConverterFactory();
         }
 
@@ -106,6 +108,16 @@ namespace ByteBee.Framework.Configuring.Impl
         public void Clear()
         {
             _store.Clear();
+        }
+
+        public void LoadFromStore()
+        {
+            _configStore.Load(this);
+        }
+
+        public void SaveToStore()
+        {
+            _configStore.Save(this);
         }
 
         private bool FindEntry(ConfigEntry entry, string section, string key)

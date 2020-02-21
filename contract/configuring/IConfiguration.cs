@@ -13,5 +13,8 @@ namespace ByteBee.Framework.Configuring.Contract
         void Set(string section, string key, object value);
 
         void Clear();
+
+        void LoadFromStore();
+        void SaveToStore();
     }
 }

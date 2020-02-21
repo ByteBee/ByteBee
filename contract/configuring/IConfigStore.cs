@@ -3,6 +3,6 @@
     public interface IConfigStore
     {
         void Save(IConfiguration source);
-        IConfiguration Load();
+        void Load(IConfiguration source);
     }
 }

@@ -26,7 +26,7 @@ namespace ByteBee.Framework.Configuring.Impl.Ini
             throw new NotImplementedException();
         }
 
-        public IConfiguration Load()
+        public void Load(IConfiguration source)
         {
             throw new NotImplementedException();
         }
