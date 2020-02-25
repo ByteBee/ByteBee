@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using ByteBee.Framework.Configuring.Contract;
-using ByteBee.Framework.Configuring.Contract.DataClasses;
+using ByteBee.Framework.Configuring.Abstractions;
+using ByteBee.Framework.Configuring.Abstractions.DataClasses;
 
-namespace ByteBee.Framework.Configuring.Impl
+namespace ByteBee.Framework.Configuring
 {
     public sealed class StandardConfigObjectProvider : IConfigObjectProvider
     {
-        private readonly IConfiguration _source;
+        private readonly IConfigManager _source;
 
-        public StandardConfigObjectProvider(IConfiguration source)
+        public StandardConfigObjectProvider(IConfigManager source)
         {
             _source = source;
         }
@@ -19,7 +19,7 @@ namespace ByteBee.Framework.Configuring.Impl
         public TConfig Get<TConfig>()
         {
             Type typeObject = typeof(TConfig);
-            Type sourceType = typeof(IConfiguration);
+            Type sourceType = typeof(IConfigManager);
 
             var config = Activator.CreateInstance<TConfig>();
 
@@ -32,7 +32,7 @@ namespace ByteBee.Framework.Configuring.Impl
 
             if (getMethod == null)
             {
-                throw new MissingMethodException("IConfiguration", "GetOrDefault");
+                throw new MissingMethodException("IConfigManager", "GetOrDefault");
             }
 
             IEnumerable<PropertyInfo> properties = typeObject.GetProperties();

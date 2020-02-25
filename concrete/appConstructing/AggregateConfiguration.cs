@@ -1,13 +1,13 @@
 ﻿using System;
-using ByteBee.Framework.AppConstructing.Contract;
-using ByteBee.Framework.Configuring.Contract;
-using ByteBee.Framework.Configuring.Impl;
+using ByteBee.Framework.AppConstructing.Abstractions;
+using ByteBee.Framework.Configuring;
+using ByteBee.Framework.Configuring.Abstractions;
 
-namespace ByteBee.Framework.AppConstructing.Impl
+namespace ByteBee.Framework.AppConstructing
 {
     public sealed partial class ConstructApp : IConfigConstructor
     {
-        private IConfiguration _source;
+        private IConfigManager _source;
         public IMessageBusConstructor SkipConfiguration()
         {
             return this;
@@ -18,12 +18,12 @@ namespace ByteBee.Framework.AppConstructing.Impl
             return AggregateConfiguration(null);
         }
 
-        public IMessageBusConstructor AggregateConfiguration(Action<IConfiguration> configCallback)
+        public IMessageBusConstructor AggregateConfiguration(Action<IConfigManager> configCallback)
         {
-            _kernel.Register<IConfiguration, StandardConfiguration>();
+            _kernel.Register<IConfigManager, StandardConfigManager>();
             _kernel.Register<IConfigObjectProvider, StandardConfigObjectProvider>();
 
-            _source = _kernel.Resolve<IConfiguration>();
+            _source = _kernel.Resolve<IConfigManager>();
 
             _bootstrapper.ConfigureAll(_source);
 

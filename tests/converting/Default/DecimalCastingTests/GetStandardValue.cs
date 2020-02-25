@@ -1,4 +1,4 @@
-﻿namespace ByteBee.Framework.Converting.Tests.Default.DecimalCastingTests
+﻿namespace ByteBee.Framework.Tests.Converting.Default.DecimalCastingTests
 {
     public class GetStandardValue
     {

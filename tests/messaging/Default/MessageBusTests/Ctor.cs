@@ -1,4 +1,4 @@
-﻿namespace ByteBee.Messaging.Tests.Default.MessageBusTests
+﻿namespace ByteBee.Framework.Tests.Messaging.Default.MessageBusTests
 {
     public sealed partial class MessageBusTest
     {

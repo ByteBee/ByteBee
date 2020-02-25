@@ -1,7 +1,7 @@
-﻿using ByteBee.Framework.Messaging.Impl;
+﻿using ByteBee.Framework.Messaging;
 using NUnit.Framework;
 
-namespace ByteBee.Messaging.Tests.Default.MessageBusTests
+namespace ByteBee.Framework.Tests.Messaging.Default.MessageBusTests
 {
     [TestFixture]
     public sealed partial class MessageBusTest

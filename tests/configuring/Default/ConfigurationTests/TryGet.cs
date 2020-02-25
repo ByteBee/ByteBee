@@ -1,11 +1,11 @@
 ﻿using System;
-using ByteBee.Framework.Converting.Contract;
+using ByteBee.Framework.Converting.Abstractions;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using Moq;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Configuring.Tests.Default.ConfigurationTests
+namespace ByteBee.Framework.Tests.Configuring.Default.ConfigurationTests
 {
     public sealed partial class ConfigurationTest
     {

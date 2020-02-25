@@ -1,9 +1,9 @@
 ﻿using System;
-using ByteBee.Framework.AppConstructing.Contract;
-using ByteBee.Framework.Bootstrapping.Contract;
-using ByteBee.Framework.Bootstrapping.Impl;
+using ByteBee.Framework.AppConstructing.Abstractions;
+using ByteBee.Framework.Bootstrapping;
+using ByteBee.Framework.Bootstrapping.Abstractions;
 
-namespace ByteBee.Framework.AppConstructing.Impl
+namespace ByteBee.Framework.AppConstructing
 {
     public sealed partial class ConstructApp : IBootstrapperConstructor
     {

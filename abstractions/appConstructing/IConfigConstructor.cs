@@ -1,12 +1,12 @@
 ﻿using System;
-using ByteBee.Framework.Configuring.Contract;
+using ByteBee.Framework.Configuring.Abstractions;
 
-namespace ByteBee.Framework.AppConstructing.Contract
+namespace ByteBee.Framework.AppConstructing.Abstractions
 {
     public interface IConfigConstructor
     {
         IMessageBusConstructor SkipConfiguration();
         IMessageBusConstructor AggregateConfiguration();
-        IMessageBusConstructor AggregateConfiguration(Action<IConfiguration> configCallback);
+        IMessageBusConstructor AggregateConfiguration(Action<IConfigManager> configCallback);
     }
 }

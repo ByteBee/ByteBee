@@ -1,9 +1,9 @@
-﻿using ByteBee.Framework.Fake.BLL.TodoManager.Impl;
-using ByteBee.Framework.Injecting.Contract;
+﻿using ByteBee.Framework.Injecting.Abstractions;
+using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Impl;
 
-namespace ByteBee.Framework.Fake.CCL.MadLib
+namespace ByteBee.Framework.Tests.Fake.CCL.MadLib
 {
-    public class LogicModule : IBeeKernelModule
+    public sealed class LogicModule : IBeeKernelModule
     {
         public void Load(IBeeKernel kernel)
         {

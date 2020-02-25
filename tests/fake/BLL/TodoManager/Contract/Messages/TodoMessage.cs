@@ -1,7 +1,7 @@
 ﻿using System;
-using ByteBee.Framework.Messaging.Contract;
+using ByteBee.Framework.Messaging.Abstractions;
 
-namespace ByteBee.Framework.Fake.BLL.TodoManager.Contract.Messages
+namespace ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract.Messages
 {
     public class TodoMessage : IMessage
     {

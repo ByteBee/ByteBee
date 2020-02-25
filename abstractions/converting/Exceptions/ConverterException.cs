@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace ByteBee.Framework.Converting.Contract.Exceptions
+namespace ByteBee.Framework.Converting.Abstractions.Exceptions
 {
     [Serializable]
     public class ConverterException : Exception

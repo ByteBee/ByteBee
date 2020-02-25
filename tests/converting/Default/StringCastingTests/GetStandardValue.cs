@@ -1,4 +1,4 @@
-﻿namespace ByteBee.Framework.Converting.Tests.Default.StringCastingTests
+﻿namespace ByteBee.Framework.Tests.Converting.Default.StringCastingTests
 {
     public class GetStandardValue
     {

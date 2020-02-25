@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Converting.Tests.Default.Int16CastingTests
+namespace ByteBee.Framework.Tests.Converting.Default.Int16CastingTests
 {
     public sealed partial class Int16CastingTest
     {

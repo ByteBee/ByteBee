@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ByteBee.Framework.Messaging.Contract.DataClasses
+namespace ByteBee.Framework.Messaging.Abstractions.DataClasses
 {
     public sealed class MessageBusErrorEventArgs : EventArgs
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ByteBee.Framework.Configuring.Contract.DataClasses
+namespace ByteBee.Framework.Configuring.Abstractions.DataClasses
 {
     [AttributeUsage(AttributeTargets.Property)]
     public sealed class ConfigKeyAttribute : Attribute

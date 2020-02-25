@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
-using ByteBee.Framework.Converting.Contract;
+using ByteBee.Framework.Converting.Abstractions;
 
-namespace ByteBee.Framework.Converting.Impl.Converters
+namespace ByteBee.Framework.Converting.Converters
 {
     internal sealed class StandardIntegerConverter : ITypeConverter<int>
     {

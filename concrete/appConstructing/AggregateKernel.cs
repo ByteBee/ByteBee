@@ -1,8 +1,8 @@
 ﻿using System;
-using ByteBee.Framework.AppConstructing.Contract;
-using ByteBee.Framework.Injecting.Contract;
+using ByteBee.Framework.AppConstructing.Abstractions;
+using ByteBee.Framework.Injecting.Abstractions;
 
-namespace ByteBee.Framework.AppConstructing.Impl
+namespace ByteBee.Framework.AppConstructing
 {
     public sealed partial class ConstructApp : IKernelConstructor
     {

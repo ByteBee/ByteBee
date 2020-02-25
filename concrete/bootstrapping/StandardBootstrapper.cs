@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using ByteBee.Framework.Bootstrapping.Contract;
-using ByteBee.Framework.Configuring.Contract;
-using ByteBee.Framework.Injecting.Contract;
-using ByteBee.Framework.Messaging.Contract;
+using ByteBee.Framework.Bootstrapping.Abstractions;
+using ByteBee.Framework.Configuring.Abstractions;
+using ByteBee.Framework.Injecting.Abstractions;
+using ByteBee.Framework.Messaging.Abstractions;
 
-namespace ByteBee.Framework.Bootstrapping.Impl
+namespace ByteBee.Framework.Bootstrapping
 {
     // ReSharper disable once ClassNeverInstantiated.Global
     public sealed class StandardBootstrapper : IBootstrapper
@@ -32,7 +32,7 @@ namespace ByteBee.Framework.Bootstrapping.Impl
             Each(b => b.Register(kernel));
         }
 
-        public void ConfigureAll(IConfiguration config)
+        public void ConfigureAll(IConfigManager config)
         {
             Each(b => b.Configure(config));
         }

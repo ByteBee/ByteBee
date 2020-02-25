@@ -1,13 +1,12 @@
 ﻿using System;
 using System.IO;
-using ByteBee.Framework.Configuring.Contract;
-using ByteBee.Framework.Configuring.Contract.Exceptions;
+using ByteBee.Framework.Configuring.Abstractions.Exceptions;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using Moq;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigStoreTests
+namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
 {
     public sealed partial class ConfigStoreTest
     {
@@ -17,7 +16,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigStoreTests
             _fileMoq.Setup(f => f.Exists(It.IsAny<string>()))
                 .Returns(false);
 
-            Action act = () => _store.Load();
+            Action act = () => _store.Load(_config);
 
             act.Should()
                 .ThrowExactly<FileNotFoundException>("no config file is there")
@@ -29,7 +28,7 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigStoreTests
         {
             ReadAllTextMock("");
             
-            Action act = () => _store.Load();
+            Action act = () => _store.Load(_config);
 
             act.Should()
                 .ThrowExactly<ConfigurationException>("empty jsons are not allowed");
@@ -40,10 +39,10 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigStoreTests
         {
             ReadAllTextMock("{}");
 
-            IConfiguration source = _store.Load();
+            _store.Load(_config);
 
-            source.GetSections().Should()
-                .BeEmpty("the config was empty");
+            _config.GetSections().Should()
+                .BeEmpty("the config file was empty");
         }
 
 
@@ -52,14 +51,14 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigStoreTests
         {
             ReadAllTextMock("{\"foobar\":{\"foo\":\"bar\"}}");
 
-            IConfiguration source = _store.Load();
+            _store.Load(_config);
 
             using (new AssertionScope())
             {
-                source.GetSections().Should()
+                _config.GetSections().Should()
                     .HaveCount(1, "there is only one element");
 
-                source.Get<string>("foobar", "foo").Should()
+                _config.Get<string>("foobar", "foo").Should()
                     .Be("bar", "the value of foobar.foo is bar");
             }
         }
@@ -69,14 +68,14 @@ namespace ByteBee.Framework.Configuring.Tests.JsonNet.ConfigStoreTests
         {
             ReadAllTextMock("{\"foobar\":{\"foo\":42}}");
 
-            IConfiguration source = _store.Load();
+            _store.Load(_config);
 
             using (new AssertionScope())
             {
-                source.GetSections().Should()
+                _config.GetSections().Should()
                     .HaveCount(1, "there is only one element");
 
-                source.Get<int>("foobar", "foo").Should()
+                _config.Get<int>("foobar", "foo").Should()
                     .Be(42, "the value of foobar.foo is 42");
             }
         }

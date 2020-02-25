@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ByteBee.Framework.Configuring.Contract;
-using ByteBee.Framework.Configuring.Contract.DataClasses;
-using ByteBee.Framework.Configuring.Contract.Exceptions;
-using ByteBee.Framework.Converting.Contract;
-using ByteBee.Framework.Converting.Impl;
+using ByteBee.Framework.Configuring.Abstractions;
+using ByteBee.Framework.Configuring.Abstractions.DataClasses;
+using ByteBee.Framework.Configuring.Abstractions.Exceptions;
+using ByteBee.Framework.Converting;
+using ByteBee.Framework.Converting.Abstractions;
 
-namespace ByteBee.Framework.Configuring.Impl
+namespace ByteBee.Framework.Configuring
 {
-    public sealed class StandardConfiguration : IConfiguration
+    public sealed class StandardConfigManager : IConfigManager
     {
         private readonly IConfigStore _configStore;
         public int NumberOfEntries => _store.Count;
@@ -17,7 +17,7 @@ namespace ByteBee.Framework.Configuring.Impl
         private readonly IList<ConfigEntry> _store = new List<ConfigEntry>();
         private IConverterFactory _converterFactory;
 
-        public StandardConfiguration(IConfigStore configStore)
+        public StandardConfigManager(IConfigStore configStore)
         {
             _configStore = configStore;
             _converterFactory = new StandardConverterFactory();

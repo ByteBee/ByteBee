@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using ByteBee.Framework.Adapting.Contract;
-using ByteBee.Framework.Adapting.Impl;
-using ByteBee.Framework.Configuring.Contract;
-using ByteBee.Framework.Configuring.Contract.Exceptions;
+using ByteBee.Framework.Adapting;
+using ByteBee.Framework.Adapting.Abstractions;
+using ByteBee.Framework.Configuring.Abstractions;
+using ByteBee.Framework.Configuring.Abstractions.Exceptions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace ByteBee.Framework.Configuring.Impl.JsonNet
+namespace ByteBee.Framework.Configuring.JsonNet
 {
     public sealed class JsonNetConfigStore : IConfigStore
     {
@@ -27,14 +27,14 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
             _file = fileAdapter;
         }
 
-        public void Save(IConfiguration configuration)
+        public void Save(IConfigManager configManager)
         {
-            if (configuration == null)
+            if (configManager == null)
             {
-                throw new ArgumentNullException(nameof(configuration));
+                throw new ArgumentNullException(nameof(configManager));
             }
 
-            string[] sections = configuration.GetSections().ToArray();
+            string[] sections = configManager.GetSections().ToArray();
 
             var body = new JObject();
 
@@ -44,12 +44,12 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
                 var jsection = new JObject();
                 body.Add(section, jsection);
 
-                string[] keys = configuration.GetKeys(section).ToArray();
+                string[] keys = configManager.GetKeys(section).ToArray();
 
                 for (int j = 0; j < keys.Length; j++)
                 {
                     string key = keys[j];
-                    var value = configuration.Get<object>(section, key);
+                    var value = configManager.Get<object>(section, key);
 
                     JToken jkey = value == null ? new JRaw("null") : JToken.FromObject(value);
 
@@ -62,7 +62,7 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
             _file.WriteAllText(_pathToConfigFile, content);
         }
 
-        public void Load(IConfiguration configuration)
+        public void Load(IConfigManager configManager)
         {
             if (_file.Exists(_pathToConfigFile) == false)
             {
@@ -81,7 +81,7 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
                 throw new ConfigurationException("The configuration file was entirely empty");
             }
 
-            configuration.Clear();
+            configManager.Clear();
 
             JObject json = JObject.Parse(fileContent);
 
@@ -95,7 +95,7 @@ namespace ByteBee.Framework.Configuring.Impl.JsonNet
                     {
                         string key = prop.Name;
                         string value = prop.Value.ToString();
-                        configuration.Set(section, key, value);
+                        configManager.Set(section, key, value);
                     }
                 }
             }

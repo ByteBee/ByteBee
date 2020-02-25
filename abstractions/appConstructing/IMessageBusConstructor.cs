@@ -1,7 +1,7 @@
 ﻿using System;
-using ByteBee.Framework.Messaging.Contract;
+using ByteBee.Framework.Messaging.Abstractions;
 
-namespace ByteBee.Framework.AppConstructing.Contract
+namespace ByteBee.Framework.AppConstructing.Abstractions
 {
     public interface IMessageBusConstructor
     {

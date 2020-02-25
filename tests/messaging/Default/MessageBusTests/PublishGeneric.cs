@@ -1,14 +1,13 @@
 ﻿using System;
-using ByteBee.Framework.Fake.BLL.TodoManager.Contract.Messages;
-using ByteBee.Framework.Messaging.Contract;
-using ByteBee.Framework.Messaging.Contract.DataClasses;
-using ByteBee.Framework.Messaging.Impl;
+using ByteBee.Framework.Messaging;
+using ByteBee.Framework.Messaging.Abstractions.DataClasses;
+using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract.Messages;
 using FluentAssertions;
 using FluentAssertions.Events;
 using FluentAssertions.Execution;
 using NUnit.Framework;
 
-namespace ByteBee.Messaging.Tests.Default.MessageBusTests
+namespace ByteBee.Framework.Tests.Messaging.Default.MessageBusTests
 {
     public sealed partial class MessageBusTest
     {

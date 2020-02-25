@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ByteBee.Framework.Messaging.Contract;
-using ByteBee.Framework.Messaging.Contract.Exceptions;
-using ByteBee.Framework.Messaging.Contract.DataClasses;
+using ByteBee.Framework.Messaging.Abstractions;
+using ByteBee.Framework.Messaging.Abstractions.DataClasses;
+using ByteBee.Framework.Messaging.Abstractions.Exceptions;
 
-namespace ByteBee.Framework.Messaging.Impl
+namespace ByteBee.Framework.Messaging
 {
     public sealed class StandardMessageBus : IMessageBus
     {

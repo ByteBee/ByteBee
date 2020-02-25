@@ -1,9 +1,9 @@
 ﻿using System;
-using ByteBee.Framework.Converting.Contract;
-using ByteBee.Framework.Converting.Impl;
+using ByteBee.Framework.Converting;
+using ByteBee.Framework.Converting.Abstractions;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Converting.Tests.Default.GuidCastingTests
+namespace ByteBee.Framework.Tests.Converting.Default.GuidCastingTests
 {
     [TestFixture]
     public sealed partial class GuidCastingTest

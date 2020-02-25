@@ -1,8 +1,8 @@
-﻿using ByteBee.Framework.Converting.Contract;
-using ByteBee.Framework.Converting.Impl;
+﻿using ByteBee.Framework.Converting;
+using ByteBee.Framework.Converting.Abstractions;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Converting.Tests.Default.StringCastingTests
+namespace ByteBee.Framework.Tests.Converting.Default.StringCastingTests
 {
     [TestFixture]
     public sealed partial class StringCastingTest

@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using ByteBee.Framework.Bootstrapping.Contract;
-using ByteBee.Framework.Configuring.Contract;
-using ByteBee.Framework.Injecting.Contract;
+using ByteBee.Framework.Bootstrapping.Abstractions;
+using ByteBee.Framework.Configuring.Abstractions;
+using ByteBee.Framework.Injecting.Abstractions;
 using Ninject;
 using Ninject.Modules;
 
-namespace ByteBee.Framework.Injecting.Impl.Ninject
+namespace ByteBee.Framework.Injecting.Ninject
 {
     public sealed class NinjectKernel : IBeeKernel
     {

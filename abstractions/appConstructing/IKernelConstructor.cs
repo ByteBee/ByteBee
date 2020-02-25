@@ -1,7 +1,7 @@
 ﻿using System;
-using ByteBee.Framework.Injecting.Contract;
+using ByteBee.Framework.Injecting.Abstractions;
 
-namespace ByteBee.Framework.AppConstructing.Contract
+namespace ByteBee.Framework.AppConstructing.Abstractions
 {
     public interface IKernelConstructor
     {

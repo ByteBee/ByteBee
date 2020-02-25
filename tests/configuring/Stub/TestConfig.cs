@@ -1,7 +1,7 @@
 ﻿using System;
-using ByteBee.Framework.Configuring.Contract.DataClasses;
+using ByteBee.Framework.Configuring.Abstractions.DataClasses;
 
-namespace ByteBee.Framework.Configuring.Tests.Stub
+namespace ByteBee.Framework.Tests.Configuring.Stub
 {
     [ConfigSection("test")]
     public sealed class TestConfig

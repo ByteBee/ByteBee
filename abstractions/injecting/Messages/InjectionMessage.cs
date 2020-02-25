@@ -1,4 +1,4 @@
-namespace ByteBee.Framework.Injecting.Contract.Messages
+namespace ByteBee.Framework.Injecting.Abstractions.Messages
 {
     public class InjectionMessage
     {

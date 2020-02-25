@@ -1,8 +1,8 @@
-﻿namespace ByteBee.Framework.Configuring.Contract
+﻿namespace ByteBee.Framework.Configuring.Abstractions
 {
     public interface IConfigStore
     {
-        void Save(IConfiguration source);
-        void Load(IConfiguration source);
+        void Save(IConfigManager source);
+        void Load(IConfigManager source);
     }
 }

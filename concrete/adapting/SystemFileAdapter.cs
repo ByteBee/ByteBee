@@ -1,8 +1,8 @@
-﻿using ByteBee.Framework.Adapting.Contract;
-using System.IO;
+﻿using System.IO;
 using System.Text;
+using ByteBee.Framework.Adapting.Abstractions;
 
-namespace ByteBee.Framework.Adapting.Impl
+namespace ByteBee.Framework.Adapting
 {
     public sealed class SystemFileAdapter : ISystemFile
     {

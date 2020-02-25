@@ -1,7 +1,7 @@
 ﻿using System;
-using ByteBee.Framework.Bootstrapping.Contract;
+using ByteBee.Framework.Bootstrapping.Abstractions;
 
-namespace ByteBee.Framework.AppConstructing.Contract
+namespace ByteBee.Framework.AppConstructing.Abstractions
 {
     public interface IBootstrapperConstructor
     {

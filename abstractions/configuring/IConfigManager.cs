@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace ByteBee.Framework.Configuring.Contract
+namespace ByteBee.Framework.Configuring.Abstractions
 {
-    public interface IConfiguration
+    public interface IConfigManager
     {
         IEnumerable<string> GetSections();
         IEnumerable<string> GetKeys(string section);

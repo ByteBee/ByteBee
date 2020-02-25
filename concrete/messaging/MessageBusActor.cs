@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ByteBee.Framework.Messaging.Impl
+namespace ByteBee.Framework.Messaging
 {
     internal sealed class MessageBusActor
     {

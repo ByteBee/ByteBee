@@ -1,4 +1,4 @@
-﻿namespace ByteBee.Framework.Configuring.Contract
+﻿namespace ByteBee.Framework.Configuring.Abstractions
 {
     public interface IConfigObjectProvider
     {

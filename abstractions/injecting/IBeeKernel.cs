@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ByteBee.Framework.Injecting.Contract
+namespace ByteBee.Framework.Injecting.Abstractions
 {
     public interface IBeeKernel
     {

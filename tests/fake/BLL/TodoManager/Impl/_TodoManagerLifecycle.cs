@@ -1,12 +1,12 @@
 ﻿using System;
-using ByteBee.Framework.Bootstrapping.Contract;
-using ByteBee.Framework.Configuring.Contract;
-using ByteBee.Framework.Fake.BLL.TodoManager.Contract;
-using ByteBee.Framework.Fake.BLL.TodoManager.Contract.Messages;
-using ByteBee.Framework.Injecting.Contract;
-using ByteBee.Framework.Messaging.Contract;
+using ByteBee.Framework.Bootstrapping.Abstractions;
+using ByteBee.Framework.Configuring.Abstractions;
+using ByteBee.Framework.Injecting.Abstractions;
+using ByteBee.Framework.Messaging.Abstractions;
+using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract;
+using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract.Messages;
 
-namespace ByteBee.Framework.Fake.BLL.TodoManager.Impl
+namespace ByteBee.Framework.Tests.Fake.BLL.TodoManager.Impl
 {
     public class TodoManagerLifecycle : ILifecycle
     {
@@ -30,7 +30,7 @@ namespace ByteBee.Framework.Fake.BLL.TodoManager.Impl
             messageBus.Register<TodoMessage>(m => Console.Write(m.Id));
         }
 
-        public void Configure(IConfiguration config)
+        public void Configure(IConfigManager config)
         {
             config.Set(nameof(TodoManagerConfig), nameof(TodoManagerConfig.MinTimeThreshold), 15);
         }

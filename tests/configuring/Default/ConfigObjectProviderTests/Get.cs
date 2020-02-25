@@ -1,9 +1,9 @@
-﻿using ByteBee.Framework.Configuring.Tests.Stub;
+﻿using ByteBee.Framework.Tests.Configuring.Stub;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Configuring.Tests.Default.ConfigObjectProviderTests
+namespace ByteBee.Framework.Tests.Configuring.Default.ConfigObjectProviderTests
 {
     public sealed partial class ConfigObjectProviderTest
     {

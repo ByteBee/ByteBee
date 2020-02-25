@@ -1,8 +1,8 @@
-﻿using ByteBee.Framework.Converting.Contract;
-using ByteBee.Framework.Converting.Impl;
+﻿using ByteBee.Framework.Converting;
+using ByteBee.Framework.Converting.Abstractions;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Converting.Tests.Default.Int64CastingTests
+namespace ByteBee.Framework.Tests.Converting.Default.Int64CastingTests
 {
     [TestFixture]
     public sealed partial class Int64CastingTests

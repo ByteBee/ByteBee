@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace ByteBee.Framework.Messaging.Contract.Exceptions
+namespace ByteBee.Framework.Messaging.Abstractions.Exceptions
 {
     [Serializable]
     public class DuplicatedActorException : MessagingException

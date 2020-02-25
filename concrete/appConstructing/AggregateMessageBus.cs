@@ -1,9 +1,9 @@
 ﻿using System;
-using ByteBee.Framework.AppConstructing.Contract;
-using ByteBee.Framework.Messaging.Contract;
-using ByteBee.Framework.Messaging.Impl;
+using ByteBee.Framework.AppConstructing.Abstractions;
+using ByteBee.Framework.Messaging;
+using ByteBee.Framework.Messaging.Abstractions;
 
-namespace ByteBee.Framework.AppConstructing.Impl
+namespace ByteBee.Framework.AppConstructing
 {
     public sealed partial class ConstructApp : IMessageBusConstructor
     {

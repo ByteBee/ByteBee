@@ -1,4 +1,4 @@
-﻿namespace ByteBee.Framework.Fake.BLL.TodoManager.Impl
+﻿namespace ByteBee.Framework.Tests.Fake.BLL.TodoManager.Impl
 {
     public class TodoManagerConfig
     {

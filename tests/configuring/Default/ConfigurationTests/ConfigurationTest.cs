@@ -1,14 +1,14 @@
-﻿using ByteBee.Framework.Configuring.Impl;
-using ByteBee.Framework.Converting.Contract;
-using ByteBee.Framework.Converting.Impl;
+﻿using ByteBee.Framework.Configuring;
+using ByteBee.Framework.Converting;
+using ByteBee.Framework.Converting.Abstractions;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Configuring.Tests.Default.ConfigurationTests
+namespace ByteBee.Framework.Tests.Configuring.Default.ConfigurationTests
 {
     [TestFixture]
     public sealed partial class ConfigurationTest
     {
-        private StandardConfiguration _source;
+        private StandardConfigManager _source;
         private IConverterFactory _converter;
 
         [SetUp]
@@ -16,7 +16,8 @@ namespace ByteBee.Framework.Configuring.Tests.Default.ConfigurationTests
         {
             _converter = new StandardConverterFactory();
 
-            _source = new StandardConfiguration();
+            var configStore = new InMemoryConfigStore();
+            _source = new StandardConfigManager(configStore);
             _source.SetConverterFactory(_converter);
         }
 

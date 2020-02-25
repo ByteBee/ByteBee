@@ -1,18 +1,17 @@
 ﻿using System.Collections.Generic;
-using ByteBee.Framework.AppConstructing.Contract;
-using ByteBee.Framework.AppConstructing.Impl;
-using ByteBee.Framework.Bootstrapping.Contract;
-using ByteBee.Framework.Fake.BLL.TodoManager.Contract.Messages;
-using ByteBee.Framework.Fake.BLL.TodoManager.Impl;
-using ByteBee.Framework.Fake.CCL.MadLib;
-using ByteBee.Framework.Injecting.Contract;
-using ByteBee.Framework.Injecting.Impl.Ninject;
-using ByteBee.Framework.Messaging.Contract;
+using ByteBee.Framework.AppConstructing;
+using ByteBee.Framework.Bootstrapping.Abstractions;
+using ByteBee.Framework.Injecting.Abstractions;
+using ByteBee.Framework.Injecting.Ninject;
+using ByteBee.Framework.Messaging.Abstractions;
+using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract.Messages;
+using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Impl;
+using ByteBee.Framework.Tests.Fake.CCL.MadLib;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.AppConstructing.Tests.Integration
+namespace ByteBee.Framework.Tests.AppConstructing.Integration
 {
     [TestFixture]
     public sealed class ConstructAppTests
@@ -47,7 +46,7 @@ namespace ByteBee.Framework.AppConstructing.Tests.Integration
             IList<ILifecycle> components = new List<ILifecycle>();
 
             ConstructApp.Default
-                .AggregateKernel<NinjectKernel>(new LogicModule())
+                .AggregateKernel<NinjectKernel>(new Aggregator().Modules)
                 .AggregateBootstrapper(components.Add);
 
             components.Count.Should().Be(1);
@@ -59,7 +58,7 @@ namespace ByteBee.Framework.AppConstructing.Tests.Integration
             int minTimeThreshold = 0;
 
             ConstructApp.Default
-                .AggregateKernel<NinjectKernel>(new LogicModule())
+                .AggregateKernel<NinjectKernel>(new Aggregator().Modules)
                 .AggregateBootstrapper()
                 .AggregateConfiguration(cs =>
                 {

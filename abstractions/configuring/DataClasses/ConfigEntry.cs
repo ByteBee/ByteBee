@@ -1,4 +1,4 @@
-﻿namespace ByteBee.Framework.Configuring.Contract.DataClasses
+﻿namespace ByteBee.Framework.Configuring.Abstractions.DataClasses
 {
     public sealed class ConfigEntry
     {

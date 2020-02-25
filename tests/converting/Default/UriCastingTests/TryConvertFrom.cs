@@ -1,4 +1,4 @@
-﻿namespace ByteBee.Framework.Converting.Tests.Default.UriCastingTests
+﻿namespace ByteBee.Framework.Tests.Converting.Default.UriCastingTests
 {
     public sealed partial class UriCastingTest
     {

@@ -1,4 +1,4 @@
-﻿namespace ByteBee.Framework.Converting.Tests.Default.GuidCastingTests
+﻿namespace ByteBee.Framework.Tests.Converting.Default.GuidCastingTests
 {
     public class GetStandardValue
     {
