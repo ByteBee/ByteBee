@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\contract\bootstrapping\ByteBee.Bootstrapping.Contract.csproj" />
-    <ProjectReference Include="..\..\contract\injecting\ByteBee.Injecting.Contract.csproj" />
+    <ProjectReference Include="..\..\abstractions\bootstrapping\ByteBee.Bootstrapping.Abstractions.csproj" />
+    <ProjectReference Include="..\..\abstractions\injecting\ByteBee.Injecting.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

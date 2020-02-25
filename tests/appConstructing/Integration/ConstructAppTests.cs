@@ -2,6 +2,7 @@
 using ByteBee.Framework.AppConstructing.Contract;
 using ByteBee.Framework.AppConstructing.Impl;
 using ByteBee.Framework.Bootstrapping.Contract;
+using ByteBee.Framework.Fake.BLL.TodoManager.Contract.Messages;
 using ByteBee.Framework.Fake.BLL.TodoManager.Impl;
 using ByteBee.Framework.Fake.CCL.MadLib;
 using ByteBee.Framework.Injecting.Contract;
@@ -79,10 +80,15 @@ namespace ByteBee.Framework.AppConstructing.Tests.Integration
             IMessageBus bus = null;
 
             ConstructApp.Default
-                .AggregateKernel<NinjectKernel>()
+                .AggregateKernel<NinjectKernel>(kernel =>
+                {
+                    kernel.RegisterLifecycle<TodoManagerLifecycle>();
+                })
                 .AggregateBootstrapper()
                 .SkipConfiguration()
                 .AggregateMessageBus(m => bus = m);
+
+            bus.Publish<TodoMessage>();
 
             bus.Should().NotBeNull();
         }

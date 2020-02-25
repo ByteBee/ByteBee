@@ -96,7 +96,8 @@ namespace ByteBee.Messaging.Tests.Default.MessageBusTests
                 subject.Should()
                     .Raise("HandlerThrowsException")
                     .WithArgs<MessageBusErrorEventArgs>(args =>
-                        args.Message.GetType() == typeof(TodoMessage)
+                        args.Message.GetType() == typeof(TodoMessage) &&
+                        args.Exception != null
                     );
             }
         }
@@ -113,7 +114,8 @@ namespace ByteBee.Messaging.Tests.Default.MessageBusTests
                 subject.Should()
                     .Raise("FilterThrowsException")
                     .WithArgs<MessageBusErrorEventArgs>(args =>
-                        args.Message.GetType() == typeof(TodoMessage)
+                        args.Message.GetType() == typeof(TodoMessage) &&
+                        args.Exception != null
                     );
             }
         }

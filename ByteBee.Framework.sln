@@ -3,43 +3,43 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "impl", "impl", "{9A47D7E4-8998-479C-9685-6AD09D9D12E3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "concrete", "concrete", "{9A47D7E4-8998-479C-9685-6AD09D9D12E3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DA01E337-D63F-410B-8178-D5C1BBC4B823}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Adapting.Contract", "contract\adapting\ByteBee.Adapting.Contract.csproj", "{736F349F-7EDB-4E16-BBA8-B94CCBE2FF1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Adapting.Abstractions", "abstractions\adapting\ByteBee.Adapting.Abstractions.csproj", "{736F349F-7EDB-4E16-BBA8-B94CCBE2FF1B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.AppConstructing.Contract", "contract\appConstructing\ByteBee.AppConstructing.Contract.csproj", "{78C5CDE0-77E4-46B1-AF36-62C46717252F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.AppConstructing.Abstractions", "abstractions\appConstructing\ByteBee.AppConstructing.Abstractions.csproj", "{78C5CDE0-77E4-46B1-AF36-62C46717252F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Bootstrapping.Contract", "contract\bootstrapping\ByteBee.Bootstrapping.Contract.csproj", "{A5C2D1D1-37C4-4F61-A64D-38BB64D88753}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Bootstrapping.Abstractions", "abstractions\bootstrapping\ByteBee.Bootstrapping.Abstractions.csproj", "{A5C2D1D1-37C4-4F61-A64D-38BB64D88753}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring.Contract", "contract\configuring\ByteBee.Configuring.Contract.csproj", "{AEA33B98-9551-44DE-823D-AD86E5353480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring.Abstractions", "abstractions\configuring\ByteBee.Configuring.Abstractions.csproj", "{AEA33B98-9551-44DE-823D-AD86E5353480}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Converting.Contract", "contract\converting\ByteBee.Converting.Contract.csproj", "{6388D296-0EB8-40E6-A171-4076D46AAF3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Converting.Abstractions", "abstractions\converting\ByteBee.Converting.Abstractions.csproj", "{6388D296-0EB8-40E6-A171-4076D46AAF3A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Injecting.Contract", "contract\injecting\ByteBee.Injecting.Contract.csproj", "{AB4D6944-9858-44E0-A347-5E5B31CAADB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Injecting.Abstractions", "abstractions\injecting\ByteBee.Injecting.Abstractions.csproj", "{AB4D6944-9858-44E0-A347-5E5B31CAADB4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Messaging.Contract", "contract\messaging\ByteBee.Messaging.Contract.csproj", "{0A683060-55D6-4A52-8AFE-AB35E02E3D1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Messaging.Abstractions", "abstractions\messaging\ByteBee.Messaging.Abstractions.csproj", "{0A683060-55D6-4A52-8AFE-AB35E02E3D1F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Adapting.Impl", "impl\adapting\ByteBee.Adapting.Impl.csproj", "{BBAD6D09-9742-42BB-BBD1-202F5CD224B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Adapting", "concrete\adapting\ByteBee.Adapting.csproj", "{BBAD6D09-9742-42BB-BBD1-202F5CD224B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.AppConstructing.Impl", "impl\appConstructing\ByteBee.AppConstructing.Impl.csproj", "{4E1D6414-51F2-4CA8-B193-D1DF7117C28F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.AppConstructing", "concrete\appConstructing\ByteBee.AppConstructing.csproj", "{4E1D6414-51F2-4CA8-B193-D1DF7117C28F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Bootstrapping.Impl", "impl\bootstrapping\ByteBee.Bootstrapping.Impl.csproj", "{20B6FF66-ECC6-462C-BC31-9F11B5BCFC0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Bootstrapping", "concrete\bootstrapping\ByteBee.Bootstrapping.csproj", "{20B6FF66-ECC6-462C-BC31-9F11B5BCFC0E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring.Impl", "impl\configuring\ByteBee.Configuring.Impl.csproj", "{3DF62378-9E3F-460E-8646-21B47D3365B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring", "concrete\configuring\ByteBee.Configuring.csproj", "{3DF62378-9E3F-460E-8646-21B47D3365B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring.Ini", "impl\configuring.ini\ByteBee.Configuring.Ini.csproj", "{DB6E1E3F-6BF6-43C5-B6EA-EF777096652A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring.Ini", "concrete\configuring.ini\ByteBee.Configuring.Ini.csproj", "{DB6E1E3F-6BF6-43C5-B6EA-EF777096652A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring.JsonNet", "impl\configuring.jsonNet\ByteBee.Configuring.JsonNet.csproj", "{74667A76-C822-40BC-83B5-FCB953BCC43B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring.JsonNet", "concrete\configuring.jsonNet\ByteBee.Configuring.JsonNet.csproj", "{74667A76-C822-40BC-83B5-FCB953BCC43B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Converting.Impl", "impl\converting\ByteBee.Converting.Impl.csproj", "{EFABFEE8-2C52-47A7-A650-790E31DF6630}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Converting", "concrete\converting\ByteBee.Converting.csproj", "{EFABFEE8-2C52-47A7-A650-790E31DF6630}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Injecting.Impl", "impl\injecting\ByteBee.Injecting.Impl.csproj", "{37A16A28-B244-4932-92DE-8490764E3C86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Injecting", "concrete\injecting\ByteBee.Injecting.csproj", "{37A16A28-B244-4932-92DE-8490764E3C86}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Injecting.Ninject", "impl\injecting.ninject\ByteBee.Injecting.Ninject.csproj", "{89EBFF0C-3D23-4B3E-B10B-99F89B9C9F0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Injecting.Ninject", "concrete\injecting.ninject\ByteBee.Injecting.Ninject.csproj", "{89EBFF0C-3D23-4B3E-B10B-99F89B9C9F0C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Messaging.Impl", "impl\messaging\ByteBee.Messaging.Impl.csproj", "{2C238F69-CFC6-4E88-8C7D-C718B99425B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Messaging", "concrete\messaging\ByteBee.Messaging.csproj", "{2C238F69-CFC6-4E88-8C7D-C718B99425B1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Framework.Fake", "tests\fake\ByteBee.Framework.Fake.csproj", "{B397863B-E5ED-468A-94EF-64CD9B7803F4}"
 EndProject
@@ -49,7 +49,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBee.Converting.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBee.AppConstructing.Tests", "tests\appConstructing\ByteBee.AppConstructing.Tests.csproj", "{FA859AEF-BC64-4874-8ED0-E412C170DF7C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "contract", "contract", "{AB050C6A-4148-4DA1-81E2-C8BA7DF6D34F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "abstractions", "abstractions", "{AB050C6A-4148-4DA1-81E2-C8BA7DF6D34F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBee.Messaging.Tests", "tests\messaging\ByteBee.Messaging.Tests.csproj", "{4393B3F6-0213-4DDB-9583-6A5BE80C2A06}"
 EndProject

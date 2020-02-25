@@ -58,31 +58,31 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\contract\appConstructing\ByteBee.AppConstructing.Contract.csproj">
+    <ProjectReference Include="..\..\abstractions\appConstructing\ByteBee.AppConstructing.Abstractions.csproj">
       <Project>{78C5CDE0-77E4-46B1-AF36-62C46717252F}</Project>
-      <Name>ByteBee.AppConstructing.Contract</Name>
+      <Name>ByteBee.AppConstructing.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\contract\bootstrapping\ByteBee.Bootstrapping.Contract.csproj">
+    <ProjectReference Include="..\..\abstractions\bootstrapping\ByteBee.Bootstrapping.Abstractions.csproj">
       <Project>{A5C2D1D1-37C4-4F61-A64D-38BB64D88753}</Project>
-      <Name>ByteBee.Bootstrapping.Contract</Name>
+      <Name>ByteBee.Bootstrapping.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\contract\configuring\ByteBee.Configuring.Contract.csproj">
+    <ProjectReference Include="..\..\abstractions\configuring\ByteBee.Configuring.Abstractions.csproj">
       <Project>{AEA33B98-9551-44DE-823D-AD86E5353480}</Project>
-      <Name>ByteBee.Configuring.Contract</Name>
+      <Name>ByteBee.Configuring.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\contract\injecting\ByteBee.Injecting.Contract.csproj">
+    <ProjectReference Include="..\..\abstractions\injecting\ByteBee.Injecting.Abstractions.csproj">
       <Project>{AB4D6944-9858-44E0-A347-5E5B31CAADB4}</Project>
-      <Name>ByteBee.Injecting.Contract</Name>
+      <Name>ByteBee.Injecting.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\contract\messaging\ByteBee.Messaging.Contract.csproj">
+    <ProjectReference Include="..\..\abstractions\messaging\ByteBee.Messaging.Abstractions.csproj">
       <Project>{0A683060-55D6-4A52-8AFE-AB35E02E3D1F}</Project>
-      <Name>ByteBee.Messaging.Contract</Name>
+      <Name>ByteBee.Messaging.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\impl\appConstructing\ByteBee.AppConstructing.Impl.csproj">
+    <ProjectReference Include="..\..\concrete\appConstructing\ByteBee.AppConstructing.csproj">
       <Project>{4E1D6414-51F2-4CA8-B193-D1DF7117C28F}</Project>
-      <Name>ByteBee.AppConstructing.Impl</Name>
+      <Name>ByteBee.AppConstructing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\impl\injecting.ninject\ByteBee.Injecting.Ninject.csproj">
+    <ProjectReference Include="..\..\concrete\injecting.ninject\ByteBee.Injecting.Ninject.csproj">
       <Project>{89EBFF0C-3D23-4B3E-B10B-99F89B9C9F0C}</Project>
       <Name>ByteBee.Injecting.Ninject</Name>
     </ProjectReference>

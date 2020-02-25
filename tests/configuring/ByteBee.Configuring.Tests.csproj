@@ -86,29 +86,29 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\contract\adapting\ByteBee.Adapting.Contract.csproj">
+    <ProjectReference Include="..\..\abstractions\adapting\ByteBee.Adapting.Abstractions.csproj">
       <Project>{736F349F-7EDB-4E16-BBA8-B94CCBE2FF1B}</Project>
-      <Name>ByteBee.Adapting.Contract</Name>
+      <Name>ByteBee.Adapting.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\contract\configuring\ByteBee.Configuring.Contract.csproj">
+    <ProjectReference Include="..\..\abstractions\configuring\ByteBee.Configuring.Abstractions.csproj">
       <Project>{AEA33B98-9551-44DE-823D-AD86E5353480}</Project>
-      <Name>ByteBee.Configuring.Contract</Name>
+      <Name>ByteBee.Configuring.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\contract\converting\ByteBee.Converting.Contract.csproj">
+    <ProjectReference Include="..\..\abstractions\converting\ByteBee.Converting.Abstractions.csproj">
       <Project>{6388D296-0EB8-40E6-A171-4076D46AAF3A}</Project>
-      <Name>ByteBee.Converting.Contract</Name>
+      <Name>ByteBee.Converting.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\impl\configuring.jsonNet\ByteBee.Configuring.JsonNet.csproj">
+    <ProjectReference Include="..\..\concrete\configuring.jsonNet\ByteBee.Configuring.JsonNet.csproj">
       <Project>{74667A76-C822-40BC-83B5-FCB953BCC43B}</Project>
       <Name>ByteBee.Configuring.JsonNet</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\impl\configuring\ByteBee.Configuring.Impl.csproj">
+    <ProjectReference Include="..\..\concrete\configuring\ByteBee.Configuring.csproj">
       <Project>{3DF62378-9E3F-460E-8646-21B47D3365B4}</Project>
-      <Name>ByteBee.Configuring.Impl</Name>
+      <Name>ByteBee.Configuring</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\impl\converting\ByteBee.Converting.Impl.csproj">
+    <ProjectReference Include="..\..\concrete\converting\ByteBee.Converting.csproj">
       <Project>{EFABFEE8-2C52-47A7-A650-790E31DF6630}</Project>
-      <Name>ByteBee.Converting.Impl</Name>
+      <Name>ByteBee.Converting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

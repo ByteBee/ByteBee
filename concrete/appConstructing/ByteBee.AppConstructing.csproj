@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>ByteBee.AppConstructing</AssemblyName>
+    <RootNamespace>ByteBee.Framework.AppConstructing</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>ByteBee</Company>
+    <Product>ByteBee Framework</Product>
+    <Authors>Sergej Kukshaus</Authors>
+    <PackageProjectUrl>https://www.bytebee.de/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ByteBee/ByteBee</RepositoryUrl>
+    <Description>A part of the legendary ByteBee-Framework!</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
+    <FileVersion>2.0.1.0</FileVersion>
+    <Version>2.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\abstractions\appConstructing\ByteBee.AppConstructing.Abstractions.csproj" />
+    <ProjectReference Include="..\bootstrapping\ByteBee.Bootstrapping.csproj" />
+    <ProjectReference Include="..\configuring\ByteBee.Configuring.csproj" />
+    <ProjectReference Include="..\messaging\ByteBee.Messaging.csproj" />
+  </ItemGroup>
+
+</Project>

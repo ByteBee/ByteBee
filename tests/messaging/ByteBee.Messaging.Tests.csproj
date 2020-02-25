@@ -77,13 +77,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\contract\messaging\ByteBee.Messaging.Contract.csproj">
+    <ProjectReference Include="..\..\abstractions\messaging\ByteBee.Messaging.Abstractions.csproj">
       <Project>{0A683060-55D6-4A52-8AFE-AB35E02E3D1F}</Project>
-      <Name>ByteBee.Messaging.Contract</Name>
+      <Name>ByteBee.Messaging.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\impl\messaging\ByteBee.Messaging.Impl.csproj">
+    <ProjectReference Include="..\..\concrete\messaging\ByteBee.Messaging.csproj">
       <Project>{2C238F69-CFC6-4E88-8C7D-C718B99425B1}</Project>
-      <Name>ByteBee.Messaging.Impl</Name>
+      <Name>ByteBee.Messaging</Name>
     </ProjectReference>
     <ProjectReference Include="..\fake\ByteBee.Framework.Fake.csproj">
       <Project>{B397863B-E5ED-468A-94EF-64CD9B7803F4}</Project>

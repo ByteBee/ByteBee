@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>ByteBee.Configuring.JsonNet</AssemblyName>
+    <RootNamespace>ByteBee.Framework.Configuring.JsonNet</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>ByteBee</Company>
+    <Product>ByteBee Framework</Product>
+    <Authors>Sergej Kukshaus</Authors>
+    <PackageProjectUrl>https://www.bytebee.de/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ByteBee/ByteBee</RepositoryUrl>
+    <Description>A part of the legendary ByteBee-Framework!</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
+    <FileVersion>2.0.1.0</FileVersion>
+    <Version>2.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\abstractions\configuring\ByteBee.Configuring.Abstractions.csproj" />
+    <ProjectReference Include="..\adapting\ByteBee.Adapting.csproj" />
+    <ProjectReference Include="..\configuring\ByteBee.Configuring.csproj" />
+  </ItemGroup>
+
+</Project>
