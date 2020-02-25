@@ -11,15 +11,18 @@ namespace ByteBee.Framework.Configuring
 {
     public sealed class StandardConfigManager : IConfigManager
     {
-        private readonly IConfigStore _configStore;
-        public int NumberOfEntries => _store.Count;
+        public int NumberOfEntries => _entries.Count;
 
-        private readonly IList<ConfigEntry> _store = new List<ConfigEntry>();
+        private readonly IList<ConfigEntry> _entries = new List<ConfigEntry>();
         private IConverterFactory _converterFactory;
+
+        public IConfigStore Store { get; }
 
         public StandardConfigManager(IConfigStore configStore)
         {
-            _configStore = configStore;
+            Store = configStore;
+            Store.Initialize(this);
+
             _converterFactory = new StandardConverterFactory();
         }
 
@@ -30,12 +33,12 @@ namespace ByteBee.Framework.Configuring
 
         public IEnumerable<string> GetSections()
         {
-            return _store.Select(e => e.Section).Distinct();
+            return _entries.Select(e => e.Section).Distinct();
         }
 
         public IEnumerable<string> GetKeys(string section)
         {
-            return _store.Where(e => e.Section == section)
+            return _entries.Where(e => e.Section == section)
                 .Select(e => e.Key).Distinct();
         }
 
@@ -44,11 +47,11 @@ namespace ByteBee.Framework.Configuring
             ValidateSectionArg(section);
             ValidateKeyArg(key);
 
-            bool isEntryDefined = _store.Any(e => FindEntry(e, section, key));
+            bool isEntryDefined = _entries.Any(e => FindEntry(e, section, key));
 
             if (isEntryDefined)
             {
-                ConfigEntry entry = _store.Single(e => FindEntry(e, section, key));
+                ConfigEntry entry = _entries.Single(e => FindEntry(e, section, key));
 
                 ITypeConverter<TResult> converter = _converterFactory.Create<TResult>();
 
@@ -91,33 +94,23 @@ namespace ByteBee.Framework.Configuring
             ValidateSectionArg(section);
             ValidateKeyArg(key);
 
-            bool isEntryDefined = _store.Any(e => FindEntry(e, section, key));
+            bool isEntryDefined = _entries.Any(e => FindEntry(e, section, key));
             if (isEntryDefined)
             {
-                ConfigEntry entry = _store.Single(e => FindEntry(e, section, key));
+                ConfigEntry entry = _entries.Single(e => FindEntry(e, section, key));
                 entry.Value = value;
             }
             else
             {
                 var entry = new ConfigEntry(section, key, value);
 
-                _store.Add(entry);
+                _entries.Add(entry);
             }
         }
 
         public void Clear()
         {
-            _store.Clear();
-        }
-
-        public void LoadFromStore()
-        {
-            _configStore.Load(this);
-        }
-
-        public void SaveToStore()
-        {
-            _configStore.Save(this);
+            _entries.Clear();
         }
 
         private bool FindEntry(ConfigEntry entry, string section, string key)

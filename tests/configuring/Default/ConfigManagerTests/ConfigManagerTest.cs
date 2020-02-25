@@ -3,12 +3,12 @@ using ByteBee.Framework.Converting;
 using ByteBee.Framework.Converting.Abstractions;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Tests.Configuring.Default.ConfigurationTests
+namespace ByteBee.Framework.Tests.Configuring.Default.ConfigManagerTests
 {
     [TestFixture]
-    public sealed partial class ConfigurationTest
+    public sealed partial class ConfigManagerTest
     {
-        private StandardConfigManager _source;
+        private StandardConfigManager _config;
         private IConverterFactory _converter;
 
         [SetUp]
@@ -17,8 +17,8 @@ namespace ByteBee.Framework.Tests.Configuring.Default.ConfigurationTests
             _converter = new StandardConverterFactory();
 
             var configStore = new InMemoryConfigStore();
-            _source = new StandardConfigManager(configStore);
-            _source.SetConverterFactory(_converter);
+            _config = new StandardConfigManager(configStore);
+            _config.SetConverterFactory(_converter);
         }
 
         [TearDown]

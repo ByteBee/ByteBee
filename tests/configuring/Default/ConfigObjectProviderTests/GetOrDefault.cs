@@ -8,7 +8,7 @@ namespace ByteBee.Framework.Tests.Configuring.Default.ConfigObjectProviderTests
     public sealed partial class ConfigObjectProviderTest
     {
         [Test]
-        public void Get_NoEntries_EmptyObject()
+        public void GetOrDefault_NoEntries_EmptyObject()
         {
             var cfg = _provider.Get<TestConfig>();
 
@@ -23,9 +23,9 @@ namespace ByteBee.Framework.Tests.Configuring.Default.ConfigObjectProviderTests
         }
 
         [Test]
-        public void Get_StringWasSet_NoErrors()
+        public void GetOrDefault_StringWasSet_NoErrors()
         {
-            _sourceMock.Setup(s => s.GetOrDefault<string>("test", "string"))
+            _configMock.Setup(s => s.GetOrDefault<string>("test", "string"))
                 .Returns(() => "hello world");
 
             var cfg = _provider.Get<TestConfig>();
@@ -34,9 +34,9 @@ namespace ByteBee.Framework.Tests.Configuring.Default.ConfigObjectProviderTests
         }
 
         [Test]
-        public void Get_IntWasSet_NoErrors()
+        public void GetOrDefault_IntWasSet_NoErrors()
         {
-            _sourceMock.Setup(s => s.GetOrDefault<int>("test", "int"))
+            _configMock.Setup(s => s.GetOrDefault<int>("test", "int"))
                 .Returns(() => 42);
 
             var cfg = _provider.Get<TestConfig>();
@@ -45,9 +45,9 @@ namespace ByteBee.Framework.Tests.Configuring.Default.ConfigObjectProviderTests
         }
 
         [Test]
-        public void Get_DoubleWasSet_NoErrors()
+        public void GetOrDefault_DoubleWasSet_NoErrors()
         {
-            _sourceMock.Setup(s => s.GetOrDefault<double>("test", "double"))
+            _configMock.Setup(s => s.GetOrDefault<double>("test", "double"))
                 .Returns(() => 3.1415);
 
             var cfg = _provider.Get<TestConfig>();
@@ -56,9 +56,9 @@ namespace ByteBee.Framework.Tests.Configuring.Default.ConfigObjectProviderTests
         }
 
         [Test]
-        public void Get_BoolWasSet_NoErrors()
+        public void GetOrDefault_BoolWasSet_NoErrors()
         {
-            _sourceMock.Setup(s => s.GetOrDefault<bool>("test", "bool"))
+            _configMock.Setup(s => s.GetOrDefault<bool>("test", "bool"))
                 .Returns(() => true);
 
             var cfg = _provider.Get<TestConfig>();

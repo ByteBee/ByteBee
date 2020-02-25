@@ -16,6 +16,8 @@ namespace ByteBee.Framework.Configuring.JsonNet
         private readonly string _pathToConfigFile;
         private ISystemFile _file;
 
+        private IConfigManager _configManager;
+
         public JsonNetConfigStore(string pathToConfigFile)
         {
             _pathToConfigFile = pathToConfigFile;
@@ -27,14 +29,24 @@ namespace ByteBee.Framework.Configuring.JsonNet
             _file = fileAdapter;
         }
 
-        public void Save(IConfigManager configManager)
+        public void Initialize(IConfigManager configManager)
         {
-            if (configManager == null)
+            if (_configManager != null)
             {
-                throw new ArgumentNullException(nameof(configManager));
+                throw new ConfigurationException("config store must depend only on one configuration");
             }
 
-            string[] sections = configManager.GetSections().ToArray();
+            _configManager = configManager;
+        }
+
+        public void Save()
+        {
+            if (_configManager == null)
+            {
+                throw new ArgumentNullException(nameof(_configManager));
+            }
+
+            string[] sections = _configManager.GetSections().ToArray();
 
             var body = new JObject();
 
@@ -44,12 +56,12 @@ namespace ByteBee.Framework.Configuring.JsonNet
                 var jsection = new JObject();
                 body.Add(section, jsection);
 
-                string[] keys = configManager.GetKeys(section).ToArray();
+                string[] keys = _configManager.GetKeys(section).ToArray();
 
                 for (int j = 0; j < keys.Length; j++)
                 {
                     string key = keys[j];
-                    var value = configManager.Get<object>(section, key);
+                    var value = _configManager.Get<object>(section, key);
 
                     JToken jkey = value == null ? new JRaw("null") : JToken.FromObject(value);
 
@@ -62,26 +74,23 @@ namespace ByteBee.Framework.Configuring.JsonNet
             _file.WriteAllText(_pathToConfigFile, content);
         }
 
-        public void Load(IConfigManager configManager)
+        public void Load()
         {
-            if (_file.Exists(_pathToConfigFile) == false)
+            bool doesConfigIsMissing = _file.Exists(_pathToConfigFile) == false;
+            if (doesConfigIsMissing)
             {
                 throw new FileNotFoundException($"Configuration file '{_pathToConfigFile}' does not exists.");
             }
 
-            if (!_file.Exists(_pathToConfigFile))
-            {
-                return;
-            }
-
             string fileContent = _file.ReadAllText(_pathToConfigFile);
 
-            if (string.IsNullOrWhiteSpace(fileContent))
+            bool doesConfigFileHaveAnyContent = string.IsNullOrWhiteSpace(fileContent);
+            if (doesConfigFileHaveAnyContent)
             {
                 throw new ConfigurationException("The configuration file was entirely empty");
             }
 
-            configManager.Clear();
+            _configManager.Clear();
 
             JObject json = JObject.Parse(fileContent);
 
@@ -95,7 +104,7 @@ namespace ByteBee.Framework.Configuring.JsonNet
                     {
                         string key = prop.Name;
                         string value = prop.Value.ToString();
-                        configManager.Set(section, key, value);
+                        _configManager.Set(section, key, value);
                     }
                 }
             }

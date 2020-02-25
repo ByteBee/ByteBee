@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using ByteBee.Framework.Bootstrapping.Abstractions;
-using ByteBee.Framework.Configuring.Abstractions;
-using ByteBee.Framework.Injecting.Abstractions;
+﻿using ByteBee.Framework.Injecting.Abstractions;
 using Ninject;
 using Ninject.Modules;
+using System;
+using System.Collections.Generic;
 
 namespace ByteBee.Framework.Injecting.Ninject
 {
@@ -27,6 +25,11 @@ namespace ByteBee.Framework.Injecting.Ninject
             _kernel.Bind<TContract>().To<TImpl>().InSingletonScope();
         }
 
+        public void Register(Type abstraction, Type concrete)
+        {
+            _kernel.Bind(abstraction).To(concrete);
+        }
+
         public void RegisterToSelf<TImpl>()
         {
             _kernel.Bind<TImpl>().ToSelf().InSingletonScope();
@@ -37,17 +40,29 @@ namespace ByteBee.Framework.Injecting.Ninject
             _kernel.Bind<TObject>().ToConstant(service).InSingletonScope();
         }
 
-        public void RegisterLifecycle<TLifecycle>() where TLifecycle : class
+        public void RegisterToMethod<TAbstraction>(Func<IBeeKernel, TAbstraction> callback)
         {
-            _kernel.Bind<ILifecycle>().To(typeof(TLifecycle)).InSingletonScope();
+            _kernel.Bind<TAbstraction>().ToMethod(ctx =>
+            {
+                return callback(this);
+            });
         }
 
-        public void RegisterConfig<TConfig>()
-        {
-            _kernel.Bind<TConfig>()
-                .ToMethod(ctx => ctx.Kernel.Get<IConfigObjectProvider>().Get<TConfig>())
-                .InSingletonScope();
-        }
+        //public void RegisterComponent<TComponent>() where TComponent : class
+        //{
+        //    _kernel.Bind<IComponentActivator>().To(typeof(TComponent)).InSingletonScope();
+        //}
+
+        //public void RegisterConfig<TConfig>()
+        //{
+        //    _kernel.Bind<TConfig>()
+        //        .ToMethod(ctx =>
+        //        {
+        //            var configProvider = ctx.Kernel.Get<IConfigObjectProvider>();
+        //            return configProvider.Get<TConfig>();
+        //        })
+        //        .InSingletonScope();
+        //}
 
         public void RegisterObject(object service)
         {

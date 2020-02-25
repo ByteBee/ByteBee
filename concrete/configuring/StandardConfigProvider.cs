@@ -7,11 +7,11 @@ using ByteBee.Framework.Configuring.Abstractions.DataClasses;
 
 namespace ByteBee.Framework.Configuring
 {
-    public sealed class StandardConfigObjectProvider : IConfigObjectProvider
+    public sealed class StandardConfigProvider : IConfigProvider
     {
         private readonly IConfigManager _source;
 
-        public StandardConfigObjectProvider(IConfigManager source)
+        public StandardConfigProvider(IConfigManager source)
         {
             _source = source;
         }

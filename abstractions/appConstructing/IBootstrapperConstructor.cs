@@ -7,6 +7,6 @@ namespace ByteBee.Framework.AppConstructing.Abstractions
     {
         //IConfigConstructor SkipBootstrapper();
         IConfigConstructor AggregateBootstrapper();
-        IConfigConstructor AggregateBootstrapper(Action<ILifecycle> lifecycleCallback);
+        IConfigConstructor AggregateBootstrapper(Action<IComponentActivator> lifecycleCallback);
     }
 }

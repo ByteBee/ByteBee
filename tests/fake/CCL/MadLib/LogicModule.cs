@@ -1,4 +1,5 @@
-﻿using ByteBee.Framework.Injecting.Abstractions;
+﻿using ByteBee.Framework.Bootstrapping;
+using ByteBee.Framework.Injecting.Abstractions;
 using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Impl;
 
 namespace ByteBee.Framework.Tests.Fake.CCL.MadLib
@@ -7,7 +8,7 @@ namespace ByteBee.Framework.Tests.Fake.CCL.MadLib
     {
         public void Load(IBeeKernel kernel)
         {
-            kernel.RegisterLifecycle<TodoManagerLifecycle>();
+            kernel.RegisterComponent<TodoManagerActivator>();
         }
     }
 }

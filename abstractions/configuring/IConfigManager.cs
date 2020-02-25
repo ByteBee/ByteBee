@@ -4,6 +4,7 @@ namespace ByteBee.Framework.Configuring.Abstractions
 {
     public interface IConfigManager
     {
+        IConfigStore Store { get; }
         IEnumerable<string> GetSections();
         IEnumerable<string> GetKeys(string section);
 
@@ -13,8 +14,5 @@ namespace ByteBee.Framework.Configuring.Abstractions
         void Set(string section, string key, object value);
 
         void Clear();
-
-        void LoadFromStore();
-        void SaveToStore();
     }
 }

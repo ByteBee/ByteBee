@@ -1,10 +1,8 @@
-﻿using System;
-using ByteBee.Framework.Adapting.Abstractions;
-using ByteBee.Framework.Configuring;
-using ByteBee.Framework.Configuring.Abstractions;
+﻿using ByteBee.Framework.Adapting.Abstractions;
 using ByteBee.Framework.Configuring.JsonNet;
 using Moq;
 using NUnit.Framework;
+using System;
 
 namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
 {
@@ -13,7 +11,6 @@ namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
     {
         private JsonNetConfigStore _store;
         private Mock<ISystemFile> _fileMoq;
-        private IConfigManager _config;
 
         [SetUp]
         public void Setup()
@@ -22,8 +19,6 @@ namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
             
             _store = new JsonNetConfigStore("test.cfg");
             _store.SetFileAdapter(_fileMoq.Object);
-
-            _config = new StandardConfigManager(_store);
         }
 
         [TearDown]

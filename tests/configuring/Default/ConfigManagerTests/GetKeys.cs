@@ -2,14 +2,14 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Tests.Configuring.Default.ConfigurationTests
+namespace ByteBee.Framework.Tests.Configuring.Default.ConfigManagerTests
 {
-    public sealed partial class ConfigurationTest
+    public sealed partial class ConfigManagerTest
     {
         [Test]
         public void GetKeys_NoElements_EmptyResult()
         {
-            IEnumerable<string> keys = _source.GetKeys("foo");
+            IEnumerable<string> keys = _config.GetKeys("foo");
 
             keys.Should().BeEmpty("the config is empty");
         }
@@ -17,9 +17,9 @@ namespace ByteBee.Framework.Tests.Configuring.Default.ConfigurationTests
         [Test]
         public void GetKeys_NoMatchingSection_EmptyResult()
         {
-            _source.Set("bar", "test", 1);
+            _config.Set("bar", "test", 1);
 
-            IEnumerable<string> keys = _source.GetKeys("foo");
+            IEnumerable<string> keys = _config.GetKeys("foo");
 
             keys.Should().BeEmpty("the there are no matching sections");
         }
@@ -27,10 +27,10 @@ namespace ByteBee.Framework.Tests.Configuring.Default.ConfigurationTests
         [Test]
         public void GetKeys_TwoElements_AllElementsReturned()
         {
-            _source.Set("test", "foo", 1);
-            _source.Set("test", "bar", 1);
+            _config.Set("test", "foo", 1);
+            _config.Set("test", "bar", 1);
 
-            IEnumerable<string> keys = _source.GetKeys("test");
+            IEnumerable<string> keys = _config.GetKeys("test");
 
             keys.Should().NotBeEmpty("the there are matching sections")
                 .And.Contain("foo", "foo was defined")
@@ -40,11 +40,11 @@ namespace ByteBee.Framework.Tests.Configuring.Default.ConfigurationTests
         [Test]
         public void GetKeys_TwoSections_RequestedSectionKeysReturned()
         {
-            _source.Set("foobar", "test", 42);
-            _source.Set("test", "foo", 1);
-            _source.Set("test", "bar", 1);
+            _config.Set("foobar", "test", 42);
+            _config.Set("test", "foo", 1);
+            _config.Set("test", "bar", 1);
 
-            IEnumerable<string> keys = _source.GetKeys("test");
+            IEnumerable<string> keys = _config.GetKeys("test");
 
             keys.Should().NotBeEmpty("the there are matching sections")
                 .And.HaveCount(2, "only two are relevant")

@@ -19,7 +19,7 @@ namespace ByteBee.Framework.AppConstructing
             return AggregateBootstrapper(null);
         }
 
-        public IConfigConstructor AggregateBootstrapper(Action<ILifecycle> lifecycleCallback)
+        public IConfigConstructor AggregateBootstrapper(Action<IComponentActivator> lifecycleCallback)
         {
             _kernel.Register<IBootstrapper, StandardBootstrapper>();
 

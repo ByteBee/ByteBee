@@ -2,7 +2,8 @@
 {
     public interface IConfigStore
     {
-        void Save(IConfigManager source);
-        void Load(IConfigManager source);
+        void Initialize(IConfigManager configManager);
+        void Save();
+        void Load();
     }
 }

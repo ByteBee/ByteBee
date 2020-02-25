@@ -8,15 +8,14 @@ namespace ByteBee.Framework.Tests.Configuring.Default.ConfigObjectProviderTests
     [TestFixture]
     public sealed partial class ConfigObjectProviderTest
     {
-        private Mock<IConfigManager> _sourceMock;
-        private StandardConfigObjectProvider _provider;
+        private Mock<IConfigManager> _configMock;
+        private StandardConfigProvider _provider;
 
         [SetUp]
         public void Setup()
         {
-            _sourceMock = new Mock<IConfigManager>();
-
-            _provider = new StandardConfigObjectProvider(_sourceMock.Object);
+            _configMock = new Mock<IConfigManager>();
+            _provider = new StandardConfigProvider(_configMock.Object);
         }
 
         [TearDown]

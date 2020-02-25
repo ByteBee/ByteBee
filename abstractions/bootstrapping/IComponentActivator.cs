@@ -4,7 +4,7 @@ using ByteBee.Framework.Messaging.Abstractions;
 
 namespace ByteBee.Framework.Bootstrapping.Abstractions
 {
-    public interface ILifecycle
+    public interface IComponentActivator
     {
         void Activate();
         void Deactivate();

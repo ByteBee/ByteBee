@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\abstractions\bootstrapping\ByteBee.Bootstrapping.Abstractions.csproj" />
     <ProjectReference Include="..\injecting\ByteBee.Injecting.csproj" />
   </ItemGroup>
 

@@ -2,14 +2,14 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Tests.Configuring.Default.ConfigurationTests
+namespace ByteBee.Framework.Tests.Configuring.Default.ConfigManagerTests
 {
-    public sealed partial class ConfigurationTest
+    public sealed partial class ConfigManagerTest
     {
         [Test]
         public void GetSections_NoElements_EmptyResultReturned()
         {
-            IEnumerable<string> sections = _source.GetSections();
+            IEnumerable<string> sections = _config.GetSections();
 
             sections.Should().BeEmpty("there are no items before");
         }
@@ -17,11 +17,11 @@ namespace ByteBee.Framework.Tests.Configuring.Default.ConfigurationTests
         [Test]
         public void GetSections_ThreeSectionsDefined_AllSectionsReturned()
         {
-            _source.Set("foo", "test", 1);
-            _source.Set("bar", "test", 2);
-            _source.Set("baz", "test", 3);
+            _config.Set("foo", "test", 1);
+            _config.Set("bar", "test", 2);
+            _config.Set("baz", "test", 3);
 
-            IEnumerable<string> sections = _source.GetSections();
+            IEnumerable<string> sections = _config.GetSections();
 
             sections.Should().NotBeEmpty("there are no items before")
                 .And.Contain("foo", "foo was defined")

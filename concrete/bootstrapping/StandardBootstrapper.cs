@@ -10,9 +10,9 @@ namespace ByteBee.Framework.Bootstrapping
     // ReSharper disable once ClassNeverInstantiated.Global
     public sealed class StandardBootstrapper : IBootstrapper
     {
-        private readonly List<ILifecycle> _lifecycles;
+        private readonly List<IComponentActivator> _lifecycles;
 
-        public StandardBootstrapper(List<ILifecycle> lifecycles)
+        public StandardBootstrapper(List<IComponentActivator> lifecycles)
         {
             _lifecycles = lifecycles;
         }
@@ -42,7 +42,7 @@ namespace ByteBee.Framework.Bootstrapping
             Each(b => b.Subscribe(messageBus));
         }
 
-        public void Each(Action<ILifecycle> callback)
+        public void Each(Action<IComponentActivator> callback)
         {
             _lifecycles.ForEach(callback);
         }

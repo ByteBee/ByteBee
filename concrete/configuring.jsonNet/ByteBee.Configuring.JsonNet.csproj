@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\abstractions\configuring\ByteBee.Configuring.Abstractions.csproj" />
     <ProjectReference Include="..\adapting\ByteBee.Adapting.csproj" />
     <ProjectReference Include="..\configuring\ByteBee.Configuring.csproj" />
   </ItemGroup>

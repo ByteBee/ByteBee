@@ -12,6 +12,6 @@ namespace ByteBee.Framework.Bootstrapping.Abstractions
         void RegisterAll(IBeeKernel kernel);
         void ConfigureAll(IConfigManager config);
         void SubscribeAll(IMessageBus messageBus);
-        void Each(Action<ILifecycle> callback);
+        void Each(Action<IComponentActivator> callback);
     }
 }

@@ -13,7 +13,8 @@ namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
         {
             IConfigManager config = null;
 
-            Action act = () => _store.Save(config);
+            _store.Initialize(config);
+            Action act = () => _store.Save();
 
             act.Should()
                 .ThrowExactly<ArgumentNullException>("config was null")
@@ -30,7 +31,8 @@ namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
             source.Setup(s => s.GetSections())
                 .Returns(() => new string[0]);
 
-            _store.Save(source.Object);
+            _store.Initialize(source.Object);
+            _store.Save();
 
             fileContent.Should().Be("{}", "no sections are defined");
         }
@@ -44,8 +46,9 @@ namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
             var source = new Mock<IConfigManager>();
             source.Setup(s => s.GetSections())
                 .Returns(() => new[] {"foo"});
-            
-            _store.Save(source.Object);
+
+            _store.Initialize(source.Object);
+            _store.Save();
 
             Console.WriteLine(fileContent);
 
@@ -62,8 +65,9 @@ namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
             var source = new Mock<IConfigManager>();
             source.Setup(s => s.GetSections())
                 .Returns(() => new[] {"foo", "bar"});
-            
-            _store.Save(source.Object);
+
+            _store.Initialize(source.Object);
+            _store.Save();
 
             fileContent.Should()
                 .Be("{\"foo\":{},\"bar\":{}}", "foo and bar sections were defined");
@@ -80,8 +84,9 @@ namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
                 .Returns(() => new[] {"foo"});
             source.Setup(s => s.GetKeys("foo"))
                 .Returns(() => new[] {"bar"});
+            _store.Initialize(source.Object);
             
-            _store.Save(source.Object);
+            _store.Save();
 
             fileContent.Should()
                 .Be("{\"foo\":{\"bar\":null}}", "foo.bar was specified");
@@ -100,8 +105,9 @@ namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
                 .Returns(() => new[] {"bar"});
             source.Setup(s => s.Get<object>("foo", "bar"))
                 .Returns(() => "foobar");
+            _store.Initialize(source.Object);
 
-            _store.Save(source.Object);
+            _store.Save();
 
             fileContent.Should()
                 .Be("{\"foo\":{\"bar\":\"foobar\"}}", "foo.bar was a string");
@@ -120,8 +126,9 @@ namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
                 .Returns(() => new[] {"bar"});
             source.Setup(s => s.Get<object>("foo", "bar"))
                 .Returns(() => 42);
+            _store.Initialize(source.Object);
 
-            _store.Save(source.Object);
+            _store.Save();
 
             fileContent.Should()
                 .Be("{\"foo\":{\"bar\":42}}", "foo.bar was a string");
@@ -140,8 +147,9 @@ namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
                 .Returns(() => new[] {"bar"});
             source.Setup(s => s.Get<object>("foo", "bar"))
                 .Returns(() => new {foo = "bar"});
+            _store.Initialize(source.Object);
 
-            _store.Save(source.Object);
+            _store.Save();
 
             fileContent.Should()
                 .Be("{\"foo\":{\"bar\":{\"foo\":\"bar\"}}}", "foo.bar was a string");
@@ -160,8 +168,9 @@ namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
                 .Returns(() => new[] {"bar"});
             source.Setup(s => s.Get<object>("foo", "bar"))
                 .Returns(() => new[] {1, 2, 3});
+            _store.Initialize(source.Object);
 
-            _store.Save(source.Object);
+            _store.Save();
 
             fileContent.Should()
                 .Be("{\"foo\":{\"bar\":[1,2,3]}}", "foo.bar was a string");

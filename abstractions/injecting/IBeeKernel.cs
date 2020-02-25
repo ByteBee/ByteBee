@@ -5,11 +5,11 @@ namespace ByteBee.Framework.Injecting.Abstractions
 {
     public interface IBeeKernel
     {
-        void Register<TContract, TImpl>() where TImpl : TContract;
-        void RegisterToSelf<TImpl>();
+        void Register<TAbstraction, TConcrete>() where TConcrete : TAbstraction;
+        void Register(Type abstraction, Type concrete);
+        void RegisterToSelf<TConcrete>();
         void RegisterToObject<TObject>(TObject service);
-        void RegisterLifecycle<TLifecycle>() where TLifecycle : class;
-        void RegisterConfig<TConfig>();
+        void RegisterToMethod<TAbstraction>(Func<IBeeKernel, TAbstraction> callback);
         void RegisterObject(object service);
 
         TContract Resolve<TContract>();

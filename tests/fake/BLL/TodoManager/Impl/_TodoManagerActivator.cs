@@ -1,4 +1,5 @@
 ﻿using System;
+using ByteBee.Framework.Bootstrapping;
 using ByteBee.Framework.Bootstrapping.Abstractions;
 using ByteBee.Framework.Configuring.Abstractions;
 using ByteBee.Framework.Injecting.Abstractions;
@@ -8,7 +9,7 @@ using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract.Messages;
 
 namespace ByteBee.Framework.Tests.Fake.BLL.TodoManager.Impl
 {
-    public class TodoManagerLifecycle : ILifecycle
+    public class TodoManagerActivator : IComponentActivator
     {
         public void Activate()
         {

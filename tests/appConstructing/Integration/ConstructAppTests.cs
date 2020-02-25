@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using ByteBee.Framework.AppConstructing;
+using ByteBee.Framework.Bootstrapping;
 using ByteBee.Framework.Bootstrapping.Abstractions;
 using ByteBee.Framework.Injecting.Abstractions;
 using ByteBee.Framework.Injecting.Ninject;
@@ -43,7 +44,7 @@ namespace ByteBee.Framework.Tests.AppConstructing.Integration
         [Test]
         public void BootstrapperInstantiated()
         {
-            IList<ILifecycle> components = new List<ILifecycle>();
+            IList<IComponentActivator> components = new List<IComponentActivator>();
 
             ConstructApp.Default
                 .AggregateKernel<NinjectKernel>(new Aggregator().Modules)
@@ -81,7 +82,7 @@ namespace ByteBee.Framework.Tests.AppConstructing.Integration
             ConstructApp.Default
                 .AggregateKernel<NinjectKernel>(kernel =>
                 {
-                    kernel.RegisterLifecycle<TodoManagerLifecycle>();
+                    kernel.RegisterComponent<TodoManagerActivator>();
                 })
                 .AggregateBootstrapper()
                 .SkipConfiguration()

@@ -19,12 +19,17 @@ namespace ByteBee.Framework.Configuring
         //    _file = fileAdapter;
         //}
 
-        public void Save(IConfigManager source)
+        public void Initialize(IConfigManager configManager)
         {
             throw new NotImplementedException();
         }
 
-        public void Load(IConfigManager source)
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Load()
         {
             throw new NotImplementedException();
         }

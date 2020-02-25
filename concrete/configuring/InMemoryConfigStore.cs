@@ -2,27 +2,21 @@
 
 namespace ByteBee.Framework.Configuring
 {
-    public class InMemoryConfigStore : IConfigStore
+    public sealed class InMemoryConfigStore : IConfigStore
     {
         private IConfigManager _source;
-
-        public void Save(IConfigManager source)
+        
+        public void Initialize(IConfigManager configManager)
         {
-            _source = source;
+            _source = configManager;
         }
 
-        public void Load(IConfigManager source)
+        public void Save()
         {
-            source.Clear();
+        }
 
-            foreach (string section in _source.GetSections())
-            {
-                foreach (string key in _source.GetKeys(section))
-                {
-                    var value = _source.Get<object>(section,key);
-                    source.Set(section, key, value);
-                }
-            }
+        public void Load()
+        {
         }
     }
 }

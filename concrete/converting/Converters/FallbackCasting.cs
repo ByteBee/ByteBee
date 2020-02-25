@@ -2,21 +2,22 @@
 
 namespace ByteBee.Framework.Converting.Converters
 {
-    public class FallbackCasting : ITypeConverter<string>
+    public class FallbackCasting : ITypeConverter<object>
     {
-        public string GetStandardValue()
+        public object GetStandardValue()
         {
-            throw new System.NotImplementedException();
+            return null;
         }
 
-        public string Convert(object value)
+        public object Convert(object value)
         {
-            throw new System.NotImplementedException();
+            return value;
         }
 
-        public bool TryConvert(object value, out string result)
+        public bool TryConvert(object value, out object result)
         {
-            throw new System.NotImplementedException();
+            result = value;
+            return true;
         }
     }
 }

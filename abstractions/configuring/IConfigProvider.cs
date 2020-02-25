@@ -1,6 +1,6 @@
 ﻿namespace ByteBee.Framework.Configuring.Abstractions
 {
-    public interface IConfigObjectProvider
+    public interface IConfigProvider
     {
         TConfig Get<TConfig>();
     }

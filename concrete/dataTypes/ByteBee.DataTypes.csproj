@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>ByteBee.Configuring.Impl</AssemblyName>
-    <RootNamespace>ByteBee.Framework.Configuring.Impl</RootNamespace>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyName>ByteBee.DataTypes</AssemblyName>
+    <RootNamespace>ByteBee.Framework.DataTypes</RootNamespace>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>ByteBee</Company>
     <Product>ByteBee Framework</Product>
     <Authors>Sergej Kukshaus</Authors>
@@ -16,10 +16,5 @@
     <FileVersion>2.0.1.0</FileVersion>
     <Version>2.0.1</Version>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\contract\configuring\ByteBee.Configuring.Contract.csproj" />
-    <ProjectReference Include="..\converting\ByteBee.Converting.Impl.csproj" />
-  </ItemGroup>
 
 </Project>
