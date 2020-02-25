@@ -39,7 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Messaging", "concre
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "abstractions", "abstractions", "{AB050C6A-4148-4DA1-81E2-C8BA7DF6D34F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.DataTypes", "impl\dataTypes\ByteBee.DataTypes.csproj", "{B1D07CEE-AA58-460F-A552-8E5F40179050}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.DataTypes", "concrete\dataTypes\ByteBee.DataTypes.csproj", "{B1D07CEE-AA58-460F-A552-8E5F40179050}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBee.Framework.Tests", "tests\ByteBee.Framework.Tests.csproj", "{B28BAE27-934A-4E8E-8F5A-A2B3CD54AFFF}"
 EndProject
