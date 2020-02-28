@@ -24,8 +24,8 @@ namespace ByteBee.Framework.AppConstructing
             _kernel.Register<IBootstrapper, StandardBootstrapper>();
 
             _bootstrapper = _kernel.Resolve<IBootstrapper>();
-            _bootstrapper.ActivateAll();
             _bootstrapper.RegisterAll(_kernel);
+            _bootstrapper.ActivateAll();
 
             if (lifecycleCallback != null)
             {
