@@ -3,6 +3,7 @@
 mkdir .build
 for /r %%x in (ByteBee.*.nupkg) do (
 	xcopy /y /b %%x .build
+	del %%x
 )
 
 
