@@ -20,6 +20,16 @@ namespace ByteBee.Framework.Injecting.Ninject
             _kernel = new StandardKernel(modules);
         }
 
+        public NinjectKernel(params IBeeKernelModule[] modules)
+        {
+            _kernel = new StandardKernel();
+
+            foreach (IBeeKernelModule module in modules)
+            {
+                module.Load(this);
+            }
+        }
+
         public void Register<TContract, TImpl>() where TImpl : TContract
         {
             _kernel.Bind<TContract>().To<TImpl>().InSingletonScope();
