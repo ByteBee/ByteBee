@@ -6,5 +6,6 @@ namespace ByteBee.Framework.Messaging
     {
         public Delegate Handler { get; set; }
         public Delegate Filter { get; set; }
+        public Type ResolverType { get; set; }
     }
 }

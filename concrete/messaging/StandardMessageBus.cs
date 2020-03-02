@@ -12,6 +12,8 @@ namespace ByteBee.Framework.Messaging
         private readonly Dictionary<Type, IList<MessageBusActor>> _actors =
             new Dictionary<Type, IList<MessageBusActor>>();
 
+        private Func<Type, object> _resolverCallback;
+
         public int ActorCount => _actors.SelectMany(s => s.Value).Count();
 
         public void Register<TMessage>(Action<TMessage> handler) where TMessage : IMessage
@@ -21,14 +23,14 @@ namespace ByteBee.Framework.Messaging
 
         public void Register<TMessage>(Action<TMessage> handler, Func<TMessage, bool> filter) where TMessage : IMessage
         {
-            ThrowIfHandlerIsNull(handler);
-            ThrowIfFilterIsNull(filter);
+            Throw.IfHandlerIsNull(handler);
+            Throw.IfFilterIsNull(filter);
 
             Type sensorType = typeof(TMessage);
             var actor = new MessageBusActor
             {
                 Handler = handler,
-                Filter = filter
+                Filter = filter,
             };
 
             RegisterMessageType(sensorType);
@@ -36,20 +38,34 @@ namespace ByteBee.Framework.Messaging
             RegisterActor(sensorType, actor);
         }
 
-        private void ThrowIfHandlerIsNull<TMessage>(Action<TMessage> handler)
+        public void SetResolverCallback(Func<Type, object> resolverCallback)
         {
-            if (handler == null)
-            {
-                throw new ArgumentNullException(nameof(handler));
-            }
+            Throw.IfResolverCallbackIsNull(resolverCallback);
+
+            _resolverCallback = resolverCallback;
         }
 
-        private void ThrowIfFilterIsNull<TMessage>(Func<TMessage, bool> filter)
+        public void Register<TResolver, TMessage>(Action<TResolver, TMessage> handler) where TMessage : IMessage
         {
-            if (filter == null)
+            Register(handler, message => true);
+        }
+
+        public void Register<TResolver, TMessage>(Action<TResolver, TMessage> handler, Func<TMessage, bool> filter) where TMessage : IMessage
+        {
+            Throw.IfHandlerIsNull(handler);
+            Throw.IfFilterIsNull(filter);
+
+            Type sensorType = typeof(TMessage);
+            var actor = new MessageBusActor
             {
-                throw new ArgumentNullException(nameof(filter));
-            }
+                Handler = handler,
+                Filter = filter,
+                ResolverType = typeof(TResolver)
+            };
+
+            RegisterMessageType(sensorType);
+            ThrowIfActorIsAlreadyDefined(sensorType, actor);
+            RegisterActor(sensorType, actor);
         }
 
         private void RegisterMessageType(Type sensorType)
@@ -66,7 +82,7 @@ namespace ByteBee.Framework.Messaging
             bool actorIsAlreadyDefined = _actors[sensorType].Any(s => s.Handler == actor.Handler);
             if (actorIsAlreadyDefined)
             {
-                throw new DuplicatedActorException($"Current actor is already registered for the message {sensorType.FullName}");
+                Throw.DuplicatedActorException($"Current actor is already registered for the message {sensorType.FullName}");
             }
         }
 
@@ -80,7 +96,7 @@ namespace ByteBee.Framework.Messaging
             Publish<TMessage>(new object[0]);
         }
 
-        public void Publish<TMessage>(object[] constructorArgs) where TMessage : IMessage
+        public void Publish<TMessage>(params object[] constructorArgs) where TMessage : IMessage
         {
             var message = (TMessage)Activator.CreateInstance(typeof(TMessage), args: constructorArgs);
             Publish(message);
@@ -96,11 +112,22 @@ namespace ByteBee.Framework.Messaging
                 return;
             }
 
+            ThrowIfResolverIsNeededButNoDefined(sensorType);
             ActivateAllActorsForThisSensor(sensorType, message);
         }
 
         public event Action<MessageBusErrorEventArgs> HandlerThrowsException;
         public event Action<MessageBusErrorEventArgs> FilterThrowsException;
+
+        private void ThrowIfResolverIsNeededButNoDefined(Type sensorType)
+        {
+            bool isResolverCallbackNeeded = _actors[sensorType].Any(x => x.ResolverType != null);
+            bool isResolverCallbackMissing = _resolverCallback == null;
+            if (isResolverCallbackNeeded && isResolverCallbackMissing)
+            {
+                Throw.MissingResolverCallbackException();
+            }
+        }
 
         private void ActivateAllActorsForThisSensor<TMessage>(Type sensorType, TMessage message) where TMessage : IMessage
         {
@@ -133,7 +160,16 @@ namespace ByteBee.Framework.Messaging
         {
             try
             {
-                actor.Handler.DynamicInvoke(message);
+                bool isOnyTheFlySubscription = actor.ResolverType != null;
+                if (isOnyTheFlySubscription)
+                {
+                    object resolver = _resolverCallback(actor.ResolverType);
+                    actor.Handler.DynamicInvoke(resolver, message);
+                }
+                else
+                {
+                    actor.Handler.DynamicInvoke(message);    
+                }
             }
             catch (Exception ex)
             {

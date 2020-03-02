@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace ByteBee.Framework.Messaging.Abstractions.Exceptions
 {
     [Serializable]
-    public class DuplicatedActorException : MessagingException
+    public sealed class DuplicatedActorException : MessagingException
     {
         public DuplicatedActorException()
         {
@@ -18,7 +18,7 @@ namespace ByteBee.Framework.Messaging.Abstractions.Exceptions
         {
         }
 
-        protected DuplicatedActorException(SerializationInfo info, StreamingContext context) : base(info, context)
+        private DuplicatedActorException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
     }

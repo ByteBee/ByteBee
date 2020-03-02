@@ -10,11 +10,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ByteBee.Framework.Tests</RootNamespace>
     <AssemblyName>ByteBee.Framework.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -129,6 +130,7 @@
     <Compile Include="Fake\BLL\TodoManager\Contract\ITodoManager.cs" />
     <Compile Include="Fake\BLL\TodoManager\Contract\Messages\TodoMessage.cs" />
     <Compile Include="Fake\BLL\TodoManager\Impl\TodoManager.cs" />
+    <Compile Include="Fake\BLL\TodoManager\Impl\TodoMessageHandler.cs" />
     <Compile Include="Fake\BLL\TodoManager\Impl\_TodoManagerConfig.cs" />
     <Compile Include="Fake\BLL\TodoManager\Impl\_TodoManagerActivator.cs" />
     <Compile Include="Fake\CCL\MadLib\Aggregator.cs" />
@@ -141,6 +143,9 @@
     <Compile Include="Messaging\Default\MessageBusTests\PublishWithArgs.cs" />
     <Compile Include="Messaging\Default\MessageBusTests\Register.cs" />
     <Compile Include="Messaging\Default\MessageBusTests\RegisterWithFilter.cs" />
+    <Compile Include="Messaging\Default\MessageBusTests\RegisterWithResolver.cs" />
+    <Compile Include="Messaging\Default\MessageBusTests\RegisterWithResolverAndFilter.cs" />
+    <Compile Include="Messaging\Default\MessageBusTests\SetResolverCallback.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
