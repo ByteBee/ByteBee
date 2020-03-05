@@ -15,16 +15,26 @@ namespace ByteBee.Framework.Injecting.Ninject
             _kernel = new StandardKernel();
         }
 
-        public NinjectKernel(params INinjectModule[] modules)
+        public NinjectKernel(INinjectModule[] modules)
         {
             _kernel = new StandardKernel(modules);
         }
 
-        public NinjectKernel(params IBeeKernelModule[] modules)
+        public NinjectKernel(IBeeKernelModule[] modules)
         {
             _kernel = new StandardKernel();
 
             foreach (IBeeKernelModule module in modules)
+            {
+                module.Load(this);
+            }
+        }
+
+        public NinjectKernel(INinjectModule[] ninjectModules, IBeeKernelModule[] beeModules)
+        {
+            _kernel = new StandardKernel(ninjectModules);
+
+            foreach (IBeeKernelModule module in beeModules)
             {
                 module.Load(this);
             }
