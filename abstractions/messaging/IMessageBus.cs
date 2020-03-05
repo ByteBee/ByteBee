@@ -7,6 +7,7 @@ namespace ByteBee.Framework.Messaging.Abstractions
     {
         event Action<MessageBusErrorEventArgs> HandlerThrowsException;
         event Action<MessageBusErrorEventArgs> FilterThrowsException;
+        bool BreakOnException { get; set; }
 
         void Register<TMessage>(Action<TMessage> handler) where TMessage : IMessage;
         void Register<TMessage>(Action<TMessage> handler, Func<TMessage, bool> filter) where TMessage : IMessage;

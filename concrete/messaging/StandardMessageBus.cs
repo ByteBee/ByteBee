@@ -1,9 +1,9 @@
-﻿using System;
+﻿using ByteBee.Framework.Messaging.Abstractions;
+using ByteBee.Framework.Messaging.Abstractions.DataClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using ByteBee.Framework.Messaging.Abstractions;
-using ByteBee.Framework.Messaging.Abstractions.DataClasses;
-using ByteBee.Framework.Messaging.Abstractions.Exceptions;
+using System.Reflection;
 
 namespace ByteBee.Framework.Messaging
 {
@@ -15,6 +15,8 @@ namespace ByteBee.Framework.Messaging
         private Func<Type, object> _resolverCallback;
 
         public int ActorCount => _actors.SelectMany(s => s.Value).Count();
+
+        public bool BreakOnException { get; set; }
 
         public void Register<TMessage>(Action<TMessage> handler) where TMessage : IMessage
         {
@@ -171,10 +173,25 @@ namespace ByteBee.Framework.Messaging
                     actor.Handler.DynamicInvoke(message);    
                 }
             }
+            catch (TargetInvocationException tie)
+            {
+                var eventArgs = new MessageBusErrorEventArgs(message, tie.InnerException);
+                HandlerThrowsException?.Invoke(eventArgs);
+
+                if (BreakOnException)
+                {
+                    throw tie.InnerException;
+                }
+            }
             catch (Exception ex)
             {
                 var eventArgs = new MessageBusErrorEventArgs(message, ex);
                 HandlerThrowsException?.Invoke(eventArgs);
+
+                if (BreakOnException)
+                {
+                    throw;
+                }
             }
         }
     }

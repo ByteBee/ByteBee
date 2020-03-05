@@ -84,7 +84,7 @@ namespace ByteBee.Framework.Tests.Messaging.Default.MessageBusTests
         }
 
         [Test]
-        public void PublishGeneric_ActorThrowsAnException_ExceptionEventShouldBeFired()
+        public void PublishGeneric_ActorThrowsAndSwallowAnException_ExceptionEventShouldBeFired()
         {
             _bus.Register<TodoMessage>(m => throw new Exception());
 
@@ -99,6 +99,19 @@ namespace ByteBee.Framework.Tests.Messaging.Default.MessageBusTests
                         args.Exception != null
                     );
             }
+        }
+
+        [Test]
+        public void PublicGeneric_ActorThrowsAnException_ExceptionWillBeForwarded()
+        {
+            _bus.BreakOnException = true;
+            _bus.Register<TodoMessage>(m => throw new ArgumentException("foobar"));
+
+            _bus.Invoking(bus => bus.Publish<TodoMessage>())
+                .Should()
+                .ThrowExactly<ArgumentException>()
+                .WithMessage("*foobar*")
+                .And.StackTrace.Should().NotBeEmpty();
         }
 
         [Test]
