@@ -12,16 +12,13 @@
     <RepositoryUrl>https://github.com/ByteBee/ByteBee</RepositoryUrl>
     <Description>A part of the legendary ByteBee-Framework!</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <AssemblyVersion>2.1.0.0</AssemblyVersion>
-    <FileVersion>2.1.0.0</FileVersion>
-    <Version>2.1.0</Version>
+    <AssemblyVersion>2.1.1.0</AssemblyVersion>
+    <FileVersion>2.1.1.0</FileVersion>
+    <Version>2.1.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\abstractions\appConstructing\ByteBee.AppConstructing.Abstractions.csproj" />
-    <ProjectReference Include="..\bootstrapping\ByteBee.Bootstrapping.csproj" />
-    <ProjectReference Include="..\configuring\ByteBee.Configuring.csproj" />
-    <ProjectReference Include="..\messaging\ByteBee.Messaging.csproj" />
   </ItemGroup>
 
 </Project>

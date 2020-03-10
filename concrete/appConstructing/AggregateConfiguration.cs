@@ -20,9 +20,6 @@ namespace ByteBee.Framework.AppConstructing
 
         public IMessageBusConstructor AggregateConfiguration(Action<IConfigManager> configCallback)
         {
-            _kernel.Register<IConfigManager, StandardConfigManager>();
-            _kernel.Register<IConfigProvider, StandardConfigProvider>();
-
             _source = _kernel.Resolve<IConfigManager>();
 
             _bootstrapper.ConfigureAll(_source);

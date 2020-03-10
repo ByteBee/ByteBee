@@ -21,8 +21,6 @@ namespace ByteBee.Framework.AppConstructing
 
         public IConfigConstructor AggregateBootstrapper(Action<IComponentActivator> lifecycleCallback)
         {
-            _kernel.Register<IBootstrapper, StandardBootstrapper>();
-
             _bootstrapper = _kernel.Resolve<IBootstrapper>();
             _bootstrapper.RegisterAll(_kernel);
             _bootstrapper.ActivateAll();

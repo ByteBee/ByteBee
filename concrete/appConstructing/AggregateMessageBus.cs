@@ -21,8 +21,6 @@ namespace ByteBee.Framework.AppConstructing
 
         public IAppConstructor AggregateMessageBus(Action<IMessageBus> messageBusCallback)
         {
-            _kernel.Register<IMessageBus, StandardMessageBus>();
-
             _messageBus = _kernel.Resolve<IMessageBus>();
 
             _bootstrapper.SubscribeAll(_messageBus);
