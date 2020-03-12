@@ -9,6 +9,8 @@ namespace ByteBee.Framework.Injecting.Ninject
     public sealed class NinjectKernel : IBeeKernel
     {
         private readonly IKernel _kernel;
+        private readonly IBeeKernelModule[] _beeModules;
+        private readonly INinjectModule[] _ninjectModules;
 
         public NinjectKernel()
         {
@@ -18,11 +20,13 @@ namespace ByteBee.Framework.Injecting.Ninject
         public NinjectKernel(INinjectModule[] modules)
         {
             _kernel = new StandardKernel(modules);
+            _ninjectModules = modules;
         }
 
         public NinjectKernel(IBeeKernelModule[] modules)
         {
             _kernel = new StandardKernel();
+            _beeModules = modules;
 
             foreach (IBeeKernelModule module in modules)
             {
@@ -33,6 +37,8 @@ namespace ByteBee.Framework.Injecting.Ninject
         public NinjectKernel(INinjectModule[] ninjectModules, IBeeKernelModule[] beeModules)
         {
             _kernel = new StandardKernel(ninjectModules);
+            _ninjectModules = ninjectModules;
+            _beeModules = beeModules;
 
             foreach (IBeeKernelModule module in beeModules)
             {

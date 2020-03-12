@@ -1,14 +1,22 @@
-﻿using System;
-using ByteBee.Framework.AppConstructing.Abstractions;
+﻿using ByteBee.Framework.AppConstructing.Abstractions;
 using ByteBee.Framework.Injecting.Abstractions;
+using System;
+using System.Collections.Generic;
 
 namespace ByteBee.Framework.AppConstructing
 {
-    public sealed partial class ConstructApp : IKernelConstructor
+    public sealed partial class StandardAppConstructor
     {
         private IBeeKernel _kernel;
 
-        public IBootstrapperConstructor AggregateKernel(IBeeKernel kernel, params IBeeKernelModule[] modules)
+        public IAppConstructor AggregateKernel(IBeeKernel kernel)
+        {
+            _kernel = kernel ?? throw new ArgumentNullException(nameof(kernel));
+            
+            return this;
+        }
+
+        public IAppConstructor AggregateKernel(IBeeKernel kernel, IEnumerable<IBeeKernelModule> modules)
         {
             _kernel = kernel ?? throw new ArgumentNullException(nameof(kernel));
 
@@ -20,13 +28,21 @@ namespace ByteBee.Framework.AppConstructing
             return this;
         }
 
-        public IBootstrapperConstructor AggregateKernel<TKernel>(params IBeeKernelModule[] modules) where TKernel : IBeeKernel
+        public IAppConstructor AggregateKernel<TKernel>(IEnumerable<IBeeKernelModule> modules) where TKernel : IBeeKernel
         {
-            return AggregateKernel<TKernel>(null, modules);
+            return AggregateKernel<TKernel>(modules, null);
         }
 
-        public IBootstrapperConstructor AggregateKernel<TKernel>(Action<IBeeKernel> kernelCallback,
-            params IBeeKernelModule[] modules) where TKernel : IBeeKernel
+        public IAppConstructor AggregateKernel<TKernel>(Action<IBeeKernel> kernelCallback) where TKernel : IBeeKernel
+        {
+            _kernel = Activator.CreateInstance<TKernel>();
+            
+            kernelCallback?.Invoke(_kernel);
+
+            return this;
+        }
+
+        public IAppConstructor AggregateKernel<TKernel>(IEnumerable<IBeeKernelModule> modules, Action<IBeeKernel> kernelCallback) where TKernel : IBeeKernel
         {
             _kernel = Activator.CreateInstance<TKernel>();
 

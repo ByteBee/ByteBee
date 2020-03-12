@@ -1,30 +1,31 @@
-﻿using System;
-using ByteBee.Framework.AppConstructing.Abstractions;
-using ByteBee.Framework.Configuring;
+﻿using ByteBee.Framework.AppConstructing.Abstractions;
+using ByteBee.Framework.AppConstructing.Abstractions.Exceptions;
+using ByteBee.Framework.Bootstrapping.Abstractions;
 using ByteBee.Framework.Configuring.Abstractions;
+using System;
 
 namespace ByteBee.Framework.AppConstructing
 {
-    public sealed partial class ConstructApp : IConfigConstructor
+    public sealed partial class StandardAppConstructor
     {
-        private IConfigManager _source;
-        public IMessageBusConstructor SkipConfiguration()
-        {
-            return this;
-        }
-
-        public IMessageBusConstructor AggregateConfiguration()
+        public IAppConstructor AggregateConfiguration()
         {
             return AggregateConfiguration(null);
         }
 
-        public IMessageBusConstructor AggregateConfiguration(Action<IConfigManager> configCallback)
+        public IAppConstructor AggregateConfiguration(Action<IConfigManager> configCallback)
         {
-            _source = _kernel.Resolve<IConfigManager>();
+            if (_kernel == null)
+            {
+                throw new KernelNotDefinedException();
+            }
 
-            _bootstrapper.ConfigureAll(_source);
 
-            configCallback?.Invoke(_source);
+            var configManager = _kernel.Resolve<IConfigManager>();
+            var bootstrapper = _kernel.Resolve<IBootstrapper>();
+
+            bootstrapper.ConfigureAll(configManager);
+            configCallback?.Invoke(configManager);
 
             return this;
         }

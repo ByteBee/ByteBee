@@ -1,33 +1,32 @@
-﻿using System;
-using ByteBee.Framework.AppConstructing.Abstractions;
-using ByteBee.Framework.Bootstrapping;
+﻿using ByteBee.Framework.AppConstructing.Abstractions;
+using ByteBee.Framework.AppConstructing.Abstractions.Exceptions;
 using ByteBee.Framework.Bootstrapping.Abstractions;
+using System;
 
 namespace ByteBee.Framework.AppConstructing
 {
-    public sealed partial class ConstructApp : IBootstrapperConstructor
+    public sealed partial class StandardAppConstructor
     {
-        private IBootstrapper _bootstrapper;
-
-        //public IConfigConstructor SkipBootstrapper()
-        //{
-        //    return this;
-        //}
-
-        public IConfigConstructor AggregateBootstrapper()
+        public IAppConstructor AggregateBootstrapper()
         {
-            return AggregateBootstrapper(null);
+            return AggregateBootstrapper(b => { });
         }
 
-        public IConfigConstructor AggregateBootstrapper(Action<IComponentActivator> lifecycleCallback)
+        public IAppConstructor AggregateBootstrapper(Action<IComponentActivator> lifecycleCallback)
         {
-            _bootstrapper = _kernel.Resolve<IBootstrapper>();
-            _bootstrapper.RegisterAll(_kernel);
-            _bootstrapper.ActivateAll();
+            if (_kernel == null)
+            {
+                throw new KernelNotDefinedException();
+            }
+
+            var bootstrapper = _kernel.Resolve<IBootstrapper>();
+
+            bootstrapper.RegisterAll(_kernel);
+            bootstrapper.ActivateAll();
 
             if (lifecycleCallback != null)
             {
-                _bootstrapper.Each(lifecycleCallback);
+                bootstrapper.Each(lifecycleCallback);
             }
 
             return this;

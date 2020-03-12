@@ -2,12 +2,8 @@
 
 namespace ByteBee.Framework.AppConstructing
 {
-    public sealed partial class ConstructApp : IAppConstructor
+    public static class ConstructApp
     {
-        private ConstructApp()
-        {
-        }
-
-        public static IKernelConstructor Default => new ConstructApp();
+        public static IAppConstructor Default => new StandardAppConstructor();
     }
 }

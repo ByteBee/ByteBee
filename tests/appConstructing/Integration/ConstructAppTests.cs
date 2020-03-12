@@ -2,8 +2,11 @@
 using ByteBee.Framework.AppConstructing;
 using ByteBee.Framework.Bootstrapping;
 using ByteBee.Framework.Bootstrapping.Abstractions;
+using ByteBee.Framework.Configuring;
+using ByteBee.Framework.Configuring.Abstractions;
 using ByteBee.Framework.Injecting.Abstractions;
 using ByteBee.Framework.Injecting.Ninject;
+using ByteBee.Framework.Messaging;
 using ByteBee.Framework.Messaging.Abstractions;
 using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract.Messages;
 using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Impl;
@@ -47,7 +50,10 @@ namespace ByteBee.Framework.Tests.AppConstructing.Integration
             IList<IComponentActivator> components = new List<IComponentActivator>();
 
             ConstructApp.Default
-                .AggregateKernel<NinjectKernel>(new Aggregator().Modules)
+                .AggregateKernel<NinjectKernel>(Aggregator.Modules, kernel =>
+                {
+                    kernel.Register<IBootstrapper, StandardBootstrapper>();
+                })
                 .AggregateBootstrapper(components.Add);
 
             components.Count.Should().Be(1);
@@ -59,11 +65,15 @@ namespace ByteBee.Framework.Tests.AppConstructing.Integration
             int minTimeThreshold = 0;
 
             ConstructApp.Default
-                .AggregateKernel<NinjectKernel>(new Aggregator().Modules)
-                .AggregateBootstrapper()
-                .AggregateConfiguration(cs =>
+                .AggregateKernel<NinjectKernel>(Aggregator.Modules, kernel =>
                 {
-                    minTimeThreshold = cs.Get<int>(
+                    kernel.Register<IBootstrapper, StandardBootstrapper>();
+                    kernel.Register<IConfigManager, StandardConfigManager>();
+                })
+                .AggregateBootstrapper()
+                .AggregateConfiguration(cfg =>
+                {
+                    minTimeThreshold = cfg.Get<int>(
                         nameof(TodoManagerConfig),
                         nameof(TodoManagerConfig.MinTimeThreshold));
                 });
@@ -82,15 +92,40 @@ namespace ByteBee.Framework.Tests.AppConstructing.Integration
             ConstructApp.Default
                 .AggregateKernel<NinjectKernel>(kernel =>
                 {
+                    kernel.Register<IBootstrapper, StandardBootstrapper>();
+                    kernel.Register<IMessageBus, StandardMessageBus>();
+
                     kernel.RegisterComponent<TodoManagerActivator>();
                 })
                 .AggregateBootstrapper()
-                .SkipConfiguration()
                 .AggregateMessageBus(m => bus = m);
 
             bus.Publish<TodoMessage>();
 
             bus.Should().NotBeNull();
+        }
+
+        [Test]
+        public void Aggregate_KernelConfigBusBootstrapper_NoError()
+        {
+            ConstructApp.Default
+                .AggregateKernel<NinjectKernel>(Aggregator.Modules, kernel =>
+                {
+                    kernel.Register<IConfigManager, StandardConfigManager>();
+                    kernel.Register<IBootstrapper, StandardBootstrapper>();
+                    kernel.Register<IMessageBus, StandardMessageBus>();
+                })
+                .AggregateConfiguration(cfg =>
+                {
+                    //string rootPath = rootPathProvider.GetRootPath();
+                    cfg.Set("path", "root", "/home/root");
+                })
+                .AggregateMessageBus(bus =>
+                {
+                    bus.BreakOnException = true;
+                    //bus.SetResolverCallback(t => _kernel.Resolve(t));
+                })
+                .AggregateBootstrapper();
         }
     }
 }

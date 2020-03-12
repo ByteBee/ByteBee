@@ -1,19 +1,13 @@
-﻿using System;
-using ByteBee.Framework.AppConstructing.Abstractions;
-using ByteBee.Framework.Messaging;
+﻿using ByteBee.Framework.AppConstructing.Abstractions;
+using ByteBee.Framework.AppConstructing.Abstractions.Exceptions;
+using ByteBee.Framework.Bootstrapping.Abstractions;
 using ByteBee.Framework.Messaging.Abstractions;
+using System;
 
 namespace ByteBee.Framework.AppConstructing
 {
-    public sealed partial class ConstructApp : IMessageBusConstructor
+    public sealed partial class StandardAppConstructor
     {
-        private IMessageBus _messageBus;
-
-        public IAppConstructor SkipMessageBus()
-        {
-            return this;
-        }
-
         public IAppConstructor AggregateMessageBus()
         {
             return AggregateMessageBus(null);
@@ -21,11 +15,16 @@ namespace ByteBee.Framework.AppConstructing
 
         public IAppConstructor AggregateMessageBus(Action<IMessageBus> messageBusCallback)
         {
-            _messageBus = _kernel.Resolve<IMessageBus>();
+            if (_kernel == null)
+            {
+                throw new KernelNotDefinedException();
+            }
 
-            _bootstrapper.SubscribeAll(_messageBus);
+            var messageBus = _kernel.Resolve<IMessageBus>();
+            var bootstrapper = _kernel.Resolve<IBootstrapper>();
 
-            messageBusCallback?.Invoke(_messageBus);
+            bootstrapper.SubscribeAll(messageBus);
+            messageBusCallback?.Invoke(messageBus);
 
             return this;
         }
