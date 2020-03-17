@@ -23,8 +23,8 @@ namespace ByteBee.Framework.AppConstructing
             var messageBus = _kernel.Resolve<IMessageBus>();
             var bootstrapper = _kernel.Resolve<IBootstrapper>();
 
-            bootstrapper.SubscribeAll(messageBus);
             messageBusCallback?.Invoke(messageBus);
+            bootstrapper.SubscribeAll(messageBus);
 
             return this;
         }

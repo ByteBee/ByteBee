@@ -23,9 +23,9 @@ namespace ByteBee.Framework.AppConstructing
 
             var configManager = _kernel.Resolve<IConfigManager>();
             var bootstrapper = _kernel.Resolve<IBootstrapper>();
-
-            bootstrapper.ConfigureAll(configManager);
+            
             configCallback?.Invoke(configManager);
+            bootstrapper.ConfigureAll(configManager);
 
             return this;
         }
