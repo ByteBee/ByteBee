@@ -1,4 +1,4 @@
-﻿using ByteBee.Framework.Injecting.Abstractions;
+﻿using ByteBee.Framework.Abstractions.Injecting;
 
 namespace ByteBee.Framework.Tests.Fake.CCL.MadLib
 {

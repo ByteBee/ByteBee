@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using ByteBee.Framework.Bootstrapping.Abstractions;
-using ByteBee.Framework.Configuring.Abstractions;
-using ByteBee.Framework.Injecting.Abstractions;
-using ByteBee.Framework.Messaging.Abstractions;
+using ByteBee.Framework.Abstractions.Bootstrapping;
+using ByteBee.Framework.Abstractions.Configuring;
+using ByteBee.Framework.Abstractions.Injecting;
+using ByteBee.Framework.Abstractions.Messaging;
 
-namespace ByteBee.Framework.AppConstructing.Abstractions
+namespace ByteBee.Framework.Abstractions.AppConstructing
 {
     public interface IAppConstructor
     {

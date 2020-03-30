@@ -1,4 +1,4 @@
-namespace ByteBee.Framework.Converting.Abstractions.Messages
+namespace ByteBee.Framework.Abstractions.Converting.Messages
 {
     public class ConverterMessage
     {

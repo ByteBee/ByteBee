@@ -1,4 +1,4 @@
-namespace ByteBee.Framework.Bootstrapping.Abstractions.Messages
+namespace ByteBee.Framework.Abstractions.Bootstrapping.Messages
 {
     public class BootstrapperMessage
     {

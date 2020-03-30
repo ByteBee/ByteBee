@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace ByteBee.Framework.Injecting.Abstractions.Exceptions
+namespace ByteBee.Framework.Abstractions.Injecting.Exceptions
 {
     [Serializable]
     public class InjectionException : Exception

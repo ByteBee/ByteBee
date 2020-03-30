@@ -1,7 +1,7 @@
 ﻿using System;
-using ByteBee.Framework.Messaging.Abstractions.DataClasses;
+using ByteBee.Framework.Abstractions.Messaging.DataClasses;
 
-namespace ByteBee.Framework.Messaging.Abstractions
+namespace ByteBee.Framework.Abstractions.Messaging
 {
     public interface IMessageBus
     {

@@ -1,6 +1,6 @@
 ﻿namespace ByteBee.Framework.Tests.Converting.Default.DateTimeCastingTests
 {
-    public class GetStandardValue
+    public sealed partial class DateTimeCastingTest
     {
         
     }

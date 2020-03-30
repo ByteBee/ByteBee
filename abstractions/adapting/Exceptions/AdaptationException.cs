@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace ByteBee.Framework.Adapting.Abstractions.Exceptions
+namespace ByteBee.Framework.Abstractions.Adapting.Exceptions
 {
     [Serializable]
     public class AdaptationException : Exception

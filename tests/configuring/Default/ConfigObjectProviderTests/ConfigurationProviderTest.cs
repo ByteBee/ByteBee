@@ -1,5 +1,5 @@
-﻿using ByteBee.Framework.Configuring;
-using ByteBee.Framework.Configuring.Abstractions;
+﻿using ByteBee.Framework.Abstractions.Configuring;
+using ByteBee.Framework.Configuring;
 using Moq;
 using NUnit.Framework;
 

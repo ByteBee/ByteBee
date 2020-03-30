@@ -1,4 +1,4 @@
-﻿namespace ByteBee.Framework.Converting.Abstractions
+﻿namespace ByteBee.Framework.Abstractions.Converting
 {
     public interface ITypeConverter<TResult>
     {

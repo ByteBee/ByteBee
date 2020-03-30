@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ByteBee.Framework.Messaging.Abstractions
+namespace ByteBee.Framework.Abstractions.Messaging
 {
     public interface IMessage
     {

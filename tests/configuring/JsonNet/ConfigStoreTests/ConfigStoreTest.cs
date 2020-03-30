@@ -1,8 +1,8 @@
-﻿using ByteBee.Framework.Adapting.Abstractions;
-using ByteBee.Framework.Configuring.JsonNet;
+﻿using ByteBee.Framework.Configuring.JsonNet;
 using Moq;
 using NUnit.Framework;
 using System;
+using ByteBee.Framework.Abstractions.Adapting;
 
 namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
 {

@@ -1,5 +1,5 @@
-﻿using ByteBee.Framework.Bootstrapping;
-using ByteBee.Framework.Injecting.Abstractions;
+﻿using ByteBee.Framework.Abstractions.Injecting;
+using ByteBee.Framework.Bootstrapping;
 using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Impl;
 
 namespace ByteBee.Framework.Tests.Fake.CCL.MadLib

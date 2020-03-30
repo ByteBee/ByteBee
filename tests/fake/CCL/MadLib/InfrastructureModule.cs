@@ -1,6 +1,6 @@
-﻿using ByteBee.Framework.Configuring;
-using ByteBee.Framework.Configuring.Abstractions;
-using ByteBee.Framework.Injecting.Abstractions;
+﻿using ByteBee.Framework.Abstractions.Configuring;
+using ByteBee.Framework.Abstractions.Injecting;
+using ByteBee.Framework.Configuring;
 
 namespace ByteBee.Framework.Tests.Fake.CCL.MadLib
 {

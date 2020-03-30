@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace ByteBee.Framework.Bootstrapping.Abstractions.Exceptions
+namespace ByteBee.Framework.Abstractions.Bootstrapping.Exceptions
 {
     [Serializable]
     public class BootstrapperException : Exception

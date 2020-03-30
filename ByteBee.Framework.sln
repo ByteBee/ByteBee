@@ -1,47 +1,33 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29728.190
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "concrete", "concrete", "{9A47D7E4-8998-479C-9685-6AD09D9D12E3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Adapting.Abstractions", "abstractions\adapting\ByteBee.Adapting.Abstractions.csproj", "{736F349F-7EDB-4E16-BBA8-B94CCBE2FF1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Adapting", "adapting\ByteBee.Adapting.csproj", "{BBAD6D09-9742-42BB-BBD1-202F5CD224B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.AppConstructing.Abstractions", "abstractions\appConstructing\ByteBee.AppConstructing.Abstractions.csproj", "{78C5CDE0-77E4-46B1-AF36-62C46717252F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.AppConstructing", "appConstructing\ByteBee.AppConstructing.csproj", "{4E1D6414-51F2-4CA8-B193-D1DF7117C28F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Bootstrapping.Abstractions", "abstractions\bootstrapping\ByteBee.Bootstrapping.Abstractions.csproj", "{A5C2D1D1-37C4-4F61-A64D-38BB64D88753}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Bootstrapping", "bootstrapping\ByteBee.Bootstrapping.csproj", "{20B6FF66-ECC6-462C-BC31-9F11B5BCFC0E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring.Abstractions", "abstractions\configuring\ByteBee.Configuring.Abstractions.csproj", "{AEA33B98-9551-44DE-823D-AD86E5353480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring", "configuring\ByteBee.Configuring.csproj", "{3DF62378-9E3F-460E-8646-21B47D3365B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Converting.Abstractions", "abstractions\converting\ByteBee.Converting.Abstractions.csproj", "{6388D296-0EB8-40E6-A171-4076D46AAF3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring.JsonNet", "configuring.jsonNet\ByteBee.Configuring.JsonNet.csproj", "{74667A76-C822-40BC-83B5-FCB953BCC43B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Injecting.Abstractions", "abstractions\injecting\ByteBee.Injecting.Abstractions.csproj", "{AB4D6944-9858-44E0-A347-5E5B31CAADB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Converting", "converting\ByteBee.Converting.csproj", "{EFABFEE8-2C52-47A7-A650-790E31DF6630}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Messaging.Abstractions", "abstractions\messaging\ByteBee.Messaging.Abstractions.csproj", "{0A683060-55D6-4A52-8AFE-AB35E02E3D1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Injecting", "injecting\ByteBee.Injecting.csproj", "{37A16A28-B244-4932-92DE-8490764E3C86}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Adapting", "concrete\adapting\ByteBee.Adapting.csproj", "{BBAD6D09-9742-42BB-BBD1-202F5CD224B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Injecting.Ninject", "injecting.ninject\ByteBee.Injecting.Ninject.csproj", "{89EBFF0C-3D23-4B3E-B10B-99F89B9C9F0C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.AppConstructing", "concrete\appConstructing\ByteBee.AppConstructing.csproj", "{4E1D6414-51F2-4CA8-B193-D1DF7117C28F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Messaging", "messaging\ByteBee.Messaging.csproj", "{2C238F69-CFC6-4E88-8C7D-C718B99425B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Bootstrapping", "concrete\bootstrapping\ByteBee.Bootstrapping.csproj", "{20B6FF66-ECC6-462C-BC31-9F11B5BCFC0E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring", "concrete\configuring\ByteBee.Configuring.csproj", "{3DF62378-9E3F-460E-8646-21B47D3365B4}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Configuring.JsonNet", "concrete\configuring.jsonNet\ByteBee.Configuring.JsonNet.csproj", "{74667A76-C822-40BC-83B5-FCB953BCC43B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Converting", "concrete\converting\ByteBee.Converting.csproj", "{EFABFEE8-2C52-47A7-A650-790E31DF6630}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Injecting", "concrete\injecting\ByteBee.Injecting.csproj", "{37A16A28-B244-4932-92DE-8490764E3C86}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Injecting.Ninject", "concrete\injecting.ninject\ByteBee.Injecting.Ninject.csproj", "{89EBFF0C-3D23-4B3E-B10B-99F89B9C9F0C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Messaging", "concrete\messaging\ByteBee.Messaging.csproj", "{2C238F69-CFC6-4E88-8C7D-C718B99425B1}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "abstractions", "abstractions", "{AB050C6A-4148-4DA1-81E2-C8BA7DF6D34F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.DataTypes", "concrete\dataTypes\ByteBee.DataTypes.csproj", "{B1D07CEE-AA58-460F-A552-8E5F40179050}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.DataTypes", "dataTypes\ByteBee.DataTypes.csproj", "{B1D07CEE-AA58-460F-A552-8E5F40179050}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBee.Framework.Tests", "tests\ByteBee.Framework.Tests.csproj", "{B28BAE27-934A-4E8E-8F5A-A2B3CD54AFFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBee.Abstractions", "abstractions\ByteBee.Abstractions.csproj", "{EB0127E6-9745-440F-B1C0-5B740EB2AAA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,34 +35,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{736F349F-7EDB-4E16-BBA8-B94CCBE2FF1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{736F349F-7EDB-4E16-BBA8-B94CCBE2FF1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{736F349F-7EDB-4E16-BBA8-B94CCBE2FF1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{736F349F-7EDB-4E16-BBA8-B94CCBE2FF1B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{78C5CDE0-77E4-46B1-AF36-62C46717252F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78C5CDE0-77E4-46B1-AF36-62C46717252F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78C5CDE0-77E4-46B1-AF36-62C46717252F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78C5CDE0-77E4-46B1-AF36-62C46717252F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5C2D1D1-37C4-4F61-A64D-38BB64D88753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5C2D1D1-37C4-4F61-A64D-38BB64D88753}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5C2D1D1-37C4-4F61-A64D-38BB64D88753}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5C2D1D1-37C4-4F61-A64D-38BB64D88753}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AEA33B98-9551-44DE-823D-AD86E5353480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AEA33B98-9551-44DE-823D-AD86E5353480}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AEA33B98-9551-44DE-823D-AD86E5353480}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AEA33B98-9551-44DE-823D-AD86E5353480}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6388D296-0EB8-40E6-A171-4076D46AAF3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6388D296-0EB8-40E6-A171-4076D46AAF3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6388D296-0EB8-40E6-A171-4076D46AAF3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6388D296-0EB8-40E6-A171-4076D46AAF3A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB4D6944-9858-44E0-A347-5E5B31CAADB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB4D6944-9858-44E0-A347-5E5B31CAADB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB4D6944-9858-44E0-A347-5E5B31CAADB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB4D6944-9858-44E0-A347-5E5B31CAADB4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A683060-55D6-4A52-8AFE-AB35E02E3D1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A683060-55D6-4A52-8AFE-AB35E02E3D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A683060-55D6-4A52-8AFE-AB35E02E3D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A683060-55D6-4A52-8AFE-AB35E02E3D1F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BBAD6D09-9742-42BB-BBD1-202F5CD224B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BBAD6D09-9742-42BB-BBD1-202F5CD224B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBAD6D09-9742-42BB-BBD1-202F5CD224B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -121,18 +79,15 @@ Global
 		{B28BAE27-934A-4E8E-8F5A-A2B3CD54AFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B28BAE27-934A-4E8E-8F5A-A2B3CD54AFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B28BAE27-934A-4E8E-8F5A-A2B3CD54AFFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB0127E6-9745-440F-B1C0-5B740EB2AAA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0127E6-9745-440F-B1C0-5B740EB2AAA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0127E6-9745-440F-B1C0-5B740EB2AAA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0127E6-9745-440F-B1C0-5B740EB2AAA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{736F349F-7EDB-4E16-BBA8-B94CCBE2FF1B} = {AB050C6A-4148-4DA1-81E2-C8BA7DF6D34F}
-		{78C5CDE0-77E4-46B1-AF36-62C46717252F} = {AB050C6A-4148-4DA1-81E2-C8BA7DF6D34F}
-		{A5C2D1D1-37C4-4F61-A64D-38BB64D88753} = {AB050C6A-4148-4DA1-81E2-C8BA7DF6D34F}
-		{AEA33B98-9551-44DE-823D-AD86E5353480} = {AB050C6A-4148-4DA1-81E2-C8BA7DF6D34F}
-		{6388D296-0EB8-40E6-A171-4076D46AAF3A} = {AB050C6A-4148-4DA1-81E2-C8BA7DF6D34F}
-		{AB4D6944-9858-44E0-A347-5E5B31CAADB4} = {AB050C6A-4148-4DA1-81E2-C8BA7DF6D34F}
-		{0A683060-55D6-4A52-8AFE-AB35E02E3D1F} = {AB050C6A-4148-4DA1-81E2-C8BA7DF6D34F}
 		{BBAD6D09-9742-42BB-BBD1-202F5CD224B8} = {9A47D7E4-8998-479C-9685-6AD09D9D12E3}
 		{4E1D6414-51F2-4CA8-B193-D1DF7117C28F} = {9A47D7E4-8998-479C-9685-6AD09D9D12E3}
 		{20B6FF66-ECC6-462C-BC31-9F11B5BCFC0E} = {9A47D7E4-8998-479C-9685-6AD09D9D12E3}

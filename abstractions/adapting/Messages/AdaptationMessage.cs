@@ -1,4 +1,4 @@
-namespace ByteBee.Framework.Adapting.Abstractions.Messages
+namespace ByteBee.Framework.Abstractions.Adapting.Messages
 {
     public class AdaptationMessage
     {

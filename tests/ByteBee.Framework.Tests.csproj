@@ -153,59 +153,35 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\abstractions\adapting\ByteBee.Adapting.Abstractions.csproj">
-      <Project>{736F349F-7EDB-4E16-BBA8-B94CCBE2FF1B}</Project>
-      <Name>ByteBee.Adapting.Abstractions</Name>
+    <ProjectReference Include="..\abstractions\ByteBee.Abstractions.csproj">
+      <Project>{EB0127E6-9745-440F-B1C0-5B740EB2AAA2}</Project>
+      <Name>ByteBee.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\abstractions\appConstructing\ByteBee.AppConstructing.Abstractions.csproj">
-      <Project>{78C5CDE0-77E4-46B1-AF36-62C46717252F}</Project>
-      <Name>ByteBee.AppConstructing.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\abstractions\bootstrapping\ByteBee.Bootstrapping.Abstractions.csproj">
-      <Project>{A5C2D1D1-37C4-4F61-A64D-38BB64D88753}</Project>
-      <Name>ByteBee.Bootstrapping.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\abstractions\configuring\ByteBee.Configuring.Abstractions.csproj">
-      <Project>{AEA33B98-9551-44DE-823D-AD86E5353480}</Project>
-      <Name>ByteBee.Configuring.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\abstractions\converting\ByteBee.Converting.Abstractions.csproj">
-      <Project>{6388D296-0EB8-40E6-A171-4076D46AAF3A}</Project>
-      <Name>ByteBee.Converting.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\abstractions\injecting\ByteBee.Injecting.Abstractions.csproj">
-      <Project>{AB4D6944-9858-44E0-A347-5E5B31CAADB4}</Project>
-      <Name>ByteBee.Injecting.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\abstractions\messaging\ByteBee.Messaging.Abstractions.csproj">
-      <Project>{0A683060-55D6-4A52-8AFE-AB35E02E3D1F}</Project>
-      <Name>ByteBee.Messaging.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\concrete\appConstructing\ByteBee.AppConstructing.csproj">
+    <ProjectReference Include="..\appConstructing\ByteBee.AppConstructing.csproj">
       <Project>{4E1D6414-51F2-4CA8-B193-D1DF7117C28F}</Project>
       <Name>ByteBee.AppConstructing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\concrete\bootstrapping\ByteBee.Bootstrapping.csproj">
+    <ProjectReference Include="..\bootstrapping\ByteBee.Bootstrapping.csproj">
       <Project>{20B6FF66-ECC6-462C-BC31-9F11B5BCFC0E}</Project>
       <Name>ByteBee.Bootstrapping</Name>
     </ProjectReference>
-    <ProjectReference Include="..\concrete\configuring.jsonNet\ByteBee.Configuring.JsonNet.csproj">
+    <ProjectReference Include="..\configuring.jsonNet\ByteBee.Configuring.JsonNet.csproj">
       <Project>{74667A76-C822-40BC-83B5-FCB953BCC43B}</Project>
       <Name>ByteBee.Configuring.JsonNet</Name>
     </ProjectReference>
-    <ProjectReference Include="..\concrete\configuring\ByteBee.Configuring.csproj">
+    <ProjectReference Include="..\configuring\ByteBee.Configuring.csproj">
       <Project>{3DF62378-9E3F-460E-8646-21B47D3365B4}</Project>
       <Name>ByteBee.Configuring</Name>
     </ProjectReference>
-    <ProjectReference Include="..\concrete\converting\ByteBee.Converting.csproj">
+    <ProjectReference Include="..\converting\ByteBee.Converting.csproj">
       <Project>{EFABFEE8-2C52-47A7-A650-790E31DF6630}</Project>
       <Name>ByteBee.Converting</Name>
     </ProjectReference>
-    <ProjectReference Include="..\concrete\injecting.ninject\ByteBee.Injecting.Ninject.csproj">
+    <ProjectReference Include="..\injecting.ninject\ByteBee.Injecting.Ninject.csproj">
       <Project>{89EBFF0C-3D23-4B3E-B10B-99F89B9C9F0C}</Project>
       <Name>ByteBee.Injecting.Ninject</Name>
     </ProjectReference>
-    <ProjectReference Include="..\concrete\messaging\ByteBee.Messaging.csproj">
+    <ProjectReference Include="..\messaging\ByteBee.Messaging.csproj">
       <Project>{2C238F69-CFC6-4E88-8C7D-C718B99425B1}</Project>
       <Name>ByteBee.Messaging</Name>
     </ProjectReference>

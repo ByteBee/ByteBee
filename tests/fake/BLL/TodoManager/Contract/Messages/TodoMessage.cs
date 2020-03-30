@@ -1,5 +1,5 @@
 ﻿using System;
-using ByteBee.Framework.Messaging.Abstractions;
+using ByteBee.Framework.Abstractions.Messaging;
 
 namespace ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract.Messages
 {

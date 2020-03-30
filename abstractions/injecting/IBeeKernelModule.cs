@@ -1,4 +1,4 @@
-﻿namespace ByteBee.Framework.Injecting.Abstractions
+﻿namespace ByteBee.Framework.Abstractions.Injecting
 {
     public interface IBeeKernelModule
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace ByteBee.Framework.AppConstructing.Abstractions.Exceptions
+namespace ByteBee.Framework.Abstractions.AppConstructing.Exceptions
 {
     [Serializable]
     public sealed class KernelNotDefinedException : AppConstructingException

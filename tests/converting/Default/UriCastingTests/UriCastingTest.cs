@@ -1,6 +1,6 @@
 ﻿using System;
+using ByteBee.Framework.Abstractions.Converting;
 using ByteBee.Framework.Converting;
-using ByteBee.Framework.Converting.Abstractions;
 using NUnit.Framework;
 
 namespace ByteBee.Framework.Tests.Converting.Default.UriCastingTests

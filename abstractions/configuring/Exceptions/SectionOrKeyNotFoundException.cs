@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace ByteBee.Framework.Configuring.Abstractions.Exceptions
+namespace ByteBee.Framework.Abstractions.Configuring.Exceptions
 {
     [Serializable]
     public sealed class SectionOrKeyNotFoundException : ConfigurationException

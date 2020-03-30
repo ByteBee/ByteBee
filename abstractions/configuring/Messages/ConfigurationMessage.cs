@@ -1,4 +1,4 @@
-namespace ByteBee.Framework.Configuring.Abstractions.Messages
+namespace ByteBee.Framework.Abstractions.Configuring.Messages
 {
     public class ConfigurationMessage
     {

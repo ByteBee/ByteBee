@@ -1,4 +1,4 @@
-﻿namespace ByteBee.Framework.Configuring.Abstractions
+﻿namespace ByteBee.Framework.Abstractions.Configuring
 {
     public interface IConfigProvider
     {

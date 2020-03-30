@@ -1,5 +1,5 @@
 ﻿using System;
-using ByteBee.Framework.Configuring.Abstractions.DataClasses;
+using ByteBee.Framework.Abstractions.Configuring.DataClasses;
 
 namespace ByteBee.Framework.Tests.Configuring.Stub
 {

@@ -1,6 +1,6 @@
 ﻿using System;
+using ByteBee.Framework.Abstractions.Messaging.DataClasses;
 using ByteBee.Framework.Messaging;
-using ByteBee.Framework.Messaging.Abstractions.DataClasses;
 using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract.Messages;
 using FluentAssertions;
 using FluentAssertions.Events;

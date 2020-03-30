@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Text;
 
-namespace ByteBee.Framework.Adapting.Abstractions
+namespace ByteBee.Framework.Abstractions.Adapting
 {
     public interface ISystemFile
     {

@@ -1,5 +1,5 @@
 ﻿using System;
-using ByteBee.Framework.Configuring.Abstractions.Exceptions;
+using ByteBee.Framework.Abstractions.Configuring.Exceptions;
 using FluentAssertions;
 using NUnit.Framework;
 
