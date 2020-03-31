@@ -2,6 +2,8 @@
 using Ninject.Modules;
 using System;
 using System.Collections.Generic;
+using ByteBee.Framework.Abstractions.Bootstrapping;
+using ByteBee.Framework.Abstractions.Configuring;
 using ByteBee.Framework.Abstractions.Injecting;
 
 namespace ByteBee.Framework.Injecting.Ninject
@@ -74,21 +76,21 @@ namespace ByteBee.Framework.Injecting.Ninject
             });
         }
 
-        //public void RegisterComponent<TComponent>() where TComponent : class
-        //{
-        //    _kernel.Bind<IComponentActivator>().To(typeof(TComponent)).InSingletonScope();
-        //}
+        public void RegisterComponent<TComponent>() where TComponent : IComponentActivator
+        {
+            _kernel.Bind<IComponentActivator>().To(typeof(TComponent)).InSingletonScope();
+        }
 
-        //public void RegisterConfig<TConfig>()
-        //{
-        //    _kernel.Bind<TConfig>()
-        //        .ToMethod(ctx =>
-        //        {
-        //            var configProvider = ctx.Kernel.Get<IConfigObjectProvider>();
-        //            return configProvider.Get<TConfig>();
-        //        })
-        //        .InSingletonScope();
-        //}
+        public void RegisterConfig<TConfig>()
+        {
+            _kernel.Bind<TConfig>()
+                .ToMethod(ctx =>
+                {
+                    var configProvider = ctx.Kernel.Get<IConfigProvider>();
+                    return configProvider.Get<TConfig>();
+                })
+                .InSingletonScope();
+        }
 
         public void RegisterObject(object service)
         {

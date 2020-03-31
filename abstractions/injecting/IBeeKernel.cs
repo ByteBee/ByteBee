@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ByteBee.Framework.Abstractions.Bootstrapping;
 
 namespace ByteBee.Framework.Abstractions.Injecting
 {
@@ -16,5 +17,8 @@ namespace ByteBee.Framework.Abstractions.Injecting
         object Resolve(Type service);
         IEnumerable<TContract> ResolveAll<TContract>();
         IEnumerable<object> ResolveAll(Type services);
+
+        void RegisterComponent<TComponent>() where TComponent : IComponentActivator;
+        void RegisterConfig<TConfig>();
     }
 }
