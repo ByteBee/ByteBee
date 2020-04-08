@@ -71,18 +71,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConstructing\Integration\ConstructAppTests.cs" />
+    <Compile Include="Configuring\Standard\ConfigManagerTests\GetOrDefault.cs" />
+    <Compile Include="Configuring\Standard\ConfigManagerTests\GetOrFallback.cs" />
+    <Compile Include="Configuring\Standard\ConfigManagerTests\GetOrFallbackFunc.cs" />
     <Compile Include="Configuring\JsonNet\ConfigStoreTests\ConfigStoreTest.cs" />
     <Compile Include="Configuring\JsonNet\ConfigStoreTests\Load.cs" />
     <Compile Include="Configuring\JsonNet\ConfigStoreTests\Save.cs" />
-    <Compile Include="Configuring\Default\ConfigObjectProviderTests\ConfigurationProviderTest.cs" />
-    <Compile Include="Configuring\Default\ConfigObjectProviderTests\GetOrDefault.cs" />
-    <Compile Include="Configuring\Default\ConfigManagerTests\Clear.cs" />
-    <Compile Include="Configuring\Default\ConfigManagerTests\ConfigManagerTest.cs" />
-    <Compile Include="Configuring\Default\ConfigManagerTests\Get.cs" />
-    <Compile Include="Configuring\Default\ConfigManagerTests\GetKeys.cs" />
-    <Compile Include="Configuring\Default\ConfigManagerTests\GetSections.cs" />
-    <Compile Include="Configuring\Default\ConfigManagerTests\Set.cs" />
-    <Compile Include="Configuring\Default\ConfigManagerTests\TryGet.cs" />
+    <Compile Include="Configuring\Standard\ConfigObjectProviderTests\ConfigurationProviderTest.cs" />
+    <Compile Include="Configuring\Standard\ConfigObjectProviderTests\GetOrDefault.cs" />
+    <Compile Include="Configuring\Standard\ConfigManagerTests\Clear.cs" />
+    <Compile Include="Configuring\Standard\ConfigManagerTests\ConfigManagerTest.cs" />
+    <Compile Include="Configuring\Standard\ConfigManagerTests\Get.cs" />
+    <Compile Include="Configuring\Standard\ConfigManagerTests\GetKeys.cs" />
+    <Compile Include="Configuring\Standard\ConfigManagerTests\GetSections.cs" />
+    <Compile Include="Configuring\Standard\ConfigManagerTests\Set.cs" />
+    <Compile Include="Configuring\Standard\ConfigManagerTests\TryGet.cs" />
     <Compile Include="Configuring\Stub\TestConfig.cs" />
     <Compile Include="Converting\Default\BooleanCastingTests\BooleanCastingTests.cs" />
     <Compile Include="Converting\Default\BooleanCastingTests\Convert.cs" />

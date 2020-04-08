@@ -79,11 +79,21 @@ namespace ByteBee.Framework.Configuring
 
         public TResult GetOrDefault<TResult>(string section, string key)
         {
+            return GetOrFallback(section, key, () => default(TResult));
+        }
+
+        public TResult GetOrFallback<TResult>(string section, string key, TResult fallback)
+        {
+            return GetOrFallback(section, key, () => fallback);
+        }
+
+        public TResult GetOrFallback<TResult>(string section, string key, Func<TResult> fallback)
+        {
             bool isEntryDefined = TryGet(section, key, out TResult obj);
 
             if (isEntryDefined == false)
             {
-                return default(TResult);
+                return fallback();
             }
 
             return obj;

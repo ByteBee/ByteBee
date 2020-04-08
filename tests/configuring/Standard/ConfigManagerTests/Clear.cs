@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Tests.Configuring.Default.ConfigManagerTests
+namespace ByteBee.Framework.Tests.Configuring.Standard.ConfigManagerTests
 {
     public sealed partial class ConfigManagerTest
     {

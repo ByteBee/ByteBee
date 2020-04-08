@@ -3,7 +3,7 @@ using FluentAssertions;
 using FluentAssertions.Execution;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Tests.Configuring.Default.ConfigObjectProviderTests
+namespace ByteBee.Framework.Tests.Configuring.Standard.ConfigObjectProviderTests
 {
     public sealed partial class ConfigObjectProviderTest
     {

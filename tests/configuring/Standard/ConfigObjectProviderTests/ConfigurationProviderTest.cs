@@ -3,7 +3,7 @@ using ByteBee.Framework.Configuring;
 using Moq;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Tests.Configuring.Default.ConfigObjectProviderTests
+namespace ByteBee.Framework.Tests.Configuring.Standard.ConfigObjectProviderTests
 {
     [TestFixture]
     public sealed partial class ConfigObjectProviderTest

@@ -3,7 +3,7 @@ using ByteBee.Framework.Configuring;
 using ByteBee.Framework.Converting;
 using NUnit.Framework;
 
-namespace ByteBee.Framework.Tests.Configuring.Default.ConfigManagerTests
+namespace ByteBee.Framework.Tests.Configuring.Standard.ConfigManagerTests
 {
     [TestFixture]
     public sealed partial class ConfigManagerTest
