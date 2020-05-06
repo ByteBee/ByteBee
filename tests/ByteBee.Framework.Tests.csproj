@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -130,8 +130,8 @@
     <Compile Include="Converting\Default\UriCastingTests\ConvertFrom.cs" />
     <Compile Include="Converting\Default\UriCastingTests\TryConvertFrom.cs" />
     <Compile Include="Converting\Default\UriCastingTests\UriCastingTest.cs" />
-    <Compile Include="Fake\BLL\TodoManager\Contract\ITodoManager.cs" />
-    <Compile Include="Fake\BLL\TodoManager\Contract\Messages\TodoMessage.cs" />
+    <Compile Include="DataTypes\BeeEnumTests\BeeEnumTest.cs" />
+    <Compile Include="DataTypes\BeeEnumTests\ByNameOrValue.cs" />
     <Compile Include="Stubbing\LogicLayer\TodoManager\Abstractions\ITodoManager.cs" />
     <Compile Include="Stubbing\LogicLayer\TodoManager\Abstractions\Messages\TodoMessage.cs" />
     <Compile Include="Stubbing\LogicLayer\TodoManager\Concrete\TodoManager.cs" />
@@ -141,6 +141,7 @@
     <Compile Include="Stubbing\CrossCuttingLayer\MadLib\Aggregator.cs" />
     <Compile Include="Stubbing\CrossCuttingLayer\MadLib\InfrastructureModule.cs" />
     <Compile Include="Stubbing\CrossCuttingLayer\MadLib\LogicModule.cs" />
+    <Compile Include="Stubbing\DataLayer\Enums\TaskPriority.cs" />
     <Compile Include="Messaging\Default\MessageBusTests\Ctor.cs" />
     <Compile Include="Messaging\Default\MessageBusTests\MessageBusTest.cs" />
     <Compile Include="Messaging\Default\MessageBusTests\PublishGeneric.cs" />
@@ -182,6 +183,10 @@
       <Project>{EFABFEE8-2C52-47A7-A650-790E31DF6630}</Project>
       <Name>ByteBee.Converting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\dataTypes\ByteBee.DataTypes.csproj">
+      <Project>{B1D07CEE-AA58-460F-A552-8E5F40179050}</Project>
+      <Name>ByteBee.DataTypes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\injecting.ninject\ByteBee.Injecting.Ninject.csproj">
       <Project>{89EBFF0C-3D23-4B3E-B10B-99F89B9C9F0C}</Project>
       <Name>ByteBee.Injecting.Ninject</Name>
@@ -191,9 +196,7 @@
       <Name>ByteBee.Messaging</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Fake\DL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

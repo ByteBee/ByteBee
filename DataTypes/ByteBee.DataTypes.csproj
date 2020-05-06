@@ -18,4 +18,8 @@
         <PackageLicenseUrl>https://github.com/ByteBee/ByteBee/blob/master/LICENSE.md</PackageLicenseUrl>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\abstractions\ByteBee.Abstractions.csproj" />
+    </ItemGroup>
+
 </Project>

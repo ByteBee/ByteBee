@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using ByteBee.Framework.Abstractions.DataTypes.Exceptions;
 
 namespace ByteBee.Framework.DataTypes
 {
@@ -41,13 +42,13 @@ namespace ByteBee.Framework.DataTypes
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentNullException(nameof(name));
+                throw new ArgumentException(nameof(name));
             }
 
             TEnum result = GetAll().SingleOrDefault(item => string.Equals(item.Name, name, StringComparison.OrdinalIgnoreCase));
             if (result == null)
             {
-                throw new ArgumentNullException($"No {typeof(TEnum).Name} with name \"{name}\" found.");
+                throw new EnumValueNotFoundException($"No {typeof(TEnum).Name} with name \"{name}\" found.");
             }
 
             return result;
@@ -58,9 +59,36 @@ namespace ByteBee.Framework.DataTypes
             TEnum result = GetAll().SingleOrDefault(item => EqualityComparer<TValue>.Default.Equals(item.Value, value));
             if (result == null)
             {
-                throw new ArgumentNullException($"No {typeof(TEnum).Name} with value {value} found.");
+                throw new EnumValueNotFoundException($"No {typeof(TEnum).Name} with value {value} found.");
             }
+
             return result;
+        }
+
+        public static TEnum ByNameOrValue(string nameOrValue)
+        {
+            if (string.IsNullOrWhiteSpace(nameOrValue))
+            {
+                throw new ArgumentException(nameOrValue);
+            }
+
+            TEnum[] values = GetAll();
+
+            TEnum output = values.SingleOrDefault(item =>
+            {
+                bool foundByName = string.Equals(item.Name, nameOrValue, StringComparison.OrdinalIgnoreCase);
+                bool foundByValue = string.Equals(item.Value.ToString(), nameOrValue, StringComparison.OrdinalIgnoreCase);
+                bool doesElementMatch = foundByName || foundByValue;
+
+                return doesElementMatch;
+            });
+
+            if (output == null)
+            {
+                throw new EnumValueNotFoundException($"No {typeof(TEnum).Name} with name or value {nameOrValue} found.");
+            }
+
+            return output;
         }
 
         public static TEnum ByValue(TValue value, TEnum defaultValue)
