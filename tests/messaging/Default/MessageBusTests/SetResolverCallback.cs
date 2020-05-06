@@ -1,7 +1,7 @@
 ﻿using System;
 using ByteBee.Framework.Abstractions.Messaging.Exceptions;
-using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract.Messages;
-using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Impl;
+using ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Abstractions.Messages;
+using ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Concrete;
 using FluentAssertions;
 using NUnit.Framework;
 

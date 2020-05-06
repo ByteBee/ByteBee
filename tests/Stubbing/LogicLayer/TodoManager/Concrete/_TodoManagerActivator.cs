@@ -3,11 +3,10 @@ using ByteBee.Framework.Abstractions.Bootstrapping;
 using ByteBee.Framework.Abstractions.Configuring;
 using ByteBee.Framework.Abstractions.Injecting;
 using ByteBee.Framework.Abstractions.Messaging;
-using ByteBee.Framework.Bootstrapping;
-using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract;
-using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract.Messages;
+using ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Abstractions;
+using ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Abstractions.Messages;
 
-namespace ByteBee.Framework.Tests.Fake.BLL.TodoManager.Impl
+namespace ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Concrete
 {
     public class TodoManagerActivator : IComponentActivator
     {

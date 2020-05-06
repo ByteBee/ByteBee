@@ -1,5 +1,5 @@
 ﻿using System;
-using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract.Messages;
+using ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Abstractions.Messages;
 using FluentAssertions;
 using NUnit.Framework;
 

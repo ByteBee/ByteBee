@@ -1,6 +1,6 @@
 ﻿using ByteBee.Framework.Abstractions.Injecting;
 using ByteBee.Framework.Bootstrapping;
-using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Impl;
+using ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Concrete;
 
 namespace ByteBee.Framework.Tests.Fake.CCL.MadLib
 {

@@ -1,7 +1,7 @@
 ﻿using System;
-using ByteBee.Framework.Tests.Fake.BLL.TodoManager.Contract;
+using ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Abstractions;
 
-namespace ByteBee.Framework.Tests.Fake.BLL.TodoManager.Impl
+namespace ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Concrete
 {
     public class TodoManager : ITodoManager
     {

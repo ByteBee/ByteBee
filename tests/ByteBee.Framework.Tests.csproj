@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -132,13 +132,15 @@
     <Compile Include="Converting\Default\UriCastingTests\UriCastingTest.cs" />
     <Compile Include="Fake\BLL\TodoManager\Contract\ITodoManager.cs" />
     <Compile Include="Fake\BLL\TodoManager\Contract\Messages\TodoMessage.cs" />
-    <Compile Include="Fake\BLL\TodoManager\Impl\TodoManager.cs" />
-    <Compile Include="Fake\BLL\TodoManager\Impl\TodoMessageHandler.cs" />
-    <Compile Include="Fake\BLL\TodoManager\Impl\_TodoManagerConfig.cs" />
-    <Compile Include="Fake\BLL\TodoManager\Impl\_TodoManagerActivator.cs" />
-    <Compile Include="Fake\CCL\MadLib\Aggregator.cs" />
-    <Compile Include="Fake\CCL\MadLib\InfrastructureModule.cs" />
-    <Compile Include="Fake\CCL\MadLib\LogicModule.cs" />
+    <Compile Include="Stubbing\LogicLayer\TodoManager\Abstractions\ITodoManager.cs" />
+    <Compile Include="Stubbing\LogicLayer\TodoManager\Abstractions\Messages\TodoMessage.cs" />
+    <Compile Include="Stubbing\LogicLayer\TodoManager\Concrete\TodoManager.cs" />
+    <Compile Include="Stubbing\LogicLayer\TodoManager\Concrete\TodoMessageHandler.cs" />
+    <Compile Include="Stubbing\LogicLayer\TodoManager\Concrete\_TodoManagerConfig.cs" />
+    <Compile Include="Stubbing\LogicLayer\TodoManager\Concrete\_TodoManagerActivator.cs" />
+    <Compile Include="Stubbing\CrossCuttingLayer\MadLib\Aggregator.cs" />
+    <Compile Include="Stubbing\CrossCuttingLayer\MadLib\InfrastructureModule.cs" />
+    <Compile Include="Stubbing\CrossCuttingLayer\MadLib\LogicModule.cs" />
     <Compile Include="Messaging\Default\MessageBusTests\Ctor.cs" />
     <Compile Include="Messaging\Default\MessageBusTests\MessageBusTest.cs" />
     <Compile Include="Messaging\Default\MessageBusTests\PublishGeneric.cs" />
