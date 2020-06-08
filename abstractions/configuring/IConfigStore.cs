@@ -1,6 +1,8 @@
-﻿namespace ByteBee.Framework.Abstractions.Configuring
+﻿using System;
+
+namespace ByteBee.Framework.Abstractions.Configuring
 {
-    public interface IConfigStore
+    public interface IConfigStore : IDisposable
     {
         void Initialize(IConfigManager configManager);
         void Save();

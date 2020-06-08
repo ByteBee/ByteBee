@@ -4,8 +4,16 @@ namespace ByteBee.Framework.AppConstructing
 {
     public sealed partial class StandardAppConstructor : IAppConstructor
     {
-        internal StandardAppConstructor()
+        public StandardAppConstructor()
         {
+        }
+        
+        public void Dispose()
+        {
+            DisposeConfiguration();
+            DisposeMessageBus();
+            DisposeBootstrapper();
+            DisposeKernel();
         }
     }
 }

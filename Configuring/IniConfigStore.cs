@@ -3,7 +3,7 @@ using ByteBee.Framework.Abstractions.Configuring;
 
 namespace ByteBee.Framework.Configuring
 {
-    public class IniConfigStore : IConfigStore
+    internal class IniConfigStore : IConfigStore
     {
         private readonly string _pathToConfigFile;
         //private ISystemFile _file;
@@ -32,6 +32,10 @@ namespace ByteBee.Framework.Configuring
         public void Load()
         {
             throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
         }
     }
 }

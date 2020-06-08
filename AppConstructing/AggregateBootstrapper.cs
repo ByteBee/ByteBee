@@ -31,5 +31,12 @@ namespace ByteBee.Framework.AppConstructing
 
             return this;
         }
+
+        private void DisposeBootstrapper()
+        {
+            var bootstrapper = _kernel.Resolve<IBootstrapper>();
+            bootstrapper.DeactivateAll();
+            bootstrapper.Dispose();
+        }
     }
 }

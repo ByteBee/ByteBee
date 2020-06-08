@@ -109,5 +109,10 @@ namespace ByteBee.Framework.Configuring.JsonNet
                 }
             }
         }
+
+        public void Dispose()
+        {
+            _configManager?.Dispose();
+        }
     }
 }

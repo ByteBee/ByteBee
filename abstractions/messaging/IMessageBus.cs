@@ -3,7 +3,7 @@ using ByteBee.Framework.Abstractions.Messaging.DataClasses;
 
 namespace ByteBee.Framework.Abstractions.Messaging
 {
-    public interface IMessageBus
+    public interface IMessageBus : IDisposable
     {
         event Action<MessageBusErrorEventArgs> HandlerThrowsException;
         event Action<MessageBusErrorEventArgs> FilterThrowsException;

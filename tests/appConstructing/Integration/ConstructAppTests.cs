@@ -77,7 +77,7 @@ namespace ByteBee.Framework.Tests.AppConstructing.Integration
                         nameof(TodoManagerConfig),
                         nameof(TodoManagerConfig.MinTimeThreshold));
                 });
-
+            
             using (new AssertionScope())
             {
                 minTimeThreshold.Should().Be(15);

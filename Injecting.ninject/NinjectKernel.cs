@@ -116,5 +116,20 @@ namespace ByteBee.Framework.Injecting.Ninject
         {
             return _kernel.GetAll(services);
         }
+
+        public void Dispose()
+        {
+            for (int i = 0; i < _ninjectModules?.Length; i++)
+            {
+                _ninjectModules[i] = null;
+            }
+
+            for (int i = 0; i < _beeModules?.Length; i++)
+            {
+                _beeModules[i] = null;
+            }
+
+            _kernel?.Dispose();
+        }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ByteBee.Framework.Abstractions.Configuring
 {
-    public interface IConfigManager
+    public interface IConfigManager : IDisposable
     {
         IConfigStore Store { get; }
         IEnumerable<string> GetSections();

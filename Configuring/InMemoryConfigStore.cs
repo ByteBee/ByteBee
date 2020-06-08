@@ -18,5 +18,10 @@ namespace ByteBee.Framework.Configuring
         public void Load()
         {
         }
+
+        public void Dispose()
+        {
+            _source?.Dispose();
+        }
     }
 }

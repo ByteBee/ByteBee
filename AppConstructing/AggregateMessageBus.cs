@@ -28,5 +28,11 @@ namespace ByteBee.Framework.AppConstructing
 
             return this;
         }
+
+        private void DisposeMessageBus()
+        {
+            var messageBus = _kernel.Resolve<IMessageBus>();
+            messageBus.Dispose();
+        }
     }
 }

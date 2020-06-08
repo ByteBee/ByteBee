@@ -5,7 +5,7 @@ using ByteBee.Framework.Abstractions.Messaging;
 
 namespace ByteBee.Framework.Abstractions.Bootstrapping
 {
-    public interface IBootstrapper
+    public interface IBootstrapper : IDisposable
     {
         void ActivateAll();
         void DeactivateAll();

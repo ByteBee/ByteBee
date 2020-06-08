@@ -19,8 +19,7 @@ namespace ByteBee.Framework.AppConstructing
             {
                 throw new KernelNotDefinedException();
             }
-
-
+            
             var configManager = _kernel.Resolve<IConfigManager>();
             var bootstrapper = _kernel.Resolve<IBootstrapper>();
             
@@ -28,6 +27,12 @@ namespace ByteBee.Framework.AppConstructing
             bootstrapper.ConfigureAll(configManager);
 
             return this;
+        }
+
+        private void DisposeConfiguration()
+        {
+            var config = _kernel.Resolve<IConfigManager>();
+            config.Dispose();
         }
     }
 }

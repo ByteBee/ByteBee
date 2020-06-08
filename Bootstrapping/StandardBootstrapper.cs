@@ -46,5 +46,10 @@ namespace ByteBee.Framework.Bootstrapping
         {
             _lifecycles.ForEach(callback);
         }
+
+        public void Dispose()
+        {
+            _lifecycles.Clear();
+        }
     }
 }

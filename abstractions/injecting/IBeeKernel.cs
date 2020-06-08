@@ -4,7 +4,7 @@ using ByteBee.Framework.Abstractions.Bootstrapping;
 
 namespace ByteBee.Framework.Abstractions.Injecting
 {
-    public interface IBeeKernel
+    public interface IBeeKernel : IDisposable
     {
         void Register<TAbstraction, TConcrete>() where TConcrete : TAbstraction;
         void Register(Type abstraction, Type concrete);

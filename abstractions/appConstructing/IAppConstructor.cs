@@ -7,7 +7,7 @@ using ByteBee.Framework.Abstractions.Messaging;
 
 namespace ByteBee.Framework.Abstractions.AppConstructing
 {
-    public interface IAppConstructor
+    public interface IAppConstructor: IDisposable
     {
         IAppConstructor AggregateKernel(IBeeKernel kernel);
         IAppConstructor AggregateKernel(IBeeKernel kernel, IEnumerable<IBeeKernelModule> modules);

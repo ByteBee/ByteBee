@@ -194,5 +194,14 @@ namespace ByteBee.Framework.Messaging
                 }
             }
         }
+
+        public void Dispose()
+        {
+            HandlerThrowsException = null;
+            FilterThrowsException = null;
+
+            _actors.SelectMany(actor => actor.Value).ToList()
+                .ForEach(a => a.Dispose());
+        }
     }
 }

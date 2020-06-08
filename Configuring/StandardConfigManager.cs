@@ -153,5 +153,10 @@ namespace ByteBee.Framework.Configuring
                 throw new ArgumentException(nameof(key));
             }
         }
+
+        public void Dispose()
+        {
+            Clear();
+        }
     }
 }

@@ -55,5 +55,10 @@ namespace ByteBee.Framework.AppConstructing
 
             return this;
         }
+
+        private void DisposeKernel()
+        {
+            _kernel.Dispose();
+        }
     }
 }
