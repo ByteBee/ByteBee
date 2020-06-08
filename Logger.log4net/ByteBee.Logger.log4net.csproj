@@ -2,8 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <AssemblyName>ByteBee.Injecting.Ninject</AssemblyName>
-        <RootNamespace>ByteBee.Framework.Injecting.Ninject</RootNamespace>
+        <AssemblyName>ByteBee.Logging.log4net</AssemblyName>
+        <RootNamespace>ByteBee.Framework.Logging.log4net</RootNamespace>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Company>ByteBee</Company>
         <Product>ByteBee Framework</Product>
@@ -15,16 +15,14 @@
         <AssemblyVersion>2.2.3.0</AssemblyVersion>
         <FileVersion>2.2.3.0</FileVersion>
         <Version>2.2.3</Version>
-        <PackageTags>dependency, injection, injection, ioc, kernel, ninject</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ninject" Version="3.3.4" />
+        <PackageReference Include="log4net" Version="2.0.8" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\abstractions\ByteBee.Abstractions.csproj" />
-        <ProjectReference Include="..\injecting\ByteBee.Injecting.csproj" />
     </ItemGroup>
 
 </Project>

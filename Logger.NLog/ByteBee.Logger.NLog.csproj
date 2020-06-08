@@ -2,8 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <AssemblyName>ByteBee.Injecting.Ninject</AssemblyName>
-        <RootNamespace>ByteBee.Framework.Injecting.Ninject</RootNamespace>
+        <AssemblyName>ByteBee.Logging.NLog</AssemblyName>
+        <RootNamespace>ByteBee.Framework.Logging.NLog</RootNamespace>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Company>ByteBee</Company>
         <Product>ByteBee Framework</Product>
@@ -11,20 +11,18 @@
         <PackageProjectUrl>https://www.bytebee.de/</PackageProjectUrl>
         <RepositoryUrl>https://github.com/ByteBee/ByteBee</RepositoryUrl>
         <Description>A part of the legendary ByteBee-Framework!</Description>
-        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
         <AssemblyVersion>2.2.3.0</AssemblyVersion>
         <FileVersion>2.2.3.0</FileVersion>
         <Version>2.2.3</Version>
-        <PackageTags>dependency, injection, injection, ioc, kernel, ninject</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ninject" Version="3.3.4" />
+        <PackageReference Include="NLog" Version="4.7.2" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\abstractions\ByteBee.Abstractions.csproj" />
-        <ProjectReference Include="..\injecting\ByteBee.Injecting.csproj" />
     </ItemGroup>
 
 </Project>
