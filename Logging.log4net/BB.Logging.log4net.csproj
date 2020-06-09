@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AssemblyName>ByteBee.Logging.log4net</AssemblyName>
+        <RootNamespace>ByteBee.Framework.Logging.log4net</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Company>ByteBee</Company>
+        <Product>ByteBee Framework</Product>
+        <Authors>Sergej Kukshaus</Authors>
+        <PackageProjectUrl>https://www.bytebee.de/</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/ByteBee/ByteBee</RepositoryUrl>
+        <Description>A part of the legendary ByteBee-Framework!</Description>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <AssemblyVersion>2.3.0.0</AssemblyVersion>
+        <FileVersion>2.3.0.0</FileVersion>
+        <Version>2.3.0</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="log4net" Version="2.0.8" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Logging.Abstractions\BB.Logging.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

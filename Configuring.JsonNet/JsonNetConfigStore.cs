@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using ByteBee.Framework.Abstractions.Adapting;
-using ByteBee.Framework.Abstractions.Configuring;
-using ByteBee.Framework.Abstractions.Configuring.Exceptions;
 using ByteBee.Framework.Adapting;
+using ByteBee.Framework.Adapting.Abstractions;
+using ByteBee.Framework.Configuring.Abstractions;
+using ByteBee.Framework.Configuring.Abstractions.Exceptions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

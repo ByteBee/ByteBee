@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AssemblyName>ByteBee.Logging.AspNetCore</AssemblyName>
+        <RootNamespace>ByteBee.Framework.Logging.AspNetCore</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Company>ByteBee</Company>
+        <Product>ByteBee Framework</Product>
+        <Authors>Sergej Kukshaus</Authors>
+        <PackageProjectUrl>https://www.bytebee.de/</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/ByteBee/ByteBee</RepositoryUrl>
+        <Description>A part of the legendary ByteBee-Framework!</Description>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<AssemblyVersion>2.3.0.0</AssemblyVersion>
+        <FileVersion>2.3.0.0</FileVersion>
+        <Version>2.3.0</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Logging.Abstractions\BB.Logging.Abstractions.csproj" />
+    </ItemGroup>
+
+
+</Project>

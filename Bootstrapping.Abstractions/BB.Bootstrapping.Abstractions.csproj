@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>netstandard2.0</TargetFramework>
+	  <AssemblyName>ByteBee.Bootstrapping.Abstractions</AssemblyName>
+	  <RootNamespace>ByteBee.Framework.Bootstrapping.Abstractions</RootNamespace>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <Company>ByteBee</Company>
+	  <Product>ByteBee Framework</Product>
+	  <Authors>Sergej Kukshaus</Authors>
+	  <PackageProjectUrl>https://www.bytebee.de/</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/ByteBee/ByteBee</RepositoryUrl>
+	  <Description>A part of the legendary ByteBee-Framework!</Description>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <AssemblyVersion>2.3.0.0</AssemblyVersion>
+	  <FileVersion>2.3.0.0</FileVersion>
+	  <Version>2.3.0</Version>
+  </PropertyGroup>
+
+</Project>

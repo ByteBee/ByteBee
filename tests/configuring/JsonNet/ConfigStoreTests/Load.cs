@@ -4,8 +4,8 @@ using Moq;
 using NUnit.Framework;
 using System;
 using System.IO;
-using ByteBee.Framework.Abstractions.Configuring;
-using ByteBee.Framework.Abstractions.Configuring.Exceptions;
+using ByteBee.Framework.Configuring.Abstractions;
+using ByteBee.Framework.Configuring.Abstractions.Exceptions;
 
 namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
 {

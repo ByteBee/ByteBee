@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using System.Text;
-using ByteBee.Framework.Abstractions.Adapting;
+using ByteBee.Framework.Adapting.Abstractions;
 
 namespace ByteBee.Framework.Adapting
 {

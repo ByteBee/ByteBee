@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using ByteBee.Framework.Abstractions.Converting;
+using ByteBee.Framework.Converting.Abstractions;
 using ByteBee.Framework.Converting.Converters;
 
 namespace ByteBee.Framework.Converting

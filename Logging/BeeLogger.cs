@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using ByteBee.Framework.Abstractions.Logging;
-using ByteBee.Framework.Abstractions.Logging.DataClasses;
+using ByteBee.Framework.Logging.Abstractions;
+using ByteBee.Framework.Logging.Abstractions.DataClasses;
 
-namespace ByteBee.Logging
+namespace ByteBee.Framework.Logging
 {
     public class BeeLogger : ILogger
     {

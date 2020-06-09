@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ByteBee.Framework.Abstractions.Configuring;
-using ByteBee.Framework.Abstractions.Configuring.DataClasses;
-using ByteBee.Framework.Abstractions.Configuring.Exceptions;
-using ByteBee.Framework.Abstractions.Converting;
+using ByteBee.Framework.Configuring.Abstractions;
+using ByteBee.Framework.Configuring.Abstractions.DataClasses;
+using ByteBee.Framework.Configuring.Abstractions.Exceptions;
 using ByteBee.Framework.Converting;
+using ByteBee.Framework.Converting.Abstractions;
 
 namespace ByteBee.Framework.Configuring
 {

@@ -1,5 +1,5 @@
 ﻿using System;
-using ByteBee.Framework.Abstractions.Messaging.Exceptions;
+using ByteBee.Framework.Messaging.Abstractions.Exceptions;
 
 namespace ByteBee.Framework.Messaging
 {

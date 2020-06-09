@@ -1,12 +1,12 @@
-﻿using ByteBee.Framework.Abstractions.Configuring;
-using ByteBee.Framework.Abstractions.Injecting;
-using ByteBee.Framework.Configuring;
+﻿using ByteBee.Framework.Configuring;
+using ByteBee.Framework.Configuring.Abstractions;
+using ByteBee.Framework.Injecting.Abstractions;
 
-namespace ByteBee.Framework.Tests.Fake.CCL.MadLib
+namespace ByteBee.Framework.Tests.Stubbing.CrossCuttingLayer.MadLib
 {
-    public class InfrastructureModule : IBeeKernelModule
+    public class InfrastructureModule : IKernelModule
     {
-        public void Load(IBeeKernel kernel)
+        public void Load(IKernel kernel)
         {
             kernel.Register<IConfigStore, InMemoryConfigStore>();
         }

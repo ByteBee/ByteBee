@@ -1,14 +1,14 @@
-﻿using ByteBee.Framework.Abstractions.Injecting;
-using ByteBee.Framework.Bootstrapping;
+﻿using ByteBee.Framework.Injecting.Abstractions;
+using ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Abstractions;
 using ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Concrete;
 
-namespace ByteBee.Framework.Tests.Fake.CCL.MadLib
+namespace ByteBee.Framework.Tests.Stubbing.CrossCuttingLayer.MadLib
 {
-    public sealed class LogicModule : IBeeKernelModule
+    public sealed class LogicModule : IKernelModule
     {
-        public void Load(IBeeKernel kernel)
+        public void Load(IKernel kernel)
         {
-            kernel.RegisterComponent<TodoManagerActivator>();
+            kernel.Register<ITodoManager, TodoManager>();
         }
     }
 }

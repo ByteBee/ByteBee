@@ -2,16 +2,17 @@
 using Ninject.Modules;
 using System;
 using System.Collections.Generic;
-using ByteBee.Framework.Abstractions.Bootstrapping;
-using ByteBee.Framework.Abstractions.Configuring;
-using ByteBee.Framework.Abstractions.Injecting;
+using ByteBee.Framework.Injecting.Abstractions;
+using IBeeKernel = ByteBee.Framework.Injecting.Abstractions.IKernel;
+using IKernel = ByteBee.Framework.Injecting.Abstractions.IKernel;
+using INinjectKernel = Ninject.IKernel;
 
 namespace ByteBee.Framework.Injecting.Ninject
 {
-    public sealed class NinjectKernel : IBeeKernel
+    public sealed class NinjectKernel : IKernel
     {
-        private readonly IKernel _kernel;
-        private readonly IBeeKernelModule[] _beeModules;
+        private readonly INinjectKernel _kernel;
+        private readonly IKernelModule[] _beeModules;
         private readonly INinjectModule[] _ninjectModules;
 
         public NinjectKernel()
@@ -25,24 +26,24 @@ namespace ByteBee.Framework.Injecting.Ninject
             _ninjectModules = modules;
         }
 
-        public NinjectKernel(IBeeKernelModule[] modules)
+        public NinjectKernel(IKernelModule[] modules)
         {
             _kernel = new StandardKernel();
             _beeModules = modules;
 
-            foreach (IBeeKernelModule module in modules)
+            foreach (IKernelModule module in modules)
             {
                 module.Load(this);
             }
         }
 
-        public NinjectKernel(INinjectModule[] ninjectModules, IBeeKernelModule[] beeModules)
+        public NinjectKernel(INinjectModule[] ninjectModules, IKernelModule[] beeModules)
         {
             _kernel = new StandardKernel(ninjectModules);
             _ninjectModules = ninjectModules;
             _beeModules = beeModules;
 
-            foreach (IBeeKernelModule module in beeModules)
+            foreach (IKernelModule module in beeModules)
             {
                 module.Load(this);
             }
@@ -76,21 +77,21 @@ namespace ByteBee.Framework.Injecting.Ninject
             });
         }
 
-        public void RegisterComponent<TComponent>() where TComponent : IComponentActivator
+        public void RegisterComponent<TModule>() where TModule : IKernelModule
         {
-            _kernel.Bind<IComponentActivator>().To(typeof(TComponent)).InSingletonScope();
+            _kernel.Bind<IKernelModule>().To(typeof(TModule)).InSingletonScope();
         }
 
-        public void RegisterConfig<TConfig>()
-        {
-            _kernel.Bind<TConfig>()
-                .ToMethod(ctx =>
-                {
-                    var configProvider = ctx.Kernel.Get<IConfigProvider>();
-                    return configProvider.Get<TConfig>();
-                })
-                .InSingletonScope();
-        }
+        //public void RegisterConfig<TConfig>()
+        //{
+        //    _kernel.Bind<TConfig>()
+        //        .ToMethod(ctx =>
+        //        {
+        //            var configProvider = ctx.Kernel.Get<IConfigProvider>();
+        //            return configProvider.Get<TConfig>();
+        //        })
+        //        .InSingletonScope();
+        //}
 
         public void RegisterObject(object service)
         {

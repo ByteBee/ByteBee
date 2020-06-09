@@ -1,10 +1,10 @@
-﻿using ByteBee.Framework.Abstractions.Injecting;
+﻿using ByteBee.Framework.Injecting.Abstractions;
 
-namespace ByteBee.Framework.Tests.Fake.CCL.MadLib
+namespace ByteBee.Framework.Tests.Stubbing.CrossCuttingLayer.MadLib
 {
     public static class Aggregator
     {
-        public static readonly IBeeKernelModule[] Modules = new IBeeKernelModule[]
+        public static readonly IKernelModule[] Modules = new IKernelModule[]
         {
             new InfrastructureModule(),
 

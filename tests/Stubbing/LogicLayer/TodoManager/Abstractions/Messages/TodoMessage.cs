@@ -1,5 +1,5 @@
 ﻿using System;
-using ByteBee.Framework.Abstractions.Messaging;
+using ByteBee.Framework.Messaging.Abstractions;
 
 namespace ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Abstractions.Messages
 {

@@ -1,4 +1,4 @@
-﻿using ByteBee.Framework.Abstractions.Converting;
+﻿using ByteBee.Framework.Converting.Abstractions;
 
 namespace ByteBee.Framework.Converting.Converters
 {

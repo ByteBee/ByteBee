@@ -2,7 +2,7 @@
 using Moq;
 using NUnit.Framework;
 using System;
-using ByteBee.Framework.Abstractions.Configuring;
+using ByteBee.Framework.Configuring.Abstractions;
 
 namespace ByteBee.Framework.Tests.Configuring.JsonNet.ConfigStoreTests
 {

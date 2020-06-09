@@ -1,4 +1,4 @@
-﻿using ByteBee.Framework.Abstractions.Configuring;
+﻿using ByteBee.Framework.Configuring.Abstractions;
 
 namespace ByteBee.Framework.Configuring
 {

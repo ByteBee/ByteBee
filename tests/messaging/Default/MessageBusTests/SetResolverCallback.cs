@@ -1,5 +1,5 @@
 ﻿using System;
-using ByteBee.Framework.Abstractions.Messaging.Exceptions;
+using ByteBee.Framework.Messaging.Abstractions.Exceptions;
 using ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Abstractions.Messages;
 using ByteBee.Framework.Tests.Stubbing.LogicLayer.TodoManager.Concrete;
 using FluentAssertions;

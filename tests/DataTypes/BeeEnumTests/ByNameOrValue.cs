@@ -1,5 +1,5 @@
 ﻿using System;
-using ByteBee.Framework.Abstractions.DataTypes.Exceptions;
+using ByteBee.Framework.DataTypes.Enums;
 using ByteBee.Framework.Tests.Stubbing.DataLayer.Enums;
 using FluentAssertions;
 using NUnit.Framework;

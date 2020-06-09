@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using ByteBee.Framework.Abstractions.Configuring;
-using ByteBee.Framework.Abstractions.Configuring.DataClasses;
+using ByteBee.Framework.Configuring.Abstractions;
+using ByteBee.Framework.Configuring.Abstractions.DataClasses;
 
 namespace ByteBee.Framework.Configuring
 {

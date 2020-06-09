@@ -1,5 +1,5 @@
 ﻿using System;
-using ByteBee.Framework.Abstractions.Converting;
+using ByteBee.Framework.Converting.Abstractions;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using Moq;

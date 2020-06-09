@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using ByteBee.Framework.Abstractions.DataTypes.Exceptions;
+using ByteBee.Framework.DataTypes.Enums;
 
 namespace ByteBee.Framework.DataTypes
 {

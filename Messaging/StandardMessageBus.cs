@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using ByteBee.Framework.Abstractions.Messaging;
-using ByteBee.Framework.Abstractions.Messaging.DataClasses;
+using ByteBee.Framework.Messaging.Abstractions;
+using ByteBee.Framework.Messaging.Abstractions.DataClasses;
 
 namespace ByteBee.Framework.Messaging
 {

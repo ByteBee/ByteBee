@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ByteBee.Framework.Logging.Abstractions;
+using ByteBee.Framework.Logging.Abstractions.DataClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using ByteBee.Framework.Abstractions.Logging;
-using ByteBee.Framework.Abstractions.Logging.DataClasses;
 
-namespace ByteBee.Logging
+
+namespace ByteBee.Framework.Logging
 {
     public class BeeLogFormatter : ILogFormatter
     {

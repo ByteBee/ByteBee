@@ -70,7 +70,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppConstructing\Integration\ConstructAppTests.cs" />
     <Compile Include="Configuring\Standard\ConfigManagerTests\GetOrDefault.cs" />
     <Compile Include="Configuring\Standard\ConfigManagerTests\GetOrFallback.cs" />
     <Compile Include="Configuring\Standard\ConfigManagerTests\GetOrFallbackFunc.cs" />
@@ -137,7 +136,6 @@
     <Compile Include="Stubbing\LogicLayer\TodoManager\Concrete\TodoManager.cs" />
     <Compile Include="Stubbing\LogicLayer\TodoManager\Concrete\TodoMessageHandler.cs" />
     <Compile Include="Stubbing\LogicLayer\TodoManager\Concrete\_TodoManagerConfig.cs" />
-    <Compile Include="Stubbing\LogicLayer\TodoManager\Concrete\_TodoManagerActivator.cs" />
     <Compile Include="Stubbing\CrossCuttingLayer\MadLib\Aggregator.cs" />
     <Compile Include="Stubbing\CrossCuttingLayer\MadLib\InfrastructureModule.cs" />
     <Compile Include="Stubbing\CrossCuttingLayer\MadLib\LogicModule.cs" />
@@ -159,41 +157,57 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\abstractions\ByteBee.Abstractions.csproj">
-      <Project>{EB0127E6-9745-440F-B1C0-5B740EB2AAA2}</Project>
-      <Name>ByteBee.Abstractions</Name>
+    <ProjectReference Include="..\Adapting.Abstractions\BB.Adapting.Abstractions.csproj">
+      <Project>{8F50159F-B6ED-429A-8176-C7C9EDACD6B3}</Project>
+      <Name>BB.Adapting.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\appConstructing\ByteBee.AppConstructing.csproj">
-      <Project>{4E1D6414-51F2-4CA8-B193-D1DF7117C28F}</Project>
-      <Name>ByteBee.AppConstructing</Name>
+    <ProjectReference Include="..\Bootstrapping.Abstractions\BB.Bootstrapping.Abstractions.csproj">
+      <Project>{290D7BBC-5B4D-4036-838F-2E057EBFE3AE}</Project>
+      <Name>BB.Bootstrapping.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\bootstrapping\ByteBee.Bootstrapping.csproj">
+    <ProjectReference Include="..\Bootstrapping\BB.Bootstrapping.csproj">
       <Project>{20B6FF66-ECC6-462C-BC31-9F11B5BCFC0E}</Project>
-      <Name>ByteBee.Bootstrapping</Name>
+      <Name>BB.Bootstrapping</Name>
     </ProjectReference>
-    <ProjectReference Include="..\configuring.jsonNet\ByteBee.Configuring.JsonNet.csproj">
+    <ProjectReference Include="..\Configuring.Abstractions\BB.Configuring.Abstractions.csproj">
+      <Project>{80CC962D-2BB0-4E91-99BA-3E7A0EB4EDE3}</Project>
+      <Name>BB.Configuring.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Configuring.jsonNet\BB.Configuring.JsonNet.csproj">
       <Project>{74667A76-C822-40BC-83B5-FCB953BCC43B}</Project>
-      <Name>ByteBee.Configuring.JsonNet</Name>
+      <Name>BB.Configuring.JsonNet</Name>
     </ProjectReference>
-    <ProjectReference Include="..\configuring\ByteBee.Configuring.csproj">
+    <ProjectReference Include="..\Configuring\BB.Configuring.csproj">
       <Project>{3DF62378-9E3F-460E-8646-21B47D3365B4}</Project>
-      <Name>ByteBee.Configuring</Name>
+      <Name>BB.Configuring</Name>
     </ProjectReference>
-    <ProjectReference Include="..\converting\ByteBee.Converting.csproj">
+    <ProjectReference Include="..\Converting.Abstractions\BB.Converting.Abstractions.csproj">
+      <Project>{A2BAECDD-7EF9-44F5-8844-CC9E3E8D7057}</Project>
+      <Name>BB.Converting.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Converting\BB.Converting.csproj">
       <Project>{EFABFEE8-2C52-47A7-A650-790E31DF6630}</Project>
-      <Name>ByteBee.Converting</Name>
+      <Name>BB.Converting</Name>
     </ProjectReference>
-    <ProjectReference Include="..\dataTypes\ByteBee.DataTypes.csproj">
+    <ProjectReference Include="..\DataTypes\BB.DataTypes.csproj">
       <Project>{B1D07CEE-AA58-460F-A552-8E5F40179050}</Project>
-      <Name>ByteBee.DataTypes</Name>
+      <Name>BB.DataTypes</Name>
     </ProjectReference>
-    <ProjectReference Include="..\injecting.ninject\ByteBee.Injecting.Ninject.csproj">
+    <ProjectReference Include="..\Injecting.Abstractions\BB.Injecting.Abstractions.csproj">
+      <Project>{28D2AF6F-3BF2-4661-8750-B3772168A391}</Project>
+      <Name>BB.Injecting.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Injecting.Ninject\BB.Injecting.Ninject.csproj">
       <Project>{89EBFF0C-3D23-4B3E-B10B-99F89B9C9F0C}</Project>
-      <Name>ByteBee.Injecting.Ninject</Name>
+      <Name>BB.Injecting.Ninject</Name>
     </ProjectReference>
-    <ProjectReference Include="..\messaging\ByteBee.Messaging.csproj">
+    <ProjectReference Include="..\Messaging.Abstractions\BB.Messaging.Abstractions.csproj">
+      <Project>{08337625-D6F3-40A1-B498-D2BF073FF0E8}</Project>
+      <Name>BB.Messaging.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Messaging\BB.Messaging.csproj">
       <Project>{2C238F69-CFC6-4E88-8C7D-C718B99425B1}</Project>
-      <Name>ByteBee.Messaging</Name>
+      <Name>BB.Messaging</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
