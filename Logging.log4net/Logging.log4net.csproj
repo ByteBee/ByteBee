@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Logging.Abstractions\BB.Logging.Abstractions.csproj" />
+      <ProjectReference Include="..\Logging.Abstractions\Logging.Abstractions.csproj" />
     </ItemGroup>
 
 </Project>
