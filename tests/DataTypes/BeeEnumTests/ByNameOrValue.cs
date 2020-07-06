@@ -1,6 +1,6 @@
 ﻿using System;
 using ByteBee.Framework.DataTypes.Enums;
-using ByteBee.Framework.Tests.Stubbing.DataLayer.Enums;
+using ByteBee.Framework.Tests.Stubbing.Data.Enums;
 using FluentAssertions;
 using NUnit.Framework;
 

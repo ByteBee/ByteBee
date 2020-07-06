@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>netstandard2.0</TargetFramework>
+	  <AssemblyName>ByteBee.Tests.Stubbing</AssemblyName>
+	  <RootNamespace>ByteBee.Framework.Tests.Stubbing</RootNamespace>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <Company>ByteBee</Company>
+	  <Product>ByteBee Framework</Product>
+	  <Authors>Sergej Kukshaus</Authors>
+	  <PackageProjectUrl>https://www.bytebee.de/</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/ByteBee/ByteBee</RepositoryUrl>
+	  <Description>A part of the legendary ByteBee-Framework!</Description>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <AssemblyVersion>2.3.0.0</AssemblyVersion>
+	  <FileVersion>2.3.0.0</FileVersion>
+	  <Version>2.3.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Configuring.Abstractions\Configuring.Abstractions.csproj" />
+    <ProjectReference Include="..\Configuring\Configuring.csproj" />
+    <ProjectReference Include="..\DataTypes\DataTypes.csproj" />
+    <ProjectReference Include="..\Injecting.Abstractions\Injecting.Abstractions.csproj" />
+    <ProjectReference Include="..\Injecting.Ninject\Injecting.Ninject.csproj" />
+    <ProjectReference Include="..\Messaging.Abstractions\Messaging.Abstractions.csproj" />
+    <ProjectReference Include="..\Messaging\Messaging.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -12,18 +12,27 @@ namespace ByteBee.Framework.Messaging
         private readonly Dictionary<Type, IList<MessageBusActor>> _actors =
             new Dictionary<Type, IList<MessageBusActor>>();
 
+        public StandardMessageBus(List<IMessageSubscription> subscriber)
+        {
+            subscriber.ForEach(s => s.Subscribe(this));
+        }
+
+        //public StandardMessageBus()
+        //{
+        //}
+
         private Func<Type, object> _resolverCallback;
 
         public int ActorCount => _actors.SelectMany(s => s.Value).Count();
 
         public bool BreakOnException { get; set; }
 
-        public void Register<TMessage>(Action<TMessage> handler) where TMessage : IMessage
+        public void Register<TMessage>(Action<TMessage> handler)
         {
             Register(handler, message => true);
         }
 
-        public void Register<TMessage>(Action<TMessage> handler, Func<TMessage, bool> filter) where TMessage : IMessage
+        public void Register<TMessage>(Action<TMessage> handler, Func<TMessage, bool> filter)
         {
             Throw.IfHandlerIsNull(handler);
             Throw.IfFilterIsNull(filter);
@@ -47,12 +56,12 @@ namespace ByteBee.Framework.Messaging
             _resolverCallback = resolverCallback;
         }
 
-        public void Register<TResolver, TMessage>(Action<TResolver, TMessage> handler) where TMessage : IMessage
+        public void Register<TResolver, TMessage>(Action<TResolver, TMessage> handler)
         {
             Register(handler, message => true);
         }
 
-        public void Register<TResolver, TMessage>(Action<TResolver, TMessage> handler, Func<TMessage, bool> filter) where TMessage : IMessage
+        public void Register<TResolver, TMessage>(Action<TResolver, TMessage> handler, Func<TMessage, bool> filter)
         {
             Throw.IfHandlerIsNull(handler);
             Throw.IfFilterIsNull(filter);
@@ -93,18 +102,18 @@ namespace ByteBee.Framework.Messaging
             _actors[sensorType].Add(actor);
         }
 
-        public void Publish<TMessage>() where TMessage : IMessage
+        public void Publish<TMessage>()
         {
             Publish<TMessage>(new object[0]);
         }
 
-        public void Publish<TMessage>(params object[] constructorArgs) where TMessage : IMessage
+        public void Publish<TMessage>(params object[] constructorArgs)
         {
             var message = (TMessage)Activator.CreateInstance(typeof(TMessage), args: constructorArgs);
             Publish(message);
         }
 
-        public void Publish<TMessage>(TMessage message) where TMessage : IMessage
+        public void Publish<TMessage>(TMessage message)
         {
             Type sensorType = message.GetType();
 
@@ -131,7 +140,7 @@ namespace ByteBee.Framework.Messaging
             }
         }
 
-        private void ActivateAllActorsForThisSensor<TMessage>(Type sensorType, TMessage message) where TMessage : IMessage
+        private void ActivateAllActorsForThisSensor<TMessage>(Type sensorType, TMessage message)
         {
             IList<MessageBusActor> actorsForType = _actors[sensorType];
             foreach (MessageBusActor actor in actorsForType)
@@ -144,7 +153,7 @@ namespace ByteBee.Framework.Messaging
             }
         }
 
-        private bool DoesActorFilterMatch<TMessage>(MessageBusActor actor, TMessage message) where TMessage : IMessage
+        private bool DoesActorFilterMatch<TMessage>(MessageBusActor actor, TMessage message)
         {
             try
             {
@@ -158,7 +167,7 @@ namespace ByteBee.Framework.Messaging
             }
         }
 
-        private void ExecuteActorsLogic<TMessage>(MessageBusActor actor, TMessage message) where TMessage : IMessage
+        private void ExecuteActorsLogic<TMessage>(MessageBusActor actor, TMessage message)
         {
             try
             {
@@ -180,7 +189,7 @@ namespace ByteBee.Framework.Messaging
 
                 if (BreakOnException)
                 {
-                    throw tie.InnerException;
+                    throw tie?.InnerException ?? tie;
                 }
             }
             catch (Exception ex)

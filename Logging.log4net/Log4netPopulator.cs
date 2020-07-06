@@ -1,14 +1,14 @@
 ﻿using ByteBee.Framework.Logging.Abstractions;
 using ByteBee.Framework.Logging.Abstractions.DataClasses;
-using log4net;
+using ILogger = log4net.ILog;
 
 namespace ByteBee.Framework.Logging.log4net
 {
     public sealed class Log4NetPopulator : ILogPopulator
     {
-        private readonly ILog _inner;
+        private readonly ILogger _inner;
 
-        public Log4NetPopulator(ILog log4net)
+        public Log4NetPopulator(ILogger log4net)
         {
             _inner = log4net;
         }

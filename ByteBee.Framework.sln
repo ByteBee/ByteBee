@@ -3,49 +3,51 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Adapting", "Adapting\BB.Adapting.csproj", "{BBAD6D09-9742-42BB-BBD1-202F5CD224B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapting", "Adapting\Adapting.csproj", "{BBAD6D09-9742-42BB-BBD1-202F5CD224B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Bootstrapping", "Bootstrapping\BB.Bootstrapping.csproj", "{20B6FF66-ECC6-462C-BC31-9F11B5BCFC0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrapping", "Bootstrapping\Bootstrapping.csproj", "{20B6FF66-ECC6-462C-BC31-9F11B5BCFC0E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Configuring", "Configuring\BB.Configuring.csproj", "{3DF62378-9E3F-460E-8646-21B47D3365B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuring", "Configuring\Configuring.csproj", "{3DF62378-9E3F-460E-8646-21B47D3365B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Configuring.JsonNet", "Configuring.jsonNet\BB.Configuring.JsonNet.csproj", "{74667A76-C822-40BC-83B5-FCB953BCC43B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuring.JsonNet", "Configuring.jsonNet\Configuring.JsonNet.csproj", "{74667A76-C822-40BC-83B5-FCB953BCC43B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Converting", "Converting\BB.Converting.csproj", "{EFABFEE8-2C52-47A7-A650-790E31DF6630}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converting", "Converting\Converting.csproj", "{EFABFEE8-2C52-47A7-A650-790E31DF6630}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Injecting", "Injecting\BB.Injecting.csproj", "{37A16A28-B244-4932-92DE-8490764E3C86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Injecting", "Injecting\Injecting.csproj", "{37A16A28-B244-4932-92DE-8490764E3C86}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Injecting.Ninject", "Injecting.Ninject\BB.Injecting.Ninject.csproj", "{89EBFF0C-3D23-4B3E-B10B-99F89B9C9F0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Injecting.Ninject", "Injecting.Ninject\Injecting.Ninject.csproj", "{89EBFF0C-3D23-4B3E-B10B-99F89B9C9F0C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Messaging", "Messaging\BB.Messaging.csproj", "{2C238F69-CFC6-4E88-8C7D-C718B99425B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messaging", "Messaging\Messaging.csproj", "{2C238F69-CFC6-4E88-8C7D-C718B99425B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.DataTypes", "DataTypes\BB.DataTypes.csproj", "{B1D07CEE-AA58-460F-A552-8E5F40179050}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTypes", "DataTypes\DataTypes.csproj", "{B1D07CEE-AA58-460F-A552-8E5F40179050}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBee.Framework.Tests", "tests\ByteBee.Framework.Tests.csproj", "{B28BAE27-934A-4E8E-8F5A-A2B3CD54AFFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Tests", "tests\_Tests.csproj", "{B28BAE27-934A-4E8E-8F5A-A2B3CD54AFFF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Logging", "Logging\BB.Logging.csproj", "{497D14C6-E891-424C-9F1E-DC1090128A3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging", "Logging\Logging.csproj", "{497D14C6-E891-424C-9F1E-DC1090128A3B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Logging.AspNetCore", "Logging.AspNetCore\BB.Logging.AspNetCore.csproj", "{363D65DE-26AF-4B9D-A219-1533F1A57AE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging.AspNetCore", "Logging.AspNetCore\Logging.AspNetCore.csproj", "{363D65DE-26AF-4B9D-A219-1533F1A57AE3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Logging.log4net", "Logging.log4net\BB.Logging.log4net.csproj", "{869DD8F2-1BD2-4C13-A40A-EE72902B7ED2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging.log4net", "Logging.log4net\Logging.log4net.csproj", "{869DD8F2-1BD2-4C13-A40A-EE72902B7ED2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Logging.NLog", "Logging.NLog\BB.Logging.NLog.csproj", "{1BA2FBB9-10B4-45C4-A4E4-5A47B8218848}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging.NLog", "Logging.NLog\Logging.NLog.csproj", "{1BA2FBB9-10B4-45C4-A4E4-5A47B8218848}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Logging.Serilog", "Logging.Serilog\BB.Logging.Serilog.csproj", "{5C6C57F0-D87A-48C9-B77F-838AA1676F55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging.Serilog", "Logging.Serilog\Logging.Serilog.csproj", "{5C6C57F0-D87A-48C9-B77F-838AA1676F55}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Logging.Abstractions", "Logging.Abstractions\BB.Logging.Abstractions.csproj", "{721066CC-5A49-4D88-9253-05BBE00589DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging.Abstractions", "Logging.Abstractions\Logging.Abstractions.csproj", "{721066CC-5A49-4D88-9253-05BBE00589DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Messaging.Abstractions", "Messaging.Abstractions\BB.Messaging.Abstractions.csproj", "{08337625-D6F3-40A1-B498-D2BF073FF0E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messaging.Abstractions", "Messaging.Abstractions\Messaging.Abstractions.csproj", "{08337625-D6F3-40A1-B498-D2BF073FF0E8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Bootstrapping.Abstractions", "Bootstrapping.Abstractions\BB.Bootstrapping.Abstractions.csproj", "{290D7BBC-5B4D-4036-838F-2E057EBFE3AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrapping.Abstractions", "Bootstrapping.Abstractions\Bootstrapping.Abstractions.csproj", "{290D7BBC-5B4D-4036-838F-2E057EBFE3AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Injecting.Abstractions", "Injecting.Abstractions\BB.Injecting.Abstractions.csproj", "{28D2AF6F-3BF2-4661-8750-B3772168A391}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Injecting.Abstractions", "Injecting.Abstractions\Injecting.Abstractions.csproj", "{28D2AF6F-3BF2-4661-8750-B3772168A391}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Configuring.Abstractions", "Configuring.Abstractions\BB.Configuring.Abstractions.csproj", "{80CC962D-2BB0-4E91-99BA-3E7A0EB4EDE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuring.Abstractions", "Configuring.Abstractions\Configuring.Abstractions.csproj", "{80CC962D-2BB0-4E91-99BA-3E7A0EB4EDE3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Converting.Abstractions", "Converting.Abstractions\BB.Converting.Abstractions.csproj", "{A2BAECDD-7EF9-44F5-8844-CC9E3E8D7057}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converting.Abstractions", "Converting.Abstractions\Converting.Abstractions.csproj", "{A2BAECDD-7EF9-44F5-8844-CC9E3E8D7057}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB.Adapting.Abstractions", "Adapting.Abstractions\BB.Adapting.Abstractions.csproj", "{8F50159F-B6ED-429A-8176-C7C9EDACD6B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapting.Abstractions", "Adapting.Abstractions\Adapting.Abstractions.csproj", "{8F50159F-B6ED-429A-8176-C7C9EDACD6B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Tests.Subbing", "Tests.Subbing\_Tests.Subbing.csproj", "{9432AFEE-FC75-40CA-A283-A72131D39CD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{8F50159F-B6ED-429A-8176-C7C9EDACD6B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F50159F-B6ED-429A-8176-C7C9EDACD6B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F50159F-B6ED-429A-8176-C7C9EDACD6B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9432AFEE-FC75-40CA-A283-A72131D39CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9432AFEE-FC75-40CA-A283-A72131D39CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9432AFEE-FC75-40CA-A283-A72131D39CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9432AFEE-FC75-40CA-A283-A72131D39CD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,15 +7,14 @@ namespace ByteBee.Framework.Logging
 {
     public class BeeLogger : ILogger
     {
-        private readonly IEnumerable<ILogPopulator> _populators;
+        private readonly List<ILogPopulator> _populators;
         private bool _isTurnedOff;
 
-        public BeeLogger()
+        public BeeLogger() : this(new List<ILogPopulator>())
         {
-            _populators = new ILogPopulator[0];
         }
 
-        public BeeLogger(IEnumerable<ILogPopulator> populators)
+        public BeeLogger(List<ILogPopulator> populators)
         {
             _populators = populators;
         }
@@ -34,10 +33,7 @@ namespace ByteBee.Framework.Logging
         {
             if (_isTurnedOff == false)
             {
-                foreach (ILogPopulator populator in _populators)
-                {
-                    populator.Populate(message);
-                }
+                _populators.ForEach(p => p.Populate(message));
             }
         }
 

@@ -9,15 +9,15 @@ namespace ByteBee.Framework.Messaging.Abstractions
         event Action<MessageBusErrorEventArgs> FilterThrowsException;
         bool BreakOnException { get; set; }
 
-        void Register<TMessage>(Action<TMessage> handler) where TMessage : IMessage;
-        void Register<TMessage>(Action<TMessage> handler, Func<TMessage, bool> filter) where TMessage : IMessage;
+        void Register<TMessage>(Action<TMessage> handler);
+        void Register<TMessage>(Action<TMessage> handler, Func<TMessage, bool> filter);
 
         void SetResolverCallback(Func<Type, object> resolverCallback);
-        void Register<TResolver, TMessage>(Action<TResolver, TMessage> handler) where TMessage : IMessage;
-        void Register<TResolver, TMessage>(Action<TResolver, TMessage> handler, Func<TMessage, bool> filter) where TMessage : IMessage;
+        void Register<TResolver, TMessage>(Action<TResolver, TMessage> handler);
+        void Register<TResolver, TMessage>(Action<TResolver, TMessage> handler, Func<TMessage, bool> filter);
 
-        void Publish<TMessage>() where TMessage : IMessage;
-        void Publish<TMessage>(params object[] constructorArgs) where TMessage : IMessage;
-        void Publish<TMessage>(TMessage message) where TMessage : IMessage;
+        void Publish<TMessage>();
+        void Publish<TMessage>(params object[] constructorArgs);
+        void Publish<TMessage>(TMessage message);
     }
 }
