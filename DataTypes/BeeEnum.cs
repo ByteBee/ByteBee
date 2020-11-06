@@ -40,15 +40,13 @@ namespace ByteBee.Framework.DataTypes
 
         public static TEnum ByName(string name)
         {
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                throw new ArgumentException(nameof(name));
-            }
-
             TEnum result = GetAll().SingleOrDefault(item => string.Equals(item.Name, name, StringComparison.OrdinalIgnoreCase));
             if (result == null)
             {
-                throw new EnumValueNotFoundException($"No {typeof(TEnum).Name} with name \"{name}\" found.");
+                var possibleValues = GetAll().Select(e => e.Name)
+                    .Aggregate((a, b) => $"{a}, {b}");
+
+                throw new EnumValueNotFoundException($"The value '{name}' is not a valid entry for {typeof(TEnum).Name}. Possible values are: {possibleValues}");
             }
 
             return result;
@@ -59,7 +57,10 @@ namespace ByteBee.Framework.DataTypes
             TEnum result = GetAll().SingleOrDefault(item => EqualityComparer<TValue>.Default.Equals(item.Value, value));
             if (result == null)
             {
-                throw new EnumValueNotFoundException($"No {typeof(TEnum).Name} with value {value} found.");
+                var possibleValues = GetAll().Select(e => e.Value.ToString())
+                    .Aggregate((a, b) => $"{a}, {b}");
+
+                throw new EnumValueNotFoundException($"The value '{value}' is not a valid entry for {typeof(TEnum).Name}. Possible values are: {possibleValues}");
             }
 
             return result;
@@ -67,11 +68,6 @@ namespace ByteBee.Framework.DataTypes
 
         public static TEnum ByNameOrValue(string nameOrValue)
         {
-            if (string.IsNullOrWhiteSpace(nameOrValue))
-            {
-                throw new ArgumentException(nameOrValue);
-            }
-
             TEnum[] values = GetAll();
 
             TEnum output = values.SingleOrDefault(item =>
@@ -85,7 +81,10 @@ namespace ByteBee.Framework.DataTypes
 
             if (output == null)
             {
-                throw new EnumValueNotFoundException($"No {typeof(TEnum).Name} with name or value {nameOrValue} found.");
+                var possibleValues = GetAll().Select(e => $"{e.Name} ({e.Value})")
+                    .Aggregate((a, b) => $"{a}, {b}");
+
+                throw new EnumValueNotFoundException($"The value '{nameOrValue}' is not a valid entry for {typeof(TEnum).Name}. Possible values are: {possibleValues}");
             }
 
             return output;

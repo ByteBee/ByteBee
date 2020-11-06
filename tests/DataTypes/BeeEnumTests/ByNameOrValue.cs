@@ -9,12 +9,41 @@ namespace ByteBee.Framework.Tests.DataTypes.BeeEnumTests
     public partial class BeeEnumTest
     {
         [Test]
+        public void ByName_NotFound_ListPossibleValues()
+        {
+            var act = this.Invoking(x => TaskPriority.ByName("test"));
+
+            act.Should()
+                .ThrowExactly<EnumValueNotFoundException>()
+                .WithMessage("The value 'test' is not a valid entry for TaskPriority. Possible values are: Normal, Low, High, Blocker");
+        }
+        [Test]
+        public void ByValue_NotFound_ListPossibleValues()
+        {
+            var act = this.Invoking(x => TaskPriority.ByValue(0));
+
+            act.Should()
+                .ThrowExactly<EnumValueNotFoundException>()
+                .WithMessage("The value '0' is not a valid entry for TaskPriority. Possible values are: 1, 2, 3, 4");
+        }
+
+        [Test]
+        public void ByNameOrValue_NotFound_ListPossibleValues()
+        {
+            var act = this.Invoking(x => TaskPriority.ByNameOrValue("test"));
+
+            act.Should()
+                .ThrowExactly<EnumValueNotFoundException>()
+                .WithMessage("The value 'test' is not a valid entry for TaskPriority. Possible values are: Normal (1), Low (2), High (3), Blocker (4)");
+        }
+
+        [Test]
         public void ByNameOrValue_StringEmpty_ArgumentException()
         {
             var act = this.Invoking(x => TaskPriority.ByNameOrValue(string.Empty));
 
             act.Should()
-                .ThrowExactly<ArgumentException>("name was empty");
+                .ThrowExactly<EnumValueNotFoundException>("name was empty");
         }
 
         [Test]
