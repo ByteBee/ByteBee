@@ -6,7 +6,7 @@ using ByteBee.Framework.DataTypes.Enums;
 
 namespace ByteBee.Framework.DataTypes
 {
-    public abstract class BeeEnum<TEnum, TValue> where TEnum : BeeEnum<TEnum, TValue>
+    public abstract class BeeEnum<TEnum, TValue> : IEquatable<BeeEnum<TEnum, TValue>> where TEnum : BeeEnum<TEnum, TValue>
     {
         private static readonly Lazy<TEnum[]> _allMembersLazy = new Lazy<TEnum[]>(() =>
         {
@@ -112,5 +112,54 @@ namespace ByteBee.Framework.DataTypes
         {
             return ByValue(value);
         }
+
+        public bool Equals(BeeEnum<TEnum, TValue> other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return string.Equals(Name, other.Name, StringComparison.InvariantCultureIgnoreCase) && EqualityComparer<TValue>.Default.Equals(Value, other.Value);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != this.GetType())
+            {
+                return false;
+            }
+
+            return Equals((BeeEnum<TEnum, TValue>) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((Name != null ? StringComparer.InvariantCultureIgnoreCase.GetHashCode(Name) : 0) * 397) ^ EqualityComparer<TValue>.Default.GetHashCode(Value);
+            }
+        }
+
+        public static bool operator ==(BeeEnum<TEnum, TValue> left, BeeEnum<TEnum, TValue> right)
+            => Equals(left, right);
+
+        public static bool operator !=(BeeEnum<TEnum, TValue> left, BeeEnum<TEnum, TValue> right)
+            => !Equals(left, right);
     }
 }

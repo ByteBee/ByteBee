@@ -290,7 +290,17 @@ namespace ByteBee.Framework.DataTypes
 
         public bool Equals(Vector2 v)
         {
-            return IsEqual(v);
+            if (ReferenceEquals(null, v))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, v))
+            {
+                return true;
+            }
+
+            return X.Equals(v.X) && Y.Equals(v.Y);
         }
 
         public bool IsEqual(Vector2 v)
@@ -343,18 +353,14 @@ namespace ByteBee.Framework.DataTypes
 
         public override bool Equals(object obj)
         {
-            return !ReferenceEquals(null, obj) && obj is Vector2 v && Equals(v);
+            return ReferenceEquals(this, obj) || obj is Vector2 other && Equals(other);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                // ReSharper disable NonReadonlyMemberInGetHashCode
-                int hashCode = X.GetHashCode();
-                hashCode = (hashCode * 397) ^ Y.GetHashCode();
-                // ReSharper restore NonReadonlyMemberInGetHashCode
-                return hashCode;
+                return (X.GetHashCode() * 397) ^ Y.GetHashCode();
             }
         }
     }
